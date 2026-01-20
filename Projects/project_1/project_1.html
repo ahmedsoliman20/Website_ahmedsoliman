@@ -12,7 +12,7 @@
 
 </head>
 
-<!--Header of the page -->
+<!--Header-->
 
 <body>
 <header class="pt-5 pb-4">
@@ -115,6 +115,28 @@
   </div>
 </div>
 
+<section class="container py-5 my-5">
+  <div class="row justify-content-center text-center mb-5">
+    <div class="col-lg-8">
+      <h2 class="fw-bold mb-4"><p id="fetch-subtitle">Loading...</p></h2>
+      <p class="lead text-secondary px-md-5" style="font-size: 1.1rem; line-height: 1.6;"> <p id="fetch-text_2">Loading...</p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-10 position-relative">
+      <div class="video-wrapper position-relative overflow-hidden rounded shadow-lg">
+        <img src="your-video-thumbnail.jpg" class="img-fluid w-100 d-block" alt="Konligo Project Video">
+        
+        <div class="position-absolute top-50 start-50 translate-middle">
+          <button class="btn btn-link p-0 text-white opacity-75 play-icon" style="transition: transform 0.3s ease;">
+            <i class="bi bi-play-circle-fill" style="font-size: 4rem;"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <script>
@@ -124,7 +146,10 @@
     { id: 'fetch-role',        file: 'role.txt' },
     { id: 'fetch-client',      file: 'client.txt' },
     { id: 'fetch-title',      file: 'title.txt' },
+    { id: 'fetch-text_2',      file: 'text_2.txt' },
+    { id: 'fetch-subtitle',      file: 'subtitle.txt' },
     { id: 'fetch-link',        file: 'visit.txt' }
+
   ];
 
   // Since everything is in the same folder, we leave this empty
