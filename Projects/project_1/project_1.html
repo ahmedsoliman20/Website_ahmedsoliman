@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unified Gallery</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<!--Header of the page -->
+
+<body>
+<header class="pt-5 pb-4">
+  <nav class="navbar navbar-expand-xl">
+    <div class="container px-4 d-flex align-items-center">
+
+      <div class="d-flex justify-content-start col-xl-4 flex-grow-1 flex-xl-grow-0">
+        <h1 class="h4 h3-lg fw-semibold mb-0 text-nowrap">
+          Ahmed Soliman
+        </h1>
+      </div>
+
+      <div class="collapse navbar-collapse justify-content-end col-xl-5" id="mainNav" style="margin-right: 4vw;"> 
+        <ul class="navbar-nav gap-lg-4 text-uppercase">
+          <li class="nav-item"><a class="nav-link active p-0" href="#">Work</a></li>
+          <li class="nav-item"><a class="nav-link p-0"  href="#">Research</a></li>
+          <li class="nav-item"><a class="nav-link p-0"  href="#">News</a></li>
+          <li class="nav-item"><a class="nav-link p-0"  href="#">Teaching</a></li>
+          <li class="nav-item"><a class="nav-link p-0"  href="#">About</a></li>
+        </ul>
+      </div>
+
+      <div class="d-flex justify-content-end align-items-center gap-3 col-xl-auto flex-grow-1 flex-xl-grow-0">
+        <div class="d-flex gap-3 align-items-center">
+          
+          <a href="https://www.researchgate.net/profile/Ahmed_Soliman141/research" class="text-reset opacity-75 d-flex align-items-center">
+            <img src="/icons_header/RNG.png" alt="ResearchGate" style="width: 18px; height: 18px; filter: invert(1);">
+          </a>
+          
+          <a href="https://www.linkedin.com/in/ahmedsoliman7/" class="text-reset opacity-75 d-flex align-items-center">
+            <img src="/icons_header/linkedin2.png" alt="LinkedIn" style="width: 18px; height: 18px; filter: invert(1);">
+          </a>
+          
+          <a href="https://www.instagram.com/ahsolimann/" class="text-reset opacity-75 d-flex align-items-center">
+            <img src="/icons_header/instagram-53.png" alt="Instagram" style="width: 18px; height: 18px; filter: invert(1);">
+          </a>
+
+          <a href="https://www.vub.be/arch/people/ahmed-soliman" class="text-reset opacity-75 d-flex align-items-center">
+            <img src="/icons_header/arch.png" alt="Private" style="width: 18px; height: 18px; filter: invert(1);">
+          </a>
+        </div>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+<!----------------->
+
+<main class="container py-5">
+  
+  <!--add pictures here-->
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="d-flex flex-column gap-4">
+        <img src="cover.jpg" class="img-fluid w-100" alt="Building Detail 1">
+        <img src="002.jpg" class="img-fluid w-100" alt="Building Detail 2">
+        <img src="003.jpeg" class="img-fluid w-100" alt="Building Detail 3">
+      </div>
+    </div>
+
+
+   <div class="col-lg-4">
+  <div class="sticky-top" style="top: 2rem; z-index: 10;">
+    
+
+<div class="row mb-5">
+    <div class="col-12">
+<h1 class="display-4 fw-bold" id="fetch-title">Loading...</h1>
+    </div>
+  </div>
+
+    <div class="mb-5">
+      <p class="text-uppercase small fw-bold text-muted mb-2">Project Description</p>
+      <p id="fetch-description">Loading...</p>
+    </div>
+
+    <div class="mb-4">
+      <p class="text-uppercase small fw-bold text-muted mb-1">Project Date</p>
+      <p id="fetch-date">Loading...</p>
+    </div>
+
+    <div class="mb-4">
+      <p class="text-uppercase small fw-bold text-muted mb-1">Role</p>
+      <p id="fetch-role">Loading...</p>
+    </div>
+
+    <div class="mb-4">
+      <p class="text-uppercase small fw-bold text-muted mb-1">Client</p>
+      <p id="fetch-client">Loading...</p>
+    </div>
+
+    <div class="mb-4">
+      <p class="text-uppercase small fw-bold text-muted mb-1">Visit</p>
+      <a href="#" id="fetch-link" class="text-decoration-none text-white">Loading...</a>
+    </div>
+
+  </div>
+</div>
+
+
+
+<script>
+  const projectData = [
+    { id: 'fetch-description', file: 'description.txt' },
+    { id: 'fetch-date',        file: 'date.txt' },
+    { id: 'fetch-role',        file: 'role.txt' },
+    { id: 'fetch-client',      file: 'client.txt' },
+    { id: 'fetch-title',      file: 'title.txt' },
+    { id: 'fetch-link',        file: 'visit.txt' }
+  ];
+
+  // Since everything is in the same folder, we leave this empty
+  const folderPath = ""; 
+
+  projectData.forEach(item => {
+    fetch(item.file) // Fetch the file directly
+      .then(response => {
+        if (!response.ok) throw new Error(`Could not find ${item.file}`);
+        return response.text();
+      })
+      .then(data => {
+        const element = document.getElementById(item.id);
+        if (element) {
+          if (item.id === 'fetch-link') {
+            element.innerText = data.trim();
+            element.href = data.trim(); 
+          } else {
+            element.innerText = data.trim();
+          }
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById(item.id).innerText = "Unavailable";
+      });
+  });
+</script>
+
+      </div>
+    </div>
+  </div>
+</main>
