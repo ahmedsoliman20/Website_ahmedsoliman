@@ -1,0 +1,103 @@
+// Option A: Include all of Bootstrap
+// Include any default variable overrides here (though functions won’t be available)\
+// ...existing code...
+
+h1 {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.5rem !important; // Adjust the size as needed
+}
+
+
+// ...existing code...
+
+/// ...existing code...
+
+.gallery-img-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery-img {
+  display: block;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+}
+
+.gallery-img.fly-in {
+  animation: flyInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes flyInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-img.animated {
+  opacity: 1;
+  transform: translateY(0);
+  animation: none;
+}
+
+.gallery-img-wrapper:hover .gallery-img.animated,
+.gallery-img-wrapper:hover::after {
+  transform: scale(1.05);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-img-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0);
+  transition: background 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  border-radius: 0.5rem;
+  z-index: 1;
+}
+
+.gallery-img-wrapper:hover::after {
+  background: rgba(255,255,255,0.6);
+}
+
+.gallery-caption {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #222;
+  /* No background */
+  padding: 0.25em 0.75em;
+  border-radius: 0.5em;
+  font-size: 1.2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  font-weight: 700;
+  z-index: 2;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.gallery-img-wrapper:hover .gallery-caption {
+  opacity: 1;
+}
+
+// ...existing code...
+// animation of the gallery images 
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
+// Custom styles can be added below 

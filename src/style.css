@@ -1,0 +1,178 @@
+
+
+
+
+    :root {
+      --radius: 20px;
+      --bg-dark: #252525;
+      --text-light: #e6e6e6;
+      --accent: #5d97ed;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+/* Container Setup */
+.tile {
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  /* aspect-ratio removed to allow stacking */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image behavior */
+.tile img {
+  width: 100%;
+  height: auto; /* Changed from 100% to auto for stacking */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.5s ease;
+}
+
+/* The Dimming Overlay */
+.tile-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Darkened to 0.8 */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+/* The Caption (Centered & Unfolding) */
+.caption {
+  position: absolute;
+  top: 50%; /* Position at middle */
+  left: 50%;
+  transform: translate(-50%, -30%); /* Start slightly higher for unfold effect */
+  color: white;
+  z-index: 2;
+  text-align: center;
+  width: 90%;
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.5s ease;
+  margin: 0;
+}
+
+/* HOVER STATES */
+.tile:hover img {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+
+.tile:hover .tile-overlay {
+  opacity: 1;
+}
+
+.tile:hover .caption {
+  transform: translate(-50%, -50%); /* Snap to perfect center on hover */
+  opacity: 1;
+}
+
+/* Animation Keyframes */
+@keyframes swipeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Apply animation to the gallery columns */
+.reveal-item {
+  opacity: 0;
+  animation: swipeIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  break-inside: avoid; /* Important for masonry stacking */
+}
+
+/* Navigation Styling */
+.nav-link { 
+  color: var(--text-light) !important; 
+  font-weight: 300 !important; 
+  font-size: 0.85rem; /* I added the size here for you too */
+  transition: color 0.2s; 
+}
+
+/* This forces the hover color to work even with the thin font */
+.nav-link:hover, .nav-link.active { 
+  color: var(--accent) !important; 
+}
+
+
+    /* --- ANIMATION LOGIC --- */
+    @keyframes swipeIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-30px);
+        clip-path: inset(0 100% 0 0);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+        clip-path: inset(0 0 0 0);
+      }
+    }
+
+    .reveal-item {
+      opacity: 0;
+      animation: swipeIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+
+    /* Gallery Styling */
+    .tile { 
+      aspect-ratio: 16/9; 
+      border-radius: 0; 
+      overflow: hidden; 
+      position: relative;
+    }
+    .tile img { 
+      transition: transform 0.3s ease; 
+      object-fit: cover; 
+      width: 100%; 
+      height: 100%; 
+    }
+    .tile:hover img { transform: scale(1.1); }
+    
+    .img-link { outline: none; display: block; overflow: hidden; }
+    .img-link:focus-visible { outline: 5px solid var(--accent); outline-offset: 3px; }
+
+
+
+
+    
+
+/* Ensure the sticky behavior works even if the parent has height issues */
+.sticky-top {
+    padding-top: 20px;
+}
+
+/* Adjusting the text color for the labels to match the muted grey in the image */
+.text-muted {
+    color: #666 !important;
+    letter-spacing: 0.1em;
+}
+
+/* Remove default padding from container if you want it wider */
+.container {
+    max-width: 1200px;
+}
+
+/* Image styling to match the sharp edges in your screenshot */
+img {
+    display: block;
+    height: auto;
+}
