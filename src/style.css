@@ -198,3 +198,37 @@ img {
     background: rgba(0, 0, 0, 0.1);
     pointer-events: none;
 }
+
+/* Mobile Styles Only - drop menu */
+/* Fixed distance on Desktop */
+@media (min-width: 1200px) {
+  .header-right-section {
+    gap: 60px; /* Change this value to set the EXACT distance you want */
+  }
+}
+
+/* Mobile Floating Box Styles */
+@media (max-width: 1199.98px) {
+  .custom-dropdown.collapse.show, 
+  .custom-dropdown.collapsing {
+    display: block !important;
+    position: absolute;
+    top: 100%;
+    right: 1.5rem;
+    width: 220px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    z-index: 9999;
+  }
+
+  .custom-dropdown .navbar-nav {
+    flex-direction: column;
+    gap: 1.2rem !important;
+  }
+
+  .custom-dropdown .nav-link {
+    color: #000 !important;
+  }
+}
