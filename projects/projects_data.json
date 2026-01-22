@@ -154,5 +154,43 @@
   "linktext": "Project video",
   "subtitle": "",
   "text_2": ""
+},
+{
+  "id": "project_9",
+  "title": "First permanent moon base",
+  "labels": {
+    "desc": "Project Description",
+    "date": "Project Date",
+    "role": "Role",
+    "client": "",
+    "visit": " "
+  },
+  "description": "The space faring age promises huge potentials, it could be our permanent link to the unlimited resources, materials, and energy from space. In 2004, George Bush announced the start of a series of robotic missions for the moon to prepare for working and living there for increasing periods of time, those missions was to collect the appropriate data about the moon resources and the construction site. The first step towards the permanent moon base will start in 2022 with unmanned moon base. till it ends with the main standalone permanent moon base. Preparation for the project : First permanent moon base will be the first planned step towards the new era, which will allow more in depth exploration to the solar system, human settlements will be established on multiple planets and moons, and year by year the present 'closed earth' mindset will be replaced by a much grander 'open space' vision of potential human advancements, and a chance for discovering endless frontiers.",
+  "date": "2014-2015",
+  "role": "BS, Graduation project, 2014",
+  "client": "",
+  "visit": "",
+  "linktext": "",
+  "subtitle": "",
+  "text_2": ""
+},
+{
+  "id": "project_10",
+  "title": "The Barber",
+  "labels": {
+    "desc": "Project Description",
+    "date": "Project Date",
+    "role": "Role",
+    "client": "Team",
+    "visit": " "
+  },
+  "description": "An Interior design project of “The Barbershop”, A chain of barbershops based in Egypt. The project was designed and implemented in 2020. Soliman and co-designer Aaacer noshokaty provided full design and execution drawings as freelancer architects. The shop is currently open and working in Cairo.",
+  "date": "2019-2020 & 2024-2025",
+  "role": "Interior design, rendering, modeling, lighting, logo design, identity design, supervision of implementation.",
+  "client": "Ahmed Soliman, Aacer Noshokaty.",
+  "visit": "",
+  "linktext": "",
+  "subtitle": "",
+  "text_2": ""
 }
 ]
