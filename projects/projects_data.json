@@ -1,0 +1,158 @@
+[
+  {
+    "id": "project_1",
+    "title": "The Univer-City",
+    "labels": {
+      "desc": "Project Description",
+      "date": "Project Date",
+      "role": "Role",
+      "client": "Team",
+      "visit": "  "
+    },
+    "description": "The university is a meltingpot of different science, of different knowledge. It’s an alternative disciplin that indirectly support our society. The idea of universe-city aim to break the imagining frontier between those two entities, it makes of the university an open space, with multiple sources. In our vision of the territory, it make sense to see Brussel as a complex web, where the universe-cities has an important role. The pole solbosh play his part in it. We highlighted 5 main aspects of the Solbosch campus and its surrounding at the scale of the Brussels University District. Linking the campus to the city, mobility systems , the landscape design, the environmental developments (including water management, and energy) and the notion of harmonism, in broad aspects, are the main point of concerns. These strategies not only help us to discuss sustainability beyond the environmental issues, but the social and economical levels are also taken into account. Through connecting the university with the city of Brussel, the campus will be transformed into open space for the neighborhood. Our first ambition is to open the campus to the city. Regarding this, we provide several common areas such as swimming, sport fields, urban farming, a rooftop playground, open libraries, a café and food services, a ressourcery, auditoriums and finally multi-functional areas to be shared for public events, conferences, etc. Therefore the new entrance building will be filled with community services as a link to the city. We then focus on the mobility on the scale of the campus and the BUD.",
+    "date": "2021-2022",
+    "role": "Design, Research, Model Making, Rendering",
+    "client": "Yasmin Allaouzi, Niloofar Amini, Paulien Beeckman, Pauline Harou, Ahmed Soliman, and Alexandre Rovere",
+    "visit": " " ,
+    "linktext": " ",
+
+
+    "subtitle": " " ,
+    "text_2": " "
+  },
+  {
+    "id": "project_2",
+    "title": "Leap Of Faith Bridge",
+    "labels": {
+      "desc": "Project Description",
+      "date": "Project Date",
+      "role": "Role",
+      "client": "Team",
+      "visit": "Visit"
+    },
+    "description": "We got the second place in FEDA week 13 students’ National competition 2012/13 in the topic of (Bridge of the Future), competing with more than 60 other university, our project was designed to provide responsive moves that varies with the different conditions. The bridge represent the leap of faith people should take to pass from their past to the future. With a middle glass part to form an obstacle that will face people in their life, Users have to choose to step forward and take the leap to the future." ,
+    "date": "2013-2014",
+    "role": "Design, Research, Model Making",
+    "client": "Mohamed Mahmoud, Mazen Nabil, Fatma Abd Elrahman, Abdullah gabr, Ayman Shawki, Mostfafa Elsayed, Haytham Kamal , Ahmed Soliman.",
+    "visit": "https://youtu.be/Ay3a4hwkNZg" ,
+    "linktext": "Project video",
+
+
+    "subtitle": " " ,
+    "text_2": ""
+  },
+    {
+  "id": "project_3",
+  "title": "Bending-active responsive grid shell",
+  "labels": {
+    "desc": "Project Description",
+    "date": "Project Date",
+    "role": "Role",
+    "client": "",
+    "visit": ""
+  },
+  "description": "The project is an attempt to combine bending-active structural elements in a responsive system. The pavilion consists of a grid-shell that can be controlled with set of wires. The wires can be separately tensioned by the users according to different needs and weather. The aims of the project is to enrich the connection between Brussels locals and the outdoor spaces. Giving the opportunity to the users to alter and shape the pavilion. The seven tensioned wires of the pavilion shape tens of alternatives. \n\n Temporary structures are everywhere. They define the outdoor spaces and fill the void between permanent constructions. They follow the organic evolution of cities’ needs and daily functions. Such organic development should be backed by transformable systems that provide flexibility. Transformable structure systems change from one state to another. They can be rapidly assembled and disassembled, then transported to another place to reuse the same materials and reduce the amount of waste.",
+  "date": "2021-2022",
+  "role": "Design, Research, structural analysis, parametric modeling",
+  "client": " ",
+  "visit": " ",
+  "linktext": " ",
+  "subtitle": "",
+  "text_2": " "
+},
+    {
+  "id": "project_4",
+  "title": "The Chavilion: Scissor chair-pavilion",
+  "labels": {
+    "desc": "Project Description",
+    "date": "Project Date",
+    "role": "Role",
+    "client": "Team",
+    "visit": ""
+  },
+  "description": "The Chavilion is a design project to create an indoor pavilion for the architectural atelier at VUB. The pavilion is a kit of parts system consists of a main repetitive unit. The system is intended to work as a Lego to assure transformability. The main block in the system is a stand-alone functional chair with scissor deplorability. Fixing 6-8 chairs together creates the arch of the pavilion that is still deployable. \n\n The project included a structural analysis using “Karamba3D” plugin on grasshopper, it also included creating a 1/5 scaled scissor system to test the whole project functionality. The chair utilized the scissor system to provide 5 different shapes of uses.",
+  "date": "2021-2022",
+  "role": "Conceptualization, Design, Research, structural analysis, parametric modeling",
+  "client": "Ahmed Soliman, Hana Taherazar, Pauline Harou, Razan Atwi.",
+  "visit": " ",
+  "linktext": " ",
+  "subtitle": "",
+  "text_2": " "
+},
+{
+  "id": "project_5",
+  "title": "ULB timber tower: timber is the new concrete ",
+  "labels": {
+    "desc": "Project Description",
+    "date": "Project Date",
+    "role": "Role",
+    "client": "",
+    "visit": ""
+  },
+  "description": "The ULB timber tower is a part of a masterplan to develop the ULB campus, The ULB campus is located in Brussels, Belgium. The project is a proposal of an entrance building for the campus to directly welcome visitors and students entering the main axis of the campus. the aims of the “ULB timber tower” reflect the vision of the masterplan but also fundamentally pursuit the following goals: 1- The project aims to promote sustainability and leading the community by example. 2- it aims to formulate a symbol of the university. 3-it aims to nourish the connection between the city and the university. 4- it provides the functional needed spaces to endure the constant increase of students, and rise the university capacity.",
+  "date": "2021-2022",
+  "role": "Conceptualization, Design, Research, structural analysis, enviromental analysis, parametric modeling, Night shots post-production by Mohamed Mahmoud ",
+  "client": "",
+  "visit": " ",
+  "linktext": " ",
+  "subtitle": "",
+  "text_2": " "
+},
+{
+  "id": "project_6",
+  "title": "Konligo: Internship - Research and development ",
+  "labels": {
+    "desc": "Project Description",
+    "date": "Project Date",
+    "role": "Role",
+    "client": "",
+    "visit": ""
+  },
+  "description": "Konligo is a Belgian start-up specialized in lightweight and transformable structures. Its main mission is to push temporary structures to the next level, while pushing the event industry to a more sustainable future. I joined the R&D team and participated in developing the deployable scissor structure technology. During my internship in Konligo, I had the chance to work in several departments. One of the perks of working in relatively small teams is to get involved in a lot of different fields and get a broader experience of how everything works. I was trained as an engineer, but I also learned a lot of entrepreneur’s skills.",
+  "date": "2021-2022",
+  "role": "R&D, Research, structural analysis, parametric modeling, computational production, Graphic design, video editing, The Structure is originally designed by konligo team ",
+  "client": "",
+  "visit": "",
+  "linktext": "",
+  "subtitle": "",
+  "text_2": ""
+},
+{
+  "id": "project_7",
+  "title": "Prison de Saint-Gilles: 2030",
+  "labels": {
+    "desc": "Project Description",
+    "date": "Project Date",
+    "role": "Role",
+    "client": "",
+    "visit": ""
+  },
+  "description": "The prisons of Saint-Gilles have been emptied, leaving an exceptional land area of more than 10ha to be rehabilitated close to the center of Brussels. We developed a full plan for turning the prison’s building into a multi-functional project that liberate the land and give the plot back to the city. The project won the first place in “Design project competition” course. Taught by Vincent Gérin and judged by jury members: Luc Deleuze, Laurent Vrijdaghs, Vincent Wathelet, John Pitseys, Françoise Sacchi. \n\n I had the opportunity to share the stage of the “realty Belgium’s real estate summit” with Benoit Moritz, Laurent Vrijdaghs, and Vincent Gérin as part of discussing case studies of the reconversion of the Saint Gilles Prison September, 2022.",
+  "date": "2021-2022",
+  "role": "Design, Research, Financial plans, conceptualization, computational production, rendering",
+  "client": "",
+  "visit": "",
+  "linktext": "",
+  "subtitle": "",
+  "text_2": ""
+},
+{
+  "id": "project_8",
+  "title": "Bending-active plate components in configurable kit-of-pats systems",
+  "labels": {
+    "desc": "Project Description",
+    "date": "Project Date",
+    "role": "Role",
+    "client": "",
+    "visit": "Visit"
+  },
+  "description": "This research explores transformable wooden kit-of-parts systems through digital and physical models. It deals with the structure as a composition of modular components that are put together on the site. It presents an alternative solution of a temporary system that can be reconfigured in different shapes and sizes using the same components. The research also offers a systematic way to connect the components with joints in symmetrical grids and solids. The system replaces each face with a modular element and then connects each two of them with one joint. The form of the final structure is based on polyhedral geometries or tesselations that were investigated thoroughly. The regularity of the systems is a key to the reconfigurability feature.",
+  "date": "2022-2023",
+  "role": "Master’s thesis project",
+  "client": "",
+  "visit": "https://youtu.be/w2GxYpVNqng",
+  "linktext": "Project video",
+  "subtitle": "",
+  "text_2": ""
+}
+]

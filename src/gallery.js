@@ -1,53 +1,54 @@
 async function autoLoadProjectImages() {
   const container = document.getElementById('image-probe-container');
-  const extensions = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
+  const extensions = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'mp4'];
   let fileNumber = 1;
   let searching = true;
 
   while (searching) {
-    // Format number to 3 digits (e.g., 1 becomes "001")
     let fileName = fileNumber.toString().padStart(3, '0');
-    let imageFound = false;
+    let fileFound = false;
 
-    // Try each extension for the current number
     for (const ext of extensions) {
       const testPath = `${fileName}.${ext}`;
       
-      try {
-        const found = await checkImageExists(testPath);
-        if (found) {
-          const imgElement = document.createElement('img');
-          imgElement.src = testPath;
-          imgElement.className = 'img-fluid w-100';
-          imgElement.alt = `Project Image ${fileName}`;
-          container.appendChild(imgElement);
-          
-          imageFound = true;
-          break; // Stop looking for other extensions for this number
+      // Use fetch instead of 'new Image' to check if file exists
+      const response = await fetch(testPath, { method: 'HEAD' }).catch(() => ({ ok: false }));
+
+      if (response.ok) {
+        let element;
+
+        if (ext === 'mp4') {
+          // Create Video Element
+          element = document.createElement('video');
+          element.src = testPath;
+          element.autoplay = true;
+          element.loop = true;
+          element.muted = true;
+          element.playsInline = true; // Essential for mobile
+          element.className = 'img-fluid w-100 d-block'; 
+        } else {
+          // Create Image Element
+          element = document.createElement('img');
+          element.src = testPath;
+          element.className = 'img-fluid w-100 d-block';
+          element.alt = `Project Image ${fileName}`;
         }
-      } catch (e) { /* Extension not found, move to next */ }
+
+        container.appendChild(element);
+        fileFound = true;
+        break; 
+      }
     }
 
-    if (!imageFound) {
-      searching = false; // Stop the loop if 00X isn't found in any format
+    if (!fileFound) {
+      searching = false;
     } else {
-      fileNumber++; // Increment and look for the next number
+      fileNumber++;
     }
-    
-    // Safety break to prevent infinite loops during testing
+
     if (fileNumber > 50) break; 
   }
 }
 
-// Helper function to see if an image exists without throwing a console error
-function checkImageExists(url) {
-  return new Promise((resolve) => {
-    const img = new Image();
-    img.onload = () => resolve(true);
-    img.onerror = () => resolve(false);
-    img.src = url;
-  });
-}
-
-// Start looking for images
+// Start looking for files
 autoLoadProjectImages();
