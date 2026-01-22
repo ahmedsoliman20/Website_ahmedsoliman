@@ -105,17 +105,17 @@
     "desc": "Project Description",
     "date": "Project Date",
     "role": "Role",
-    "client": "",
+    "client": " ",
     "visit": ""
   },
   "description": "Konligo is a Belgian start-up specialized in lightweight and transformable structures. Its main mission is to push temporary structures to the next level, while pushing the event industry to a more sustainable future. I joined the R&D team and participated in developing the deployable scissor structure technology. During my internship in Konligo, I had the chance to work in several departments. One of the perks of working in relatively small teams is to get involved in a lot of different fields and get a broader experience of how everything works. I was trained as an engineer, but I also learned a lot of entrepreneur’s skills.",
   "date": "2021-2022",
-  "role": "R&D, Research, structural analysis, parametric modeling, computational production, Graphic design, video editing, The Structure is originally designed by konligo team ",
-  "client": "",
-  "visit": "",
+  "role": "R&D, Research, structural analysis, parametric modeling, computational production, Graphic design, video editing, The Structure is originally designed by konligo team. ",
+  "client": " ",
+  "visit": " ",
   "linktext": "",
-  "subtitle": "",
-  "text_2": ""
+  "subtitle": " ",
+  "text_2": " "
 },
 {
   "id": "project_7",
@@ -129,10 +129,10 @@
   },
   "description": "The prisons of Saint-Gilles have been emptied, leaving an exceptional land area of more than 10ha to be rehabilitated close to the center of Brussels. We developed a full plan for turning the prison’s building into a multi-functional project that liberate the land and give the plot back to the city. The project won the first place in “Design project competition” course. Taught by Vincent Gérin and judged by jury members: Luc Deleuze, Laurent Vrijdaghs, Vincent Wathelet, John Pitseys, Françoise Sacchi. \n\n I had the opportunity to share the stage of the “realty Belgium’s real estate summit” with Benoit Moritz, Laurent Vrijdaghs, and Vincent Gérin as part of discussing case studies of the reconversion of the Saint Gilles Prison September, 2022.",
   "date": "2021-2022",
-  "role": "Design, Research, Financial plans, conceptualization, computational production, rendering",
+  "role": "Design, Research, Financial plans, conceptualization, computational production, rendering.",
   "client": "",
   "visit": "",
-  "linktext": "",
+  "linktext": " ",
   "subtitle": "",
   "text_2": ""
 },
