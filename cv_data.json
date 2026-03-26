@@ -1,0 +1,117 @@
+{
+  "profile": {
+    "name": "Ahmed Soliman",
+    "title": "PhD Researcher | Computational Architect & Structural Designer",
+    "image": "/news/xmain.jpg",
+    "bio": "Ahmed Soliman is a PhD researcher in Architectural Engineering at Vrije Universiteit Brussel, specializing in innovative structures and computational design. His research focuses on deployable scissor structures and rigid plate systems, combining structural engineering with parametric and computational design. With a strong academic and teaching background across multiple universities, Ahmed has developed expertise in digital design workflows, sustainability, and advanced fabrication thinking. His work bridges architecture and engineering, driven by a problem-solving mindset and a passion for innovation in construction systems."
+  },
+  "socialLinks": [
+    {
+      "name": "linkedin",
+      "url": "https://www.linkedin.com/in/ahmedsoliman7/",
+      "icon": "linkedin2.png",
+      "label": "LinkedIn"
+    },
+    {
+      "name": "portfolio",
+      "url": "https://ahmedmroshdy.wixsite.com/soliman",
+      "icon": "portfolio.png",
+      "label": "Portfolio"
+    },
+    {
+      "name": "vub",
+      "url": "https://www.vub.be/arch/people/ahmed-soliman",
+      "icon": "arch.png",
+      "label": "VUB Profile"
+    }
+  ],
+  "contacts": [
+    {
+      "type": "email",
+      "label": "Email",
+      "value": "ahmed.soliman@vub.be",
+      "url": "mailto:ahmed.soliman@vub.be"
+    },
+    {
+      "type": "phone",
+      "label": "Phone",
+      "value": "+32477312898",
+      "url": "tel:+32477312898"
+    }
+  ],
+  "experience": [
+    {
+      "period": "Oct 2022 – Present",
+      "title": "PhD Researcher",
+      "organization": "Vrije Universiteit Brussel",
+      "location": "Brussels, Belgium"
+    },
+    {
+      "period": "Jul 2024 – Oct 2024",
+      "title": "Visiting Researcher",
+      "organization": "National Technical University of Athens",
+      "location": "Athens, Greece"
+    },
+    {
+      "period": "Sep 2021 – Oct 2021",
+      "title": "Architectural Engineer Intern",
+      "organization": "Konligo",
+      "location": "Brussels, Belgium"
+    },
+    {
+      "period": "Sep 2014 – Aug 2020",
+      "title": "Teaching Assistant",
+      "organization": "Future University in Egypt",
+      "location": "Cairo, Egypt"
+    },
+    {
+      "period": "2019 – 2020",
+      "title": "Teaching Assistant",
+      "organization": "American University in Cairo",
+      "location": "Cairo, Egypt"
+    },
+    {
+      "period": "2016 – 2020",
+      "title": "Teaching Assistant",
+      "organization": "Ain Shams University",
+      "location": "Cairo, Egypt"
+    },
+    {
+      "period": "Sep 2015",
+      "title": "3ds Max Instructor",
+      "organization": "Future University in Egypt",
+      "location": "Cairo, Egypt"
+    },
+    {
+      "period": "Aug 2013",
+      "title": "Intern Architect",
+      "organization": "MA Studio",
+      "location": "Cairo, Egypt"
+    },
+    {
+      "period": "Aug 2012",
+      "title": "Intern Site Engineer",
+      "organization": "Memmar El Morshedy",
+      "location": "Cairo, Egypt"
+    },
+    {
+      "period": "Jun 2012 – Jul 2012",
+      "title": "Intern Architect",
+      "organization": "El GABALY Architects",
+      "location": "Cairo, Egypt"
+    },
+    {
+      "period": "Jul 2011 – Aug 2011",
+      "title": "Trainee Architect",
+      "organization": "Mirage Firm",
+      "location": "Cairo, Egypt"
+    },
+    {
+      "period": "Jul 2010",
+      "title": "Trainee Site Engineer",
+      "organization": "Sabbour Consulting",
+      "location": "Cairo, Egypt"
+    }
+  ],
+  "cvDownloadUrl": "#"
+}
