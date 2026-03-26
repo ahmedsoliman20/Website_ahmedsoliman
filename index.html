@@ -9,8 +9,182 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="../src/style.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
   <style>
+    header {
+      background: linear-gradient(180deg, rgb(1, 128, 199) 0%, rgb(10, 149, 210) 50%, rgb(20, 170, 220) 100%);
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    main.py-4 {
+      padding-top: 0 !important;
+    }
+
+    #hero-section {
+      position: sticky;
+      top: 0;
+      z-index: 0;
+      background: linear-gradient(180deg, rgb(20, 170, 220) 0%, rgb(32, 198, 230) 50%, rgb(44, 226, 239) 100%);
+      text-align: center;
+      padding: 50px 0;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      width: 100vw;
+      min-height: 63vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 0;
+      overflow: hidden;
+    }
+
+    #hero-section .hero-inner {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 100%;
+    }
+
+    #hero-section .hero-text {
+      position: absolute;
+      top: 50%;
+      left: calc((100vw - min(100vw - 48px, 1320px)) / 2 + 160px);
+      transform: translateY(-50%);
+      z-index: 10;
+      color: white;
+      pointer-events: none;
+      text-align: left;
+    }
+
+    #hero-section model-viewer {
+      display: block;
+      width: 51%;
+      max-width: 576px;
+      height: 100%;
+      min-height: 50vh;
+      margin-top: auto;
+      margin-left: auto;
+      margin-right: calc((100vw - min(100vw - 48px, 1320px)) / 2);
+      margin-bottom: 0;
+      background: transparent;
+      --poster-color: transparent;
+      animation: slideUpFade 1.8s ease-out forwards;
+      overflow: visible;
+    }
+
+    @keyframes slideUpFade {
+      from {
+        opacity: 0;
+        transform: translateY(60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .learn-more-btn {
+      position: absolute;
+      bottom: 15px;
+      right: calc((100vw - min(100vw - 48px, 1320px)) / 2);
+      z-index: 100;
+      background: none;
+      border: 1px solid rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.6);
+      padding: 6px 12px;
+      font-size: 0.75rem;
+      border-radius: 4px;
+      cursor: pointer;
+      pointer-events: all;
+      transition: all 0.3s ease;
+    }
+
+    .learn-more-btn:hover {
+      color: rgba(255,255,255,0.85);
+      border-color: rgba(255,255,255,0.7);
+    }
+
+    .intro-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .intro-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .intro-overlay .intro-content {
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      text-align: left;
+      white-space: pre-line;
+    }
+
+    .intro-overlay .intro-close {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .intro-overlay .intro-close:hover {
+      color: white;
+    }
+
+    #gallery-grid {
+      position: relative;
+      z-index: 1;
+      padding-top: 80px;
+    }
+
+    #gallery-grid::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 100%;
+      background: var(--bs-body-bg);
+      z-index: -1;
+    }
+
+    #gallery-grid .reveal-item {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    #gallery-grid .reveal-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* Mobile Floating Box Styles matched to project page */
     @media (max-width: 1199.98px) {
       .custom-dropdown.collapse.show, 
@@ -42,7 +216,7 @@
 
 <body>
 
-<header class="pt-5 pb-4">
+<header class="pt-5 pb-0">
   <nav class="navbar navbar-expand-xl">
     <div class="container px-4 d-flex align-items-center position-relative">
 
@@ -90,6 +264,29 @@
 
 <main class="py-4">
   <div class="container px-4">
+    <section id="hero-section" class="mb-4">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div style="font-weight: bold; font-size: 2.4rem;">Hi, this is Ahmed Soliman</div>
+          <div style="font-size: 1.1rem; margin-top: 2px; opacity: 0.85;">Computational Architect &amp; Structural Designer</div>
+        </div>
+        <button class="learn-more-btn">Learn More</button>
+        <model-viewer
+          src="export-for-the-site-3d-test.glb"
+          alt="Ahmed Soliman"
+          camera-controls
+          touch-action="pan-y"
+          interaction-prompt="auto"
+          camera-orbit="45deg 110deg 70m"
+          min-camera-orbit="-180deg 60deg 70m"
+          max-camera-orbit="180deg 120deg 150m"
+          field-of-view="45deg"
+          exposure="1"
+          shadow-intensity="0.25"
+          camera-target="15m 37m 0m"
+        ></model-viewer>
+      </div>
+    </section>
     <div id="gallery-grid" style="column-count: 3; column-gap: 10px;"></div>
   </div>
 </main>
@@ -122,7 +319,7 @@
     galleryItems.sort(() => Math.random() - 0.5);
 
     grid.innerHTML = galleryItems.map((item, index) => `
-      <div class="reveal-item d-inline-block w-100 mb-2" style="animation-delay: ${index * 0.15}s; break-inside: avoid;">
+      <div class="reveal-item d-inline-block w-100 mb-2" style="transition-delay: ${index * 0.15}s; break-inside: avoid;">
         <div class="tile" style="aspect-ratio: auto; height: auto;">
           <a class="img-link" href="${item.link}">
             <img src="${item.img}" class="img-fluid" alt="${item.title}" style="display: block; width: 100%;">
@@ -137,7 +334,58 @@
   loadGallery();
 </script>
 
+<script>
+  // Scroll reveal for gallery items
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  // Observe gallery items once they are loaded
+  const galleryGrid = document.getElementById('gallery-grid');
+  const gridObserver = new MutationObserver(() => {
+    galleryGrid.querySelectorAll('.reveal-item').forEach(item => {
+      observer.observe(item);
+    });
+  });
+  gridObserver.observe(galleryGrid, { childList: true });
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="intro-overlay" id="introOverlay">
+  <button class="intro-close" id="introClose">&times;</button>
+  <div class="intro-content" id="introText"></div>
+</div>
+
+<script>
+  // Learn More popup
+  const overlay = document.getElementById('introOverlay');
+  const introText = document.getElementById('introText');
+  const introClose = document.getElementById('introClose');
+  const learnMoreBtn = document.querySelector('.learn-more-btn');
+
+  learnMoreBtn.addEventListener('click', async () => {
+    if (!introText.textContent) {
+      const res = await fetch('introtext.json');
+      const data = await res.json();
+      const raw = Array.isArray(data.intro) ? data.intro.join('\n') : data.intro;
+      introText.innerHTML = raw.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+    }
+    overlay.classList.add('active');
+  });
+
+  introClose.addEventListener('click', () => {
+    overlay.classList.remove('active');
+  });
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.classList.remove('active');
+  });
+</script>
 </body>
 
 </html>
