@@ -17,7 +17,9 @@
     "news_15": "Guest Lecture on Innovative Structural Techniques",
     "news_16": "Exhibition at VUB Difference Day – Freedom of Speech 2024",
     "news_17": "Presentation at IASS Annual Symposium 2024 – Redefining the Art of Structural Design",
-    "news_18": "Presentation at IASS Annual Symposium 2025 – The Living Past as a Source of Innovation"
+    "news_18": "Presentation at IASS Annual Symposium 2025 – The Living Past as a Source of Innovation",
+    "news_19": "Collaboration Meeting: Horse Festival",
+    "news_20": "Interview : Ahmed Soliman speaks with Olivia Gambelin"
   },
 
   "descriptions": {
@@ -38,7 +40,9 @@
     "news_15": "Delivered a guest lecture in the Architectural Engineering program at Future University in Egypt, focusing on innovative structural techniques and contemporary design approaches.",
     "news_16": "Participated in the exhibition of architectural engineering student work at the VUB Difference Day event (“Podium for Free Speech”) in Brussels in 2024, showcasing projects developed within the Parametric Design and Transformable Structures course.",
     "news_17": "Attended and presented research at the IASS Annual Symposium 2024 – “Redefining the Art of Structural Design,” held at ETH Zurich in Zurich, Switzerland, from 26 to 30 August 2024.",
-    "news_18": "Attended and presented research at the IASS Annual Symposium 2025 – “The Living Past as a Source of Innovation,” held in Mexico City, Mexico, from 27 to 31 October 2025."
+    "news_18": "Attended and presented research at the IASS Annual Symposium 2025 – “The Living Past as a Source of Innovation,” held in Mexico City, Mexico, from 27 to 31 October 2025.",
+    "news_19": "Collaboration Meeting: Horse Festival × VUB Architecture Department × Asiat Park",
+    "news_20": "Ahmed Soliman speaks with Olivia Gambelin, author of Responsible AI, about problem-solving, research, creativity, and the role of doubt in the learning process "
   },
 
   "categories": {
@@ -59,6 +63,8 @@
     "news_15": "Lectures",
     "news_16": "Exhibitions",
     "news_17": "Conferences",
-    "news_18": "Conferences"
+    "news_18": "Conferences",
+    "news_19": "Other",
+    "news_20": "Other"
   }
 }
