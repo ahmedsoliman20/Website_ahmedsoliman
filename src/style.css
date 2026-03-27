@@ -6,7 +6,7 @@
   --radius: 20px;
   --bg-dark: #252525;
   --text-light: #e6e6e6;
-  --accent: #5d97ed;
+  --accent: lab(94.29% -6.64 42.88);
 }
 
 body {
