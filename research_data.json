@@ -1,4 +1,9 @@
 {
+  "sectionTitles": {
+    "publications": "Publications",
+    "supervised": "Supervised Work",
+    "outreach": "Other"
+  },
   "publications": [
     {
       "text": "Designing from Waste: Computational Reuse of Formwork Wood in Lightweight Structures. \n Nicolas, Gabrielle; Soliman, Ahmed; De Laet, Lars; Snoeck, Didier. \n Proceedings of the IASS Annual Symposium 2025: The living past as a source of innovation. 2025. p. 1-11.",
@@ -19,6 +24,10 @@
     {
       "text": "Double-curved plate components in configurable systems. \n Soliman, Ahmed; Leemans, Ellen; De Laet, Lars ; De Temmerman, Niels. \n Integration of Design and Fabrication: Proceedings of the International Association for Shell and Spatial Structures Annual Symposium 2023. ed. / Yi Min Xie; Jane Burry; Ting-Uei Lee; Jiaming Ma. IASS, 2023. p. 983-994.",
       "link": "https://researchportal.vub.be/en/publications/double-curved-plate-components-in-configurable-systems/"
+    },
+    {
+      "text": "Bending-active plate components in configurable kit-of-parts systems\nSoliman, A. (Master thesis). Sept 2022",
+      "link": "https://researchportal.vub.be/en/studentTheses/bending-active-plate-components-in-configurable-kit-of-parts-syst/"
     }
   ],
   "supervised": [
@@ -48,6 +57,24 @@
     },
     {
       "text": "Elastic Geodesic Gridshells based on Reciprocal Frames\nMaes, F. Promotor: De Temmerman, N. Co-promotor: De Laet, L. Advisors: Leemans, E.; Soliman, A. Jury: Van de Voorde, S.; Devos, R.; Belmans, B. , 20 Jun 2024",
+      "link": ""
+    }
+  ],
+  "outreach": [
+    {
+      "text": "Guest lecture: Architecture Beyond Limits: Structural Innovation in Extreme Environments, Mar 2026, Cairo\nHosted by Dr. arch. Mohamed Mahmoud, Year 2025/2026",
+      "link": ""
+    },
+    {
+      "text": "Guest lecture: Innovative structural techniques: A dialog between geometry and function, Mar 2024, Cairo\nHosted by Dr. arch. Mohamed Mahmoud, Year 2023/2024",
+      "link": ""
+    },
+    {
+      "text": "Guest lecture: Foundations of Form: Exploring the Structural Core of Architecture, Apr 2024, Cairo\nHosted by Dr. arch. Randa Medhat, Year 2023/2024",
+      "link": ""
+    },
+    {
+      "text": "Guest lecture: Temporary Is the New Permanent: A look into lightweight temporary structures, May 2023, Cairo\nHosted by the department of architectural engineering at future university in cairo, Year 2022/2023",
       "link": ""
     }
   ]

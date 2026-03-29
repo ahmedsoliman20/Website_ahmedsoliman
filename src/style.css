@@ -180,7 +180,153 @@ body {
 }
 
 /* ==========================================================================
-   6. sticky filter bar on scroll in the NEWS PAGE
+   7. SHARED SITE HEADER & FOOTER (about/news/teaching/research)
+   ========================================================================== */
+@media (max-width: 1199.98px) {
+  .site-header .custom-dropdown .nav-link {
+    text-align: left;
+  }
+}
+
+.site-footer {
+  background: #252525;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 60px 0 40px;
+  margin-top: 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-footer .footer-content {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.35fr) minmax(140px, 0.8fr) minmax(180px, 0.85fr);
+  gap: 20px;
+  margin-bottom: 40px;
+  align-items: start;
+}
+
+.site-footer .footer-brand h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.site-footer .footer-brand p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.site-footer .footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.site-footer .footer-nav {
+  justify-self: end;
+  gap: 4px;
+  padding-right: 18px;
+}
+
+.site-footer .footer-connect {
+  justify-self: end;
+  text-align: right;
+}
+
+.site-footer .footer-connect .social-links {
+  justify-content: flex-end;
+}
+
+.site-footer .footer-links a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: opacity 0.3s ease;
+}
+
+.site-footer .footer-links a:hover {
+  opacity: 1;
+}
+
+.site-footer .social-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.site-footer .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.site-footer .social-links a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.site-footer .social-links img {
+  width: 18px;
+  height: 18px;
+  filter: invert(1);
+}
+
+.site-footer .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.site-footer .back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.site-footer .back-to-top:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .site-footer .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .site-footer .footer-nav,
+  .site-footer .footer-connect {
+    justify-self: start;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .site-footer .footer-connect .social-links {
+    justify-content: flex-start;
+  }
+
+  .site-footer .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   8. sticky filter bar on scroll in the NEWS PAGE
    ========================================================================== */
 .sticky-filter-wrapper {
   position: -webkit-sticky; /* Support for Safari */
@@ -201,6 +347,82 @@ body {
   margin-bottom: 30px;     /* Space before the next row starts */
 }
 
+/* 3. News popup modal styling */
+#imageModal .modal-dialog {
+  max-width: min(960px, calc(100vw - 2rem));
+}
+
+.news-modal-content {
+  background: linear-gradient(160deg, #2e2e2e 0%, #232323 100%);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.news-modal-body {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
+}
+
+.news-modal-image-wrap {
+  min-height: 50vh;
+}
+
+.news-modal-image {
+  max-height: 65vh;
+  max-width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.news-modal-caption,
+.news-modal-footer {
+  background: linear-gradient(160deg, rgba(46, 46, 46, 0.96) 0%, rgba(35, 35, 35, 0.96) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.news-modal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1050;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(20, 20, 20, 0.65);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  line-height: 1;
+  padding: 0;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.news-modal-arrow:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.news-modal-arrow:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+#prevImageBtn {
+  left: 12px;
+}
+
+#nextImageBtn {
+  right: 12px;
+}
+
+.news-modal-close {
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
 /* 2. Page Bottom Padding */
 main.py-4 {
   padding-bottom: 80px !important; 
@@ -212,7 +434,7 @@ main.py-4 {
 
 
 /* ==========================================================================
-   7. styles of the TEACHING PAGE
+  9. styles of the TEACHING PAGE
    ========================================================================== */
 
 
@@ -254,4 +476,16 @@ main.py-4 {
     line-height: 1.6;
     color: #a0a0a0; /* Muted gray for a professional look */
     max-width: 600px;
+}
+
+/* ==========================================================================
+   10. STYLES FOR RESEARCH PAGE (research.html)
+   ========================================================================== */
+.research-page main.py-4 {
+  padding-top: 2.75rem !important;
+  padding-bottom: 1.25rem !important;
+}
+
+.research-page .site-footer {
+  margin-top: 48px;
 }

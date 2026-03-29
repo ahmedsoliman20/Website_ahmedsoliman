@@ -11,149 +11,20 @@
   
   <link rel="stylesheet" href="../src/style.css">
 
-  <style>
-    footer {
-      background: #252525;
-      color: rgba(255, 255, 255, 0.9);
-      padding: 60px 0 40px;
-      margin-top: 80px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DCJVGXKXL5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-    footer .footer-content {
-      display: grid;
-      grid-template-columns: minmax(260px, 1.35fr) minmax(140px, 0.8fr) minmax(180px, 0.85fr);
-      gap: 20px;
-      margin-bottom: 40px;
-      align-items: start;
-    }
-
-    footer .footer-brand h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    footer .footer-brand p {
-      font-size: 0.9rem;
-      opacity: 0.8;
-      margin: 0;
-    }
-
-    footer .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    footer .footer-nav {
-      justify-self: end;
-      gap: 4px;
-      padding-right: 18px;
-    }
-
-    footer .footer-connect {
-      justify-self: end;
-      text-align: right;
-    }
-
-    footer .footer-connect .social-links {
-      justify-content: flex-end;
-    }
-
-    footer .footer-links a {
-      color: rgba(255, 255, 255, 0.85);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: opacity 0.3s ease;
-    }
-
-    footer .footer-links a:hover {
-      opacity: 1;
-    }
-
-    footer .social-links {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-    }
-
-    footer .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.15);
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-
-    footer .social-links a:hover {
-      background: rgba(255, 255, 255, 0.25);
-      transform: translateY(-3px);
-    }
-
-    footer .social-links img {
-      width: 18px;
-      height: 18px;
-      filter: invert(1);
-    }
-
-    footer .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-
-    footer .back-to-top {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: rgba(255, 255, 255, 0.85);
-      cursor: pointer;
-      text-decoration: none;
-      transition: opacity 0.3s ease;
-    }
-
-    footer .back-to-top:hover {
-      opacity: 1;
-    }
-
-    @media (max-width: 768px) {
-      footer .footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      footer .footer-nav,
-      footer .footer-connect {
-        justify-self: start;
-        padding-right: 0;
-        text-align: left;
-      }
-
-      footer .footer-connect .social-links {
-        justify-content: flex-start;
-      }
-
-      footer .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+    gtag('config', 'G-DCJVGXKXL5');
+  </script>
 </head>
 
 <body>
 
-<header class="pt-5 pb-4">
+<header class="site-header pt-5 pb-4">
   <nav class="navbar navbar-expand-xl">
     <div class="container px-4 d-flex align-items-center position-relative">
 
@@ -223,20 +94,20 @@
 <!-- Image popup modal -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content bg-transparent border-0">
-      <div class="modal-body p-0" style="background: rgba(0,0,0,.85); position: relative;">
-        <button id="prevImageBtn" type="button" class="btn btn-outline-light btn-sm" style="position:absolute;top:50%;left:12px;transform:translateY(-50%);z-index:1050;">â—€</button>
-        <button id="nextImageBtn" type="button" class="btn btn-outline-light btn-sm" style="position:absolute;top:50%;right:12px;transform:translateY(-50%);z-index:1050;">â–¶</button>
-        <div class="d-flex justify-content-center align-items-center p-3" style="min-height: 50vh;">
-          <img id="imageModalImg" src="" alt="" class="img-fluid rounded" style="max-height: 65vh; max-width: 100%;" />
+    <div class="modal-content news-modal-content border-0">
+      <div class="modal-body p-0 news-modal-body">
+        <button id="prevImageBtn" type="button" class="btn news-modal-arrow" aria-label="Previous image">&#10094;</button>
+        <button id="nextImageBtn" type="button" class="btn news-modal-arrow" aria-label="Next image">&#10095;</button>
+        <div class="d-flex justify-content-center align-items-center p-3 news-modal-image-wrap">
+          <img id="imageModalImg" src="" alt="" class="img-fluid rounded news-modal-image" />
         </div>
-        <div class="p-3 text-white" style="background: rgba(0,0,0,0.75);">
+        <div class="p-3 text-white news-modal-caption">
           <h5 class="mb-2" id="imageModalTitle"></h5>
           <p class="mb-0" id="imageModalDescription"></p>
         </div>
       </div>
-      <div class="modal-footer justify-content-center" style="background: rgba(0,0,0,0.75);">
-        <button type="button" class="btn btn-outline-light btn-sm" data-bs-dismiss="modal">Close</button>
+      <div class="modal-footer justify-content-center news-modal-footer">
+        <button type="button" class="btn btn-outline-light btn-sm news-modal-close" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -249,9 +120,70 @@
   let allItems = []; 
   let currentGalleryItems = [];
   let currentGalleryIndex = 0;
+  const SUPPORTED_IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'];
+  const imagePathCache = new Map();
+
+  function isExternalOrAbsolutePath(path) {
+    return /^(https?:\/\/|\.\.\/|\/)/.test(path);
+  }
+
+  function hasSupportedExtension(fileName) {
+    return /\.(jpg|jpeg|png|webp)$/i.test(fileName);
+  }
+
+  function testImagePath(path) {
+    return new Promise(resolve => {
+      const img = new Image();
+      img.onload = () => resolve(true);
+      img.onerror = () => resolve(false);
+      img.src = path;
+    });
+  }
+
+  async function resolveNewsImagePath(imageName, fallbackBaseName) {
+    const rawName = (imageName || fallbackBaseName || '').trim();
+    if (!rawName) {
+      return 'https://placehold.co/600x400?text=Image+Not+Found';
+    }
+
+    if (isExternalOrAbsolutePath(rawName)) {
+      return rawName;
+    }
+
+    const cacheKey = `news:${rawName}`;
+    if (imagePathCache.has(cacheKey)) {
+      return imagePathCache.get(cacheKey);
+    }
+
+    if (hasSupportedExtension(rawName)) {
+      const directPath = `../news/${rawName}`;
+      imagePathCache.set(cacheKey, directPath);
+      return directPath;
+    }
+
+    const candidates = SUPPORTED_IMAGE_EXTENSIONS.map(ext => `../news/${rawName}.${ext}`);
+    for (const candidate of candidates) {
+      const exists = await testImagePath(candidate);
+      if (exists) {
+        imagePathCache.set(cacheKey, candidate);
+        return candidate;
+      }
+    }
+
+    // Keep a deterministic fallback so rendering never breaks.
+    const fallbackPath = candidates[0];
+    imagePathCache.set(cacheKey, fallbackPath);
+    return fallbackPath;
+  }
 
   async function loadGallery() {
-    let jsonData = { descriptions: {}, newstitles: {}, categories: {} };
+    let jsonData = {
+      descriptions: {},
+      newstitles: {},
+      categories: {},
+      images: {},
+      order: []
+    };
 
     try {
       const jsonRes = await fetch('new.json');
@@ -262,19 +194,42 @@
       console.error("Could not load new.json", err);
     }
 
-    const newsKeys = Object.keys(jsonData.newstitles).reverse();
+    // Preferred format: an explicit array lets you add/reorder items without renaming files.
+    if (Array.isArray(jsonData.items) && jsonData.items.length > 0) {
+      allItems = await Promise.all(jsonData.items.map(async (item, index) => {
+        const fallbackId = index + 1;
+        const imagePath = await resolveNewsImagePath(item.image, `n${fallbackId}`);
 
-    allItems = newsKeys.map(key => {
-      const id = key.split('_')[1];
-      return {
-        title: jsonData.newstitles[key] || `News Item ${id}`,
-        img: `../news/n${id}.jpg`,
-        link: `../Projects/Project_${id}/index.html`,
-        description: jsonData.descriptions[key] || "",
-        // This line checks if 'categories' exists in your JSON for that specific key
-        category: (jsonData.categories && jsonData.categories[key]) ? jsonData.categories[key] : "other"
-      };
-    });
+        return {
+          title: item.title || `News Item ${fallbackId}`,
+          img: imagePath,
+          link: item.link || "#",
+          description: item.description || "",
+          category: item.category || "other"
+        };
+      }));
+    } else {
+      const fallbackKeys = Object.keys(jsonData.newstitles).reverse();
+      const newsKeys = Array.isArray(jsonData.order) && jsonData.order.length > 0
+        ? jsonData.order.filter(key => key in (jsonData.newstitles || {}))
+        : fallbackKeys;
+
+      allItems = await Promise.all(newsKeys.map(async key => {
+        const id = key.split('_')[1];
+        const imagePath = await resolveNewsImagePath(
+          (jsonData.images && jsonData.images[key]) ? jsonData.images[key] : '',
+          `n${id}`
+        );
+
+        return {
+          title: jsonData.newstitles[key] || `News Item ${id}`,
+          img: imagePath,
+          link: `../Projects/Project_${id}/index.html`,
+          description: jsonData.descriptions[key] || "",
+          category: (jsonData.categories && jsonData.categories[key]) ? jsonData.categories[key] : "other"
+        };
+      }));
+    }
 
     renderGallery(allItems);
     setupFilters();
@@ -305,6 +260,15 @@
 
   function setupFilters() {
     const buttons = document.querySelectorAll('.btn-filter');
+
+    function normalizeCategory(value) {
+      return String(value || '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9\s]/g, '')
+        .replace(/\s+/g, ' ')
+        .replace(/s$/, '');
+    }
     
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -313,13 +277,13 @@
         btn.classList.add('active');
 
         // Logic: Filter Items
-        const filterValue = btn.getAttribute('data-filter').toLowerCase();
+        const filterValue = normalizeCategory(btn.getAttribute('data-filter'));
         
         if (filterValue === 'all') {
           renderGallery(allItems);
         } else {
           const filtered = allItems.filter(item => 
-            item.category.toLowerCase() === filterValue
+            normalizeCategory(item.category) === filterValue
           );
           renderGallery(filtered);
         }
@@ -388,7 +352,7 @@
 </script>
 
 
-<footer>
+<footer class="site-footer">
   <div class="container px-4">
     <div class="footer-content">
       <div class="footer-brand">
@@ -444,3 +408,4 @@
 </script>
 </body>
 </html>
+
