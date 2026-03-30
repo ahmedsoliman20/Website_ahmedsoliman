@@ -3,42 +3,52 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ahmed Soliman</title>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="../src/style.css">
-
-  <style>
-    /* Mobile Floating Box Styles matched to project page */
-    @media (max-width: 1199.98px) {
-      .custom-dropdown.collapse.show, 
-      .custom-dropdown.collapsing {
-        display: block !important;
-        position: absolute;
-        top: 100%;
-        right: 1.5rem;
-        width: 220px;
-        background: #2b2b2b !important; /* Dark background */
-        padding: 2rem;
-        border-radius: 12px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-        z-index: 9999;
-      }
-
-      .custom-dropdown .navbar-nav {
-        flex-direction: column;
-        gap: 1.2rem !important;
-      }
-
-      .custom-dropdown .nav-link {
-        color: #fff !important; /* White text */
-        text-align: left;
+  <title>About Ahmed Soliman | Architectural Engineer and Researcher</title>
+  <meta name="description" content="Learn more about Ahmed Soliman, an architectural engineer and researcher based in Brussels, with work across computation, structural design, and academia." />
+  <link rel="canonical" href="https://ahmedsoliman.be/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About Ahmed Soliman | Architectural Engineer and Researcher" />
+  <meta property="og:description" content="Learn more about Ahmed Soliman, an architectural engineer and researcher based in Brussels, with work across computation, structural design, and academia." />
+  <meta property="og:url" content="https://ahmedsoliman.be/about.html" />
+  <meta property="og:image" content="https://ahmedsoliman.be/assets/thumb.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Ahmed Soliman | Architectural Engineer and Researcher" />
+  <meta name="twitter:description" content="Learn more about Ahmed Soliman, an architectural engineer and researcher based in Brussels, with work across computation, structural design, and academia." />
+  <meta name="twitter:image" content="https://ahmedsoliman.be/assets/thumb.webp" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ahmed Soliman",
+      "jobTitle": "Architectural Engineer & Researcher",
+      "url": "https://ahmedsoliman.be/about.html",
+      "image": "https://ahmedsoliman.be/assets/thumb.webp",
+      "sameAs": [
+        "https://www.linkedin.com/in/ahmedsoliman7/",
+        "https://www.instagram.com/ahsolimann/",
+        "https://www.researchgate.net/profile/Ahmed_Soliman141/research",
+        "https://www.vub.be/arch/people/ahmed-soliman",
+        "https://researchportal.vub.be/en/persons/ahmed-soliman/"
+      ],
+      "knowsAbout": [
+        "Architecture",
+        "Computational Design",
+        "Structural Design",
+        "Architectural Engineering",
+        "Teaching",
+        "Research"
+      ],
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Brussels, Belgium"
       }
     }
-  
-  </style>
+  </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&family=Lora:ital@1&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="../src/style.css">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DCJVGXKXL5"></script>
   <script>
@@ -99,26 +109,37 @@
 </header>
 
 
-<body>
-
-<main class="py-5">
+<main class="about-main">
   <div class="container px-4">
     
     <!-- Profile Section -->
-    <div class="row align-items-start gap-5 mb-5">
+    <div class="row align-items-start about-profile-section">
       <div class="col-12 col-lg-3">
-        <img id="profileImage" src="" alt="Profile" class="img-fluid rounded" style="max-width: 250px; width: 100%; aspect-ratio: 1; object-fit: cover;">
+        <img id="profileImage" src="" alt="Profile" class="img-fluid rounded profile-fade" style="max-width: 250px; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 18px !important;">
       </div>
       
       <div class="col-12 col-lg-8">
-        <div class="mb-4">
+        <div class="about-profile-copy">
           <h2 id="profileTitle" class="h5 mb-2"></h2>
-          <p id="profileBio" class="text-muted" style="line-height: 1.7; font-size: 0.95rem;"></p>
+          <p id="profileBio" class="text-muted" style="line-height: 1.7; font-size: 0.95rem; text-align: justify; text-justify: inter-word;"></p>
         </div>
 
-        <!-- Contact -->
-        <div class="d-flex gap-2 align-items-center mb-4">
-          <button class="btn btn-outline-light btn-sm" id="contactBtn">contact</button>
+        <div class="about-quick-links" aria-label="Profile and social links">
+          <button class="about-contact-link" id="contactBtn">CONTACT</button>
+          <a href="https://researchportal.vub.be/en/persons/ahmed-soliman/" target="_blank" title="Pure Profile" class="about-quick-link about-quick-link-pure">PURE</a>
+          <a href="https://innovativestructureslab.com/" target="_blank" title="Innovative Structures Lab" class="about-quick-link about-quick-link-pure">LAB</a>
+          <a href="https://www.instagram.com/ahsolimann/" target="_blank" title="Instagram" class="about-quick-link">
+            <img src="icons_header/instagram-53.png" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/in/ahmedsoliman7/" target="_blank" title="LinkedIn" class="about-quick-link">
+            <img src="icons_header/linkedin2.png" alt="LinkedIn">
+          </a>
+          <a href="https://www.researchgate.net/profile/Ahmed_Soliman141/research" target="_blank" title="ResearchGate" class="about-quick-link">
+            <img src="icons_header/RNG.png" alt="ResearchGate">
+          </a>
+          <a href="https://www.vub.be/arch/people/ahmed-soliman" target="_blank" title="Architectural Department Page" class="about-quick-link">
+            <img src="icons_header/arch.png" alt="Architectural Department">
+          </a>
         </div>
 
         <!-- Contact Details Modal -->
@@ -137,20 +158,19 @@
     </div>
 
     <!-- Experience Timeline Section -->
-    <div class="row mt-5">
+    <div class="row about-experience-section">
       <div class="col-12">
-        <h3 class="h6 text-uppercase mb-4">Experience</h3>
+        <h3 class="h6 text-uppercase about-section-title">Experience</h3>
         <div id="experienceContainer"></div>
-        <div class="text-center mt-4">
-          <a id="cvDownloadLink" href="#" class="text-reset opacity-75">download full CV</a>
+        <div class="text-center about-cv-link-wrap">
+          <a id="cvDownloadLink" href="#" class="text-reset opacity-75">Download Full CV</a>
         </div>
       </div>
     </div>
 
     <section class="physical-copy-section">
-      <p>In a digital age where everything is instant, this is intentional.</p>
-      <p>Request a physical copy of the portfolio.</p>
-      <button class="btn btn-outline-light btn-sm mt-2" id="requestPhysicalCopyBtn">Request a Physical Copy</button>
+      <p class="physical-tagline">In a digital age where everything is instant, this is intentional.</p>
+      <button class="about-contact-link mt-3" id="requestPhysicalCopyBtn">Request a Physical Copy of the Portfolio</button>
     </section>
 
     <div class="modal fade" id="physicalCopyModal" tabindex="-1" aria-hidden="true">
@@ -181,12 +201,48 @@
 </main>
 
 <style>
+  .about-main {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .profile-fade {
+    opacity: 0;
+    transition: opacity 1.1s ease;
+  }
+
+  .profile-fade.is-visible {
+    opacity: 1;
+  }
+
+  .about-profile-section {
+    margin-bottom: 56px;
+    row-gap: 12px;
+    column-gap: 20px;
+  }
+
+  .about-profile-copy {
+    margin-bottom: 24px;
+  }
+
+  .about-experience-section {
+    margin-top: 0;
+  }
+
+  .about-section-title {
+    margin-bottom: 24px;
+  }
+
+  .about-cv-link-wrap {
+    margin-top: 24px;
+  }
+
   #experienceContainer .experience-entry {
     display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 2rem;
-    margin-bottom: 0.25rem;
-    padding-bottom: 0.25rem;
+    grid-template-columns: 185px 1fr;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
@@ -195,9 +251,11 @@
   }
 
   #experienceContainer .experience-period {
-    font-weight: 600;
+    font-weight: 400;
     font-size: 0.9rem;
     color: #ffffff;
+    text-align: right;
+    white-space: nowrap;
   }
 
   #experienceContainer .experience-title {
@@ -229,152 +287,126 @@
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.03);
     text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .physical-copy-section.is-visible {
+    opacity: 1;
   }
 
   .physical-copy-section p {
     margin: 0;
   }
 
+  .physical-tagline {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 0.5rem !important;
+  }
+
   .physical-copy-section p + p {
     margin-top: 0.35rem;
   }
 
-    footer {
-      background: #252525;
-      color: rgba(255, 255, 255, 0.9);
-      padding: 60px 0 40px;
-      margin-top: 80px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+  .about-quick-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  .about-contact-link {
+    height: 34px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0 12px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #f7f7f7;
+    background: linear-gradient(135deg, rgba(88, 88, 88, 0.9) 0%, rgba(52, 52, 52, 0.9) 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  #requestPhysicalCopyBtn {
+    height: 42px;
+    padding: 0 20px;
+    font-size: 0.78rem;
+  }
+
+  .about-contact-link:hover {
+    transform: translateY(-2px);
+    background: rgba(209, 52, 52, 0.85);
+    border-color: rgba(233, 110, 110, 0.95);
+    box-shadow: 0 8px 20px rgba(163, 35, 35, 0.35);
+  }
+
+  .about-quick-link {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .about-quick-link img {
+    width: 16px;
+    height: 16px;
+    filter: invert(1);
+  }
+
+  .about-quick-link:hover {
+    transform: translateY(-2px);
+    background: rgba(209, 52, 52, 0.85);
+    border-color: rgba(233, 110, 110, 0.95);
+    box-shadow: 0 8px 20px rgba(163, 35, 35, 0.35);
+  }
+
+  .about-quick-link-pure {
+    width: auto;
+    min-width: 58px;
+    border-radius: 999px;
+    padding: 0 10px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .site-footer {
+    margin-top: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .about-main {
+      padding-top: 48px;
+      padding-bottom: 48px;
     }
 
-    footer .footer-content {
-      display: grid;
-      grid-template-columns: minmax(260px, 1.35fr) minmax(140px, 0.8fr) minmax(180px, 0.85fr);
-      gap: 20px;
-      margin-bottom: 40px;
-      align-items: start;
+    .about-profile-section > .col-12.col-lg-3 {
+      margin-bottom: 14px;
     }
 
-    footer .footer-brand h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 12px;
+    .about-profile-section {
+      margin-bottom: 44px;
     }
 
-    footer .footer-brand p {
-      font-size: 0.9rem;
-      opacity: 0.8;
-      margin: 0;
+    .about-quick-links {
+      margin-bottom: 24px;
     }
-
-    footer .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    footer .footer-nav {
-      justify-self: end;
-      gap: 4px;
-      padding-right: 18px;
-    }
-
-    footer .footer-connect {
-      justify-self: end;
-      text-align: right;
-    }
-
-    footer .footer-connect .social-links {
-      justify-content: flex-end;
-    }
-
-    footer .footer-links a {
-      color: rgba(255, 255, 255, 0.85);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: opacity 0.3s ease;
-    }
-
-    footer .footer-links a:hover {
-      opacity: 1;
-    }
-
-    footer .social-links {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-    }
-
-    footer .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.15);
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-
-    footer .social-links a:hover {
-      background: rgba(255, 255, 255, 0.25);
-      transform: translateY(-3px);
-    }
-
-    footer .social-links img {
-      width: 18px;
-      height: 18px;
-      filter: invert(1);
-    }
-
-    footer .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-
-    footer .back-to-top {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: rgba(255, 255, 255, 0.85);
-      cursor: pointer;
-      text-decoration: none;
-      transition: opacity 0.3s ease;
-    }
-
-    footer .back-to-top:hover {
-      opacity: 1;
-    }
-
-    @media (max-width: 768px) {
-      footer .footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      footer .footer-nav,
-      footer .footer-connect {
-        justify-self: start;
-        padding-right: 0;
-        text-align: left;
-      }
-
-      footer .footer-connect .social-links {
-        justify-content: flex-start;
-      }
-
-      footer .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
+  }
   </style>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -393,8 +425,102 @@
   function renderCVPage(cvData) {
     const { profile, socialLinks, contacts, experience, cvDownloadUrl } = cvData;
 
+    const monthOrder = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    function monthTokenToShortName(token) {
+      const normalized = String(token || '').trim().toLowerCase();
+      const monthMap = {
+        jan: 'Jan',
+        january: 'Jan',
+        feb: 'Feb',
+        february: 'Feb',
+        mar: 'Mar',
+        march: 'Mar',
+        apr: 'Apr',
+        april: 'Apr',
+        may: 'May',
+        jun: 'Jun',
+        june: 'Jun',
+        jul: 'Jul',
+        july: 'Jul',
+        aug: 'Aug',
+        august: 'Aug',
+        sep: 'Sep',
+        sept: 'Sep',
+        september: 'Sep',
+        oct: 'Oct',
+        october: 'Oct',
+        nov: 'Nov',
+        november: 'Nov',
+        dec: 'Dec',
+        december: 'Dec'
+      };
+
+      return monthMap[normalized] || null;
+    }
+
+    function abbreviateMonths(periodText) {
+      const monthMap = {
+        january: 'Jan',
+        february: 'Feb',
+        march: 'Mar',
+        april: 'Apr',
+        may: 'May',
+        june: 'Jun',
+        july: 'Jul',
+        august: 'Aug',
+        september: 'Sep',
+        october: 'Oct',
+        november: 'Nov',
+        december: 'Dec'
+      };
+
+      return String(periodText || '').replace(/\b(january|february|march|april|may|june|july|august|september|october|november|december)\b/gi, (match) => {
+        const normalized = match.toLowerCase();
+        return monthMap[normalized] || match;
+      });
+    }
+
+    function normalizeSameMonthRange(periodText) {
+      const text = String(periodText || '').trim();
+      const rangeMatch = text.match(/^([A-Za-z]+)\s+(\d{4})\s*[\u2013-]\s*([A-Za-z]+)\s+(\d{4})$/);
+
+      if (!rangeMatch) {
+        return text;
+      }
+
+      const startMonth = monthTokenToShortName(rangeMatch[1]);
+      const startYear = Number(rangeMatch[2]);
+      const endMonth = monthTokenToShortName(rangeMatch[3]);
+      const endYear = Number(rangeMatch[4]);
+
+      if (!startMonth || !endMonth) {
+        return text;
+      }
+
+      if (startMonth !== endMonth || startYear !== endYear) {
+        return `${startMonth} ${startYear} – ${endMonth} ${endYear}`;
+      }
+
+      const currentIndex = monthOrder.indexOf(startMonth);
+      if (currentIndex === -1) {
+        return `${startMonth} ${startYear} – ${endMonth} ${endYear}`;
+      }
+
+      const nextIndex = (currentIndex + 1) % 12;
+      const nextMonth = monthOrder[nextIndex];
+      const nextYear = currentIndex === 11 ? startYear + 1 : startYear;
+
+      return `${startMonth} ${startYear} – ${nextMonth} ${nextYear}`;
+    }
+
     // Render Profile
-    document.getElementById('profileImage').src = profile.image;
+    const profileImageEl = document.getElementById('profileImage');
+    profileImageEl.src = profile.image;
+    profileImageEl.onerror = () => {
+      profileImageEl.onerror = null;
+      profileImageEl.src = '/assets/xmain.jpg';
+    };
     document.getElementById('profileTitle').textContent = profile.title;
     document.getElementById('profileBio').textContent = profile.bio;
 
@@ -419,7 +545,7 @@
     const experienceContainer = document.getElementById('experienceContainer');
     experienceContainer.innerHTML = experience.map(entry => `
       <div class="experience-entry">
-        <div class="experience-period">${entry.period}</div>
+        <div class="experience-period">${normalizeSameMonthRange(abbreviateMonths(entry.period))}</div>
         <div>
           <div class="experience-title">${entry.title}</div>
           <div class="experience-org">${entry.organization} - ${entry.location}</div>
@@ -478,7 +604,7 @@
       <div class="footer-brand">
         <h3>Ahmed Soliman</h3>
         <p>Architectural Engineer & Researcher</p>
-        <p style="font-size: 0.85rem; margin-top: 12px;">Exploring the intersection of architecture, computation, and design innovation.</p>
+        <p style="font-size: 0.85rem; margin-top: 12px;">Exploring the intersection of architecture, computation, and structural design.</p>
       </div>
 
       <div class="footer-links footer-nav">
@@ -525,9 +651,38 @@
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  // Scroll reveal for physical copy section
+  const revealSection = document.querySelector('.physical-copy-section');
+  if (revealSection) {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.2, rootMargin: '0px 0px -80px 0px' });
+        observer.observe(revealSection);
+      });
+    });
+  }
+
+  // Fade-in for profile image
+  const profileFade = document.querySelector('.profile-fade');
+  if (profileFade) {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        profileFade.classList.add('is-visible');
+      });
+    });
+  }
 </script>
 </body>
 
 </html>
+
 
 

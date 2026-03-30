@@ -3,75 +3,37 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ahmed Soliman</title>
+  <title>Teaching | Ahmed Soliman</title>
+  <meta name="description" content="View Ahmed Soliman's teaching in architecture, design studios, and computational design across universities in Brussels and beyond." />
+  <link rel="canonical" href="https://ahmedsoliman.be/teaching.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Teaching | Ahmed Soliman" />
+  <meta property="og:description" content="View Ahmed Soliman's teaching in architecture, design studios, and computational design across universities in Brussels and beyond." />
+  <meta property="og:url" content="https://ahmedsoliman.be/teaching.html" />
+  <meta property="og:image" content="https://ahmedsoliman.be/assets/thumb.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Teaching | Ahmed Soliman" />
+  <meta name="twitter:description" content="View Ahmed Soliman's teaching in architecture, design studios, and computational design across universities in Brussels and beyond." />
+  <meta name="twitter:image" content="https://ahmedsoliman.be/assets/thumb.webp" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Teaching | Ahmed Soliman",
+      "url": "https://ahmedsoliman.be/teaching.html",
+      "description": "View Ahmed Soliman's teaching in architecture, design studios, and computational design across universities in Brussels and beyond.",
+      "image": "https://ahmedsoliman.be/assets/thumb.webp",
+      "about": {
+        "@type": "Person",
+        "name": "Ahmed Soliman"
+      }
+    }
+  </script>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="../src/style.css">
-
-  <style>
-    /* Mobile Floating Box Styles matched to project page */
-    @media (max-width: 1199.98px) {
-      .custom-dropdown.collapse.show, 
-      .custom-dropdown.collapsing {
-        display: block !important;
-        position: absolute;
-        top: 100%;
-        right: 1.5rem;
-        width: 220px;
-        background: #2b2b2b !important; /* Dark background */
-        padding: 2rem;
-        border-radius: 12px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-        z-index: 9999;
-      }
-
-      .custom-dropdown .navbar-nav {
-        flex-direction: column;
-        gap: 1.2rem !important;
-      }
-
-      .custom-dropdown .nav-link {
-        color: #fff !important; /* White text */
-        text-align: left;
-      }
-    }
-
-    /* Carousel Custom Styling */
-    .carousel-item {
-      height: 500px; /* Adjust height as needed */
-      background-color: #000;
-    }
-    .carousel-item img, .carousel-item video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Ensures media fills the area without stretching */
-    }
-  
-    .role-section {
-      padding-top: 1rem;
-    }
-
-    .role-section.has-separator {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 2rem;
-      margin-top: 0.5rem;
-    }
-
-    .entry-title {
-      margin-bottom: 0.25rem;
-    }
-
-    .entry-years {
-      margin-bottom: 0.3rem;
-    }
-
-    .entry-description {
-      margin-bottom: 0;
-    }
-
-  </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DCJVGXKXL5"></script>
   <script>
@@ -131,7 +93,8 @@
   </nav>
 </header>
 
-<div class="container px-4 mb-5">
+<div class="teaching-hero-sticky">
+<div class="container px-4">
   <div id="topCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
     <div class="carousel-inner rounded-4">
       
@@ -147,7 +110,7 @@
       </div>
 
       <div class="carousel-item">
-        <img src="teaching/IMG_3226.jpeg" class="d-block w-100" alt="Work highlight">
+        <img src="teaching/005.webp" class="d-block w-100" alt="Work highlight">
         <div class="carousel-caption d-none d-md-block">
           <h5> </h5>
           <p> </p>
@@ -167,39 +130,172 @@
     </button>
   </div>
 </div>
+</div>
 
-<div class="container py-5" id="course-container">
+<div class="teaching-content-layer">
+
+<div class="container px-4">
+  <div class="sticky-filter-wrapper teaching-filter-wrapper">
+    <div class="d-flex flex-wrap align-items-center gap-3" id="teaching-logo-filters" aria-label="Filter teaching by university">
+      <button class="teaching-logo-filter" type="button" data-university="vub" aria-label="Filter by Vrije Universiteit Brussel">
+        <img src="assets/vub.png" alt="VUB logo">
+        <span class="institution-meta">
+          <span class="institution-name">Vrije Universiteit Brussel</span>
+          <span class="institution-location">Brussels, Belgium</span>
+        </span>
+      </button>
+      <button class="teaching-logo-filter" type="button" data-university="fue" aria-label="Filter by Future University in Egypt">
+        <img src="assets/fue.png" alt="FUE logo">
+        <span class="institution-meta">
+          <span class="institution-name">Future University in Egypt</span>
+          <span class="institution-location">Cairo, Egypt</span>
+        </span>
+      </button>
+      <button class="teaching-logo-filter" type="button" data-university="ain" aria-label="Filter by Ain Shams University">
+        <img src="assets/ain.png" alt="AIN logo">
+        <span class="institution-meta">
+          <span class="institution-name">Ain Shams University</span>
+          <span class="institution-location">Cairo, Egypt</span>
+        </span>
+      </button>
+      <button class="teaching-logo-filter" type="button" data-university="auc" aria-label="Filter by American University in Cairo">
+        <img src="assets/auc.png" alt="AUC logo">
+        <span class="institution-meta">
+          <span class="institution-name">American University in Cairo</span>
+          <span class="institution-location">Cairo, Egypt</span>
+        </span>
+      </button>
+      <a class="teaching-action-link" href="st_samples.html" aria-label="Open samples of students work">
+        <span class="teaching-action-icon bi bi-images"></span>
+        <span class="teaching-action-text">Sample of Students Work</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container py-4" id="course-container">
   </div>
 
+</div><!-- /.teaching-content-layer -->
+
 <script>
+  let allTeachingSections = [];
+  let activeUniversity = 'all';
+
+  function detectUniversityTag(description) {
+    const text = String(description || '').toLowerCase();
+
+    if (text.includes('vrije universiteit brussel') || text.includes('bruface') || text.includes('vub')) {
+      return 'vub';
+    }
+    if (text.includes('future university in egypt')) {
+      return 'fue';
+    }
+    if (text.includes('ain shams')) {
+      return 'ain';
+    }
+    if (text.includes('american university in cairo')) {
+      return 'auc';
+    }
+
+    return '';
+  }
+
+  function countAcademicYears(yearsText) {
+    const years = String(yearsText || '')
+      .split(',')
+      .map((item) => item.trim())
+      .filter(Boolean);
+
+    return new Set(years).size;
+  }
+
+  function getYearsBadgeText(yearsText) {
+    const count = countAcademicYears(yearsText);
+    if (count <= 1) {
+      return '1 academic year taught';
+    }
+    return `${count} academic years taught`;
+  }
+
+  function renderCourses() {
+    const container = document.getElementById('course-container');
+
+    const filteredSections = allTeachingSections
+      .map((section) => ({
+        ...section,
+        items: (section.items || []).filter((course) => {
+          const universityTag = detectUniversityTag(course.description);
+          if (activeUniversity === 'all') {
+            return true;
+          }
+          return universityTag === activeUniversity;
+        })
+      }))
+      .filter((section) => section.items.length > 0);
+
+    if (filteredSections.length === 0) {
+      container.innerHTML = '<div class="text-center opacity-75 py-4"><p class="mb-0">No courses found for this university yet.</p></div>';
+      return;
+    }
+
+    container.innerHTML = filteredSections.map((section, sectionIndex) => `
+      <div class="role-section ${sectionIndex > 0 ? 'has-separator' : ''}">
+        ${section.items.map((course, index) => `
+          <div class="row section-container mb-4">
+            <div class="col-md-3">
+              ${index === 0 ? `<p class="role-text" style="text-align: right;">${section.category}</p>` : ''}
+            </div>
+            <div class="col-md-9">
+              <h2 class="entry-title">${course.title}</h2>
+              <div class="entry-meta-badges">
+                <span class="teaching-badge role-badge">${course.role || 'Teaching Assistant'}</span>
+                <span class="teaching-badge years-badge">${getYearsBadgeText(course.years)}</span>
+              </div>
+              <p class="entry-years">${course.years}</p>
+              <p class="entry-description">${course.description}</p>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `).join('');
+  }
+
+  function setupUniversityFilters() {
+    const filterButtons = document.querySelectorAll('.teaching-logo-filter');
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const clickedUniversity = button.getAttribute('data-university');
+
+        if (!clickedUniversity) {
+          return;
+        }
+
+        const isSameFilter = clickedUniversity === activeUniversity;
+        activeUniversity = isSameFilter ? 'all' : clickedUniversity;
+
+        filterButtons.forEach((btn) => btn.classList.remove('active'));
+        if (!isSameFilter) {
+          button.classList.add('active');
+        }
+        renderCourses();
+      });
+    });
+  }
+
   async function loadCourses() {
     try {
       const response = await fetch('teachingdata.json'); 
-      const sections = await response.json();
-      const container = document.getElementById('course-container');
-
-      container.innerHTML = sections.map((section, sectionIndex) => `
-        <div class="role-section ${sectionIndex > 0 ? 'has-separator' : ''}">
-          ${section.items.map((course, index) => `
-            <div class="row section-container mb-4">
-              <div class="col-md-3">
-                ${index === 0 ? `<p class="role-text" style="text-align: right;">${section.role}</p>` : ''}
-              </div>
-              <div class="col-md-9">
-                <h2 class="entry-title">${course.title}</h2>
-                <p class="entry-years">${course.years}</p>
-                <p class="entry-description">${course.description}</p>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      `).join('');
+      allTeachingSections = await response.json();
+      renderCourses();
       
     } catch (error) {
       console.error('Error loading the courses:', error);
     }
   }
 
+  setupUniversityFilters();
   loadCourses();
 </script>
 
@@ -211,7 +307,7 @@
       <div class="footer-brand">
         <h3>Ahmed Soliman</h3>
         <p>Architectural Engineer & Researcher</p>
-        <p style="font-size: 0.85rem; margin-top: 12px;">Exploring the intersection of architecture, computation, and design innovation.</p>
+        <p style="font-size: 0.85rem; margin-top: 12px;">Exploring the intersection of architecture, computation, and structural design.</p>
       </div>
 
       <div class="footer-links footer-nav">
@@ -261,4 +357,5 @@
 </script>
 </body>
 </html>
+
 

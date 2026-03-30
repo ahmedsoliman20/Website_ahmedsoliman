@@ -176,6 +176,32 @@ body {
 
   .custom-dropdown .nav-link {
     color: #fff !important; /* Adjusted for dark mobile menu */
+    text-align: left;
+  }
+}
+
+/* Mobile header layout parity with homepage (icons under title) */
+@media (max-width: 576px) {
+  header .navbar .container {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .header-right-section {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .header-right-section > .d-flex.align-items-center.gap-3.ms-xl-5 {
+    width: 100%;
+    margin-left: 0 !important;
+    justify-content: space-between;
+  }
+
+  .custom-dropdown.collapse.show,
+  .custom-dropdown.collapsing {
+    right: 0.75rem !important;
+    left: auto !important;
   }
 }
 
@@ -425,7 +451,7 @@ body {
 
 /* 2. Page Bottom Padding */
 main.py-4 {
-  padding-bottom: 80px !important; 
+  padding-bottom: 40px !important; 
 }
 
 
@@ -434,13 +460,37 @@ main.py-4 {
 
 
 /* ==========================================================================
-  9. styles of the TEACHING PAGE
+   9. TEACHING PAGE STYLING (teaching.html)
    ========================================================================== */
+
+/* Top teaching carousel media frame */
+.carousel-item {
+  height: 500px;
+  background-color: #000;
+}
+
+.carousel-item img,
+.carousel-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Grouping and separators between teaching role blocks */
+.role-section {
+  padding-top: 0.8rem;
+}
+
+.role-section.has-separator {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.4rem;
+  margin-top: 1rem;
+}
 
 
 /* Container for each course row */
 .section-container {
-    margin-bottom: 1.5rem; /* Space between different courses */
+  margin-bottom: 1.1rem; /* Space between different courses */
 }
 
 /* Left side: Role text */
@@ -457,29 +507,315 @@ main.py-4 {
     font-family: 'Helvetica', Arial, sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
-    margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
     color: #ffffff;
     border: none; /* Ensures no default h2 borders interfere */
+}
+
+.entry-meta-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 0.24rem;
+}
+
+.teaching-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.role-badge {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.years-badge {
+  background: rgba(205, 210, 217, 0.1);
+  color: #d5d9df;
+  border: 1px solid rgba(205, 210, 217, 0.28);
 }
 
 /* The Years/Dates */
 .entry-years {
     font-weight: 600;
     font-size: 1rem;
-    margin-bottom: .8rem;
+  margin-bottom: 0.08rem;
     color: #ffffff;
 }
 
 /* The Professor/University details */
 .entry-description {
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.45;
     color: #a0a0a0; /* Muted gray for a professional look */
     max-width: 600px;
+  margin-bottom: 0.1rem;
+}
+
+.teaching-filter-wrapper {
+  top: 8px;
+  z-index: 1001;
+}
+
+/* Sticky hero carousel */
+.teaching-hero-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  padding-top: 12px;
+}
+
+/* Content layer slides over the sticky carousel */
+.teaching-content-layer {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-dark);
+  padding-bottom: 2rem;
+}
+
+#teaching-logo-filters {
+  padding: 0.35rem 0;
+}
+
+.teaching-logo-filter {
+  width: 74px;
+  height: 74px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.04);
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  gap: 10px;
+  overflow: hidden;
+  transition: width 0.28s ease, transform 0.22s ease, border-color 0.22s ease, background 0.22s ease, opacity 0.22s ease;
+  opacity: 0.72;
+}
+
+.teaching-logo-filter img {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  object-fit: contain;
+}
+
+.teaching-logo-filter .institution-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  max-width: 0;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: max-width 0.28s ease, opacity 0.22s ease;
+}
+
+.teaching-logo-filter .institution-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.teaching-logo-filter .institution-location {
+  margin-top: 2px;
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.teaching-logo-filter:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.55);
+  opacity: 0.92;
+}
+
+.teaching-logo-filter.active {
+  width: 290px;
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  opacity: 1;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
+}
+
+.teaching-logo-filter.active .institution-meta {
+  max-width: 210px;
+  opacity: 1;
+}
+
+.teaching-logo-filter:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.teaching-action-link {
+  min-height: 74px;
+  min-width: 260px;
+  margin-left: auto;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f2f2f2;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  text-decoration: none;
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.teaching-action-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.teaching-action-icon {
+  font-size: 1.15rem;
+  opacity: 0.9;
+}
+
+.teaching-action-text {
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.teaching-action-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 575.98px) {
+  #teaching-logo-filters {
+    justify-content: center;
+  }
+
+  .teaching-logo-filter {
+    width: 62px;
+    height: 62px;
+    border-radius: 8px;
+    padding: 8px;
+  }
+
+  .teaching-logo-filter img {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+  }
+
+  .teaching-logo-filter.active {
+    width: 240px;
+  }
+
+  .teaching-logo-filter .institution-name {
+    font-size: 0.72rem;
+  }
+
+  .teaching-logo-filter .institution-location {
+    font-size: 0.64rem;
+  }
+
+  .teaching-logo-filter.active .institution-meta {
+    max-width: 165px;
+  }
+
+  .teaching-action-link {
+    min-height: 62px;
+    min-width: 210px;
+    padding: 8px 12px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .teaching-action-text {
+    font-size: 0.74rem;
+  }
+
+  .entry-years {
+    text-align: left !important;
+  }
+
+  .section-container .col-md-3 {
+    text-align: center;
+    margin-bottom: 0.6rem;
+  }
+
+  .role-text {
+    display: inline-block;
+    text-align: center !important;
+    margin: 0 auto 0.45rem;
+    padding-bottom: 0.35rem;
+    position: relative;
+  }
+
+  .role-text::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 42px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.35);
+  }
 }
 
 /* ==========================================================================
-   10. STYLES FOR RESEARCH PAGE (research.html)
+   10. STYLES FOR STUDENT SAMPLES PAGE (st_samples.html)
+   ========================================================================== */
+.samples-page .samples-intro {
+  max-width: 720px;
+}
+
+.samples-page .samples-intro h2 {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.samples-page .samples-intro p {
+  color: #b0b0b0;
+  margin-bottom: 0;
+}
+
+.samples-page .samples-grid {
+  margin-top: 1.2rem;
+}
+
+.samples-page .sample-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.samples-page .sample-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.samples-page .sample-caption {
+  font-size: 0.84rem;
+  color: #c9c9c9;
+  padding: 0.55rem 0.7rem 0.65rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================================================================
+   11. STYLES FOR RESEARCH PAGE (research.html)
    ========================================================================== */
 .research-page main.py-4 {
   padding-top: 2.75rem !important;
