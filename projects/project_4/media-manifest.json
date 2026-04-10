@@ -1,0 +1,20 @@
+﻿{
+    "gallery":  [
+                    "001.webp",
+                    "002.webp",
+                    "003.mp4",
+                    "004.webp",
+                    "005.mp4",
+                    "006.mp4",
+                    "007.webp",
+                    "008.png"
+                ],
+    "slideshow":  [
+                      "slideshow/001 (1).webp",
+                      "slideshow/001 (2).webp",
+                      "slideshow/001 (3).webp",
+                      "slideshow/001 (4).webp",
+                      "slideshow/001 (5).webp",
+                      "slideshow/001 (6).webp"
+                  ]
+}

@@ -379,6 +379,62 @@
       column-gap: 10px;
     }
 
+    .gallery-section-wrap {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      overflow: visible;
+    }
+
+    #gallery-filters {
+      position: sticky;
+      top: 160px;
+      margin-top: 56px;
+      margin-left: 24px;
+      align-self: flex-start;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .gallery-section-wrap #gallery-grid {
+      width: 100%;
+      flex: 0 0 100%;
+    }
+
+    .gallery-filter-key {
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+      color: rgba(235, 235, 235, 0.5);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: capitalize;
+      cursor: pointer;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .gallery-filter-key:hover,
+    .gallery-filter-key.is-active {
+      color: rgba(255, 255, 255, 0.96);
+      transform: translateX(-2px);
+    }
+
+    @media (max-width: 1360px) {
+      #gallery-filters {
+        margin-left: 18px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      #gallery-filters {
+        margin-left: 14px;
+      }
+    }
+
     @media (max-width: 992px) {
       #gallery-grid {
         column-count: 2;
@@ -555,64 +611,225 @@
         <polyline points="2,12 11,24 20,12" stroke="rgba(180,180,180,0.45)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </svg>
     </div>
-    <div id="gallery-grid"></div>
+    <div class="gallery-section-wrap">
+      <div id="gallery-grid"></div>
+      <aside id="gallery-filters" aria-label="Gallery filters"></aside>
+    </div>
   </div>
 </main>
 
 <script>
-  const projectCount = 10; 
   const grid = document.getElementById('gallery-grid');
+  const galleryFiltersContainer = document.getElementById('gallery-filters');
+  const coverExtensions = ['webp', 'jpg', 'jpeg', 'png'];
+  const galleryMetadataPath = '../projects/projects_data.json';
+  const fallbackFilterKeys = ['Professional', 'Research', 'Design', 'Computational', 'Graphic'];
+  let filterDefinitions = [];
+  let activeFilterKey = 'all';
+  let allGalleryItems = [];
 
-  async function loadGallery() {
-    const galleryItems = [];
+  function normalizeText(value) {
+    return String(value || '').toLowerCase();
+  }
 
-    for (let i = 5; i <= projectCount; i++) {
-      const folderPath = `../projects/project_${i}`;
-      
-      try {
-        const response = await fetch(`${folderPath}/title.txt`);
-        const titleText = response.ok ? await response.text() : `project ${i}`;
+  function canonicalizeFilterKey(value) {
+    const normalizedKey = normalizeText(value).trim();
+    if (normalizedKey === 'grahpic') {
+      return 'graphic';
+    }
+    return normalizedKey;
+  }
 
-        galleryItems.push({
-  title: titleText.trim(),
-  img: `${folderPath}/cover.jpg`,
-  // This constructs ../projects/project_1/project_1.html
-  link: `${folderPath}/project_${i}.html` 
-});
-      } catch (error) {
-        console.error(`Error loading project_${i}:`, error);
-      }
+  function getFilterTerms(filterKey) {
+    const normalizedKey = canonicalizeFilterKey(filterKey);
+
+    if (normalizedKey === 'graphic') {
+      return ['graphic', 'grahpic'];
     }
 
-    for (let i = 1; i < 5; i++) {
-      const folderPath = `../projects/project_${i}`;
-      
-      try {
-        const response = await fetch(`${folderPath}/title.txt`);
-        const titleText = response.ok ? await response.text() : `project ${i}`;
+    return [normalizedKey];
+  }
 
-        galleryItems.push({
-  title: titleText.trim(),
-  img: `${folderPath}/cover.jpg`,
-  // This constructs ../projects/project_1/project_1.html
-  link: `${folderPath}/project_${i}.html` 
-});
-      } catch (error) {
-        console.error(`Error loading project_${i}:`, error);
+  function buildFilterDefinitionsFromProjects(projectsData) {
+    const uniqueFilters = new Set();
+
+    projectsData.forEach((project) => {
+      if (!project || !Array.isArray(project.filters)) {
+        return;
       }
-    }
 
-    grid.innerHTML = galleryItems.map((item, index) => `
-      <div class="reveal-item d-inline-block w-100 mb-2" style="transition-delay: ${index * 0.15}s; break-inside: avoid;">
+      project.filters.forEach((filterValue) => {
+        const normalized = canonicalizeFilterKey(filterValue);
+        if (normalized) {
+          uniqueFilters.add(normalized);
+        }
+      });
+    });
+
+    const keys = uniqueFilters.size ? Array.from(uniqueFilters) : fallbackFilterKeys;
+    const dynamicFilters = keys
+      .map((key) => canonicalizeFilterKey(key))
+      .filter((key) => !!key)
+      .map((key) => ({ key, label: key, terms: getFilterTerms(key) }));
+
+    return [{ key: 'all', label: 'all', terms: [] }, ...dynamicFilters];
+  }
+
+  function applyGalleryFilter(filterKey) {
+    const selectedDefinition = filterDefinitions.find((filter) => filter.key === filterKey) || null;
+    const filteredItems = !selectedDefinition || filterKey === 'all'
+      ? allGalleryItems
+      : allGalleryItems.filter((item) => selectedDefinition.terms.some((term) => item.filterTags.includes(term)));
+
+    renderGalleryItems(filteredItems);
+
+    galleryFiltersContainer.querySelectorAll('.gallery-filter-key').forEach((button) => {
+      button.classList.toggle('is-active', button.dataset.filterKey === filterKey);
+    });
+  }
+
+  function renderGalleryItems(items) {
+    grid.innerHTML = items.map((item, index) => `
+      <div class="reveal-item d-inline-block w-100 mb-2" data-filter-tags="${item.filterTags.join('|').replace(/"/g, '&quot;')}" style="transition-delay: ${index * 0.15}s; break-inside: avoid;">
         <div class="tile" style="aspect-ratio: auto; height: auto;">
           <a class="img-link" href="${item.link}">
-            <img src="${item.img}" class="img-fluid" alt="${item.title}" style="display: block; width: 100%;">
+            <img src="${item.img}" class="img-fluid" alt="${item.title}" loading="lazy" decoding="async" style="display: block; width: 100%;">
             <div class="tile-overlay"></div>
             <figcaption class="caption font-bebas">${item.title}</figcaption>
           </a>
         </div>
       </div>
     `).join('');
+  }
+
+  function renderGalleryFilters() {
+    if (activeFilterKey && !filterDefinitions.some((filter) => filter.key === activeFilterKey)) {
+      activeFilterKey = null;
+    }
+
+    galleryFiltersContainer.innerHTML = filterDefinitions.map((filter) => (
+      `<button type="button" class="gallery-filter-key" data-filter-key="${filter.key}">${filter.label}</button>`
+    )).join('');
+
+    galleryFiltersContainer.querySelectorAll('.gallery-filter-key').forEach((button) => {
+      button.addEventListener('click', () => {
+        const clickedKey = button.dataset.filterKey;
+        if (clickedKey === 'all') {
+          activeFilterKey = 'all';
+        } else {
+          activeFilterKey = activeFilterKey === clickedKey ? 'all' : clickedKey;
+        }
+        applyGalleryFilter(activeFilterKey);
+      });
+    });
+  }
+
+  async function fetchGalleryProjects() {
+    function parseGalleryOrder(value) {
+      const numericValue = Number(value);
+      return Number.isFinite(numericValue) ? numericValue : null;
+    }
+
+    try {
+      const response = await fetch(galleryMetadataPath, { cache: 'no-cache' });
+      if (!response.ok) {
+        return [];
+      }
+
+      const data = await response.json();
+      if (!Array.isArray(data)) {
+        return [];
+      }
+
+      filterDefinitions = buildFilterDefinitionsFromProjects(data);
+
+      return data
+        .map((project, index) => {
+          if (!project || typeof project.id !== 'string') {
+            return null;
+          }
+
+          const projectId = project.id.trim();
+          const idMatch = projectId.match(/(\d+)/);
+          const projectNumber = idMatch ? idMatch[1] : '';
+          const folderPath = `../projects/${projectId}`;
+          const showInGallery = project.showInGallery !== false;
+          const galleryOrder = parseGalleryOrder(project.galleryOrder);
+          const filterTags = Array.isArray(project.filters)
+            ? project.filters.map((filterValue) => canonicalizeFilterKey(filterValue)).filter((filterValue) => !!filterValue)
+            : [];
+
+          return {
+            index,
+            title: typeof project.title === 'string' && project.title.trim() ? project.title.trim() : projectId,
+            folderPath,
+            showInGallery,
+            galleryOrder,
+            filterTags,
+            link: projectNumber
+              ? `${folderPath}/project_${projectNumber}.html`
+              : `${folderPath}/index.html`
+          };
+        })
+        .filter((project) => project && project.showInGallery)
+        .sort((a, b) => {
+          const aHasOrder = a.galleryOrder !== null;
+          const bHasOrder = b.galleryOrder !== null;
+
+          if (aHasOrder && bHasOrder) {
+            return a.galleryOrder - b.galleryOrder;
+          }
+
+          if (aHasOrder) {
+            return -1;
+          }
+
+          if (bHasOrder) {
+            return 1;
+          }
+
+          return a.index - b.index;
+        });
+    } catch (error) {
+      console.error('Failed to load gallery metadata:', error);
+      return [];
+    }
+  }
+
+  async function resolveCoverImage(folderPath) {
+    for (const ext of coverExtensions) {
+      const candidate = `${folderPath}/cover.${ext}`;
+      try {
+        const response = await fetch(candidate, { method: 'HEAD' });
+        if (response.ok) {
+          return candidate;
+        }
+      } catch (error) {
+        // Ignore network errors here and keep trying other extensions.
+      }
+    }
+    return `${folderPath}/cover.jpg`;
+  }
+
+  async function loadGallery() {
+    const projects = await fetchGalleryProjects();
+    renderGalleryFilters();
+
+    allGalleryItems = await Promise.all(
+      projects.map(async (project) => {
+        const coverImage = await resolveCoverImage(project.folderPath);
+        return {
+          title: project.title,
+          img: coverImage,
+          filterTags: project.filterTags,
+          link: project.link
+        };
+      })
+    );
+
+    renderGalleryItems(allGalleryItems);
+
+    applyGalleryFilter(activeFilterKey);
   }
 
   loadGallery();

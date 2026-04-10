@@ -2,6 +2,11 @@
   {
     "id": "project_1",
     "title": "The Univer-City",
+    "galleryOrder": 5,
+    "filters": ["design", "research"],
+    "_galleryFieldsHelp": "Set galleryOrder (number) to control homepage order and showInGallery (true/false) to include or hide.",
+    "_galleryOrderExample": 1,
+    "_showInGalleryExample": true,
     "labels": {
       "desc": "Project Description",
       "date": "Project Date",
@@ -22,7 +27,9 @@
   },
   {
     "id": "project_2",
-    "title": "Leap Of Faith Bridge",
+    "title": "Leap of Faith Bridge",
+    "galleryOrder": 2,
+    "filters": ["Design", "competition"],
     "labels": {
       "desc": "Project Description",
       "date": "Project Date",
@@ -35,7 +42,7 @@
     "role": "Design, Research, Model Making",
     "client": "Mohamed Mahmoud, Mazen Nabil, Fatma Abd Elrahman, Abdullah gabr, Ayman Shawki, Mostfafa Elsayed, Haytham Kamal , Ahmed Soliman.",
     "visit": "https://youtu.be/Ay3a4hwkNZg" ,
-    "linktext": "Project video",
+    "linktext": "Full project video",
 
 
     "subtitle": " " ,
@@ -44,6 +51,8 @@
     {
   "id": "project_3",
   "title": "Bending-active responsive grid shell",
+  "galleryOrder": 3,
+  "filters": ["design", "research", "computational"],
   "labels": {
     "desc": "Project Description",
     "date": "Project Date",
@@ -63,6 +72,8 @@
     {
   "id": "project_4",
   "title": "The Chavilion: Scissor chair-pavilion",
+  "galleryOrder": 4,
+  "filters": ["design", "research", "computational"],
   "labels": {
     "desc": "Project Description",
     "date": "Project Date",
@@ -82,6 +93,8 @@
 {
   "id": "project_5",
   "title": "ULB timber tower: timber is the new concrete ",
+  "galleryOrder": 1,
+  "filters": ["design", "computational"],
   "labels": {
     "desc": "Project Description",
     "date": "Project Date",
@@ -89,7 +102,7 @@
     "client": "",
     "visit": ""
   },
-  "description": "The ULB timber tower is a part of a masterplan to develop the ULB campus, The ULB campus is located in Brussels, Belgium. The project is a proposal of an entrance building for the campus to directly welcome visitors and students entering the main axis of the campus. the aims of the “ULB timber tower” reflect the vision of the masterplan but also fundamentally pursuit the following goals: 1- The project aims to promote sustainability and leading the community by example. 2- it aims to formulate a symbol of the university. 3-it aims to nourish the connection between the city and the university. 4- it provides the functional needed spaces to endure the constant increase of students, and rise the university capacity.",
+  "description": "The ULB Timber Tower is part of a master plan to develop the ULB campus in Brussels, Belgium. The project proposes an entrance building that directly welcomes visitors and students arriving along the campus's main axis. The aims of the ULB Timber Tower reflect the vision of the master plan while pursuing four main goals: 1) to promote sustainability and lead the community by example; 2) to establish a symbolic identity for the university; 3) to strengthen the connection between the city and the university; and 4) to provide the functional spaces needed to accommodate the constant increase in students and expand university capacity.",
   "date": "2021-2022",
   "role": "Conceptualization, Design, Research, structural analysis, enviromental analysis, parametric modeling, Night shots post-production by Mohamed Mahmoud ",
   "client": "",
@@ -101,25 +114,29 @@
 {
   "id": "project_6",
   "title": "Konligo: Internship - Research and development ",
+  "galleryOrder": 6,
+  "filters": ["professional", "research", "grahpic"],
   "labels": {
     "desc": "Project Description",
     "date": "Project Date",
     "role": "Role",
     "client": " ",
-    "visit": ""
+    "visit": "Visit"
   },
   "description": "Konligo is a Belgian start-up specialized in lightweight and transformable structures. Its main mission is to push temporary structures to the next level, while pushing the event industry to a more sustainable future. I joined the R&D team and participated in developing the deployable scissor structure technology. During my internship in Konligo, I had the chance to work in several departments. One of the perks of working in relatively small teams is to get involved in a lot of different fields and get a broader experience of how everything works. I was trained as an engineer, but I also learned a lot of entrepreneur’s skills.",
   "date": "2021-2022",
-  "role": "R&D, Research, structural analysis, parametric modeling, computational production, Graphic design, video editing, The Structure is originally designed by konligo team. ",
+  "role": "R&D, Research, parametric modeling, computational production, Graphic design, video editing, The Structure is originally designed by konligo team. ",
   "client": " ",
-  "visit": " ",
-  "linktext": "",
+  "visit": "https://www.konligo.com/nl/",
+  "linktext": "Konligo.",
   "subtitle": " ",
   "text_2": " "
 },
 {
   "id": "project_7",
   "title": "Prison de Saint-Gilles: 2030",
+  "galleryOrder": 7,
+  "filters": ["design", "research", "competition"],
   "labels": {
     "desc": "Project Description",
     "date": "Project Date",
@@ -139,25 +156,29 @@
 {
   "id": "project_8",
   "title": "Bending-active plate components in configurable kit-of-pats systems",
+  "galleryOrder": 8,
+  "filters": ["research", "computational", "design"],
   "labels": {
     "desc": "Project Description",
     "date": "Project Date",
-    "role": "Role",
-    "client": "",
+    "role": "project type",
+    "client": "Publication",
     "visit": "Visit"
   },
-  "description": "This research explores transformable wooden kit-of-parts systems through digital and physical models. It deals with the structure as a composition of modular components that are put together on the site. It presents an alternative solution of a temporary system that can be reconfigured in different shapes and sizes using the same components. The research also offers a systematic way to connect the components with joints in symmetrical grids and solids. The system replaces each face with a modular element and then connects each two of them with one joint. The form of the final structure is based on polyhedral geometries or tesselations that were investigated thoroughly. The regularity of the systems is a key to the reconfigurability feature.",
+  "description": "This research investigates transformable wooden kit-of-parts systems through digital and physical modeling. It conceptualizes the structure as an assembly of modular components constructed on site and proposes a reconfigurable temporary system capable of adapting to different shapes and sizes using a consistent set of elements. A systematic method for connecting components is introduced, based on joints arranged within symmetrical grids and solids. Each face is replaced by a modular element, with pairs of elements connected through a single joint. The resulting structural configurations are derived from thoroughly studied polyhedral geometries or tessellations. The regularity of these systems is key to their reconfigurability.",
   "date": "2022-2023",
   "role": "Master’s thesis project",
-  "client": "",
+  "client": "<ul><li><strong>Double-curved plate components in configurable systems.</strong><br>Soliman, Ahmed; Leemans, Ellen; De Laet, Lars; De Temmerman, Niels.<br>Integration of Design and Fabrication: Proceedings of the International Association for Shell and Spatial Structures Annual Symposium 2023. Ed. Yi Min Xie; Jane Burry; Ting-Uei Lee; Jiaming Ma. IASS, 2023. p. 983-994. <a href=\"https://researchportal.vub.be/en/publications/double-curved-plate-components-in-configurable-systems/\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more</a></li><li><strong>Bending-active plate components in configurable kit-of-parts systems</strong><br>Soliman, A. (Master thesis). Sept 2022 <a href=\"https://researchportal.vub.be/en/studentTheses/bending-active-plate-components-in-configurable-kit-of-parts-syst/\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more</a></li></ul>",
   "visit": "https://youtu.be/w2GxYpVNqng",
-  "linktext": "Project video",
+  "linktext": "Full project video",
   "subtitle": "",
   "text_2": ""
 },
 {
   "id": "project_9",
   "title": "First permanent moon base",
+  "galleryOrder": 9,
+  "filters": ["design"],
   "labels": {
     "desc": "Project Description",
     "date": "Project Date",
@@ -165,7 +186,7 @@
     "client": "",
     "visit": " "
   },
-  "description": "The space faring age promises huge potentials, it could be our permanent link to the unlimited resources, materials, and energy from space. In 2004, George Bush announced the start of a series of robotic missions for the moon to prepare for working and living there for increasing periods of time, those missions was to collect the appropriate data about the moon resources and the construction site. The first step towards the permanent moon base will start in 2022 with unmanned moon base. till it ends with the main standalone permanent moon base. Preparation for the project : First permanent moon base will be the first planned step towards the new era, which will allow more in depth exploration to the solar system, human settlements will be established on multiple planets and moons, and year by year the present 'closed earth' mindset will be replaced by a much grander 'open space' vision of potential human advancements, and a chance for discovering endless frontiers.",
+  "description": "The spacefaring age promises immense potential, offering humanity access to vast resources, materials, and energy beyond Earth. In 2004, George W. Bush introduced a vision for renewed lunar exploration through a series of robotic missions designed to gather data on lunar resources and identify suitable construction sites for future habitation.\n\nThis project presents a vision, conceived in 2014, of an early step toward the colonization of the Moon. It explores the development of an initial unmanned lunar base as the foundation for a permanent human presence.\n\nThe first permanent Moon base represents a critical milestone in the transition to a new era of exploration. It will enable deeper access to the solar system, support the establishment of extraterrestrial settlements, and shift humanity’s perspective from a “closed Earth” mindset to a broader, open-space vision of progress and discovery.",
   "date": "2014-2015",
   "role": "BS, Graduation project, 2014",
   "client": "",
@@ -177,19 +198,21 @@
 {
   "id": "project_10",
   "title": "The Barber",
+  "galleryOrder": 10,
+  "filters": ["professional", "design", "graphic"],
   "labels": {
     "desc": "Project Description",
     "date": "Project Date",
     "role": "Role",
     "client": "Team",
-    "visit": " "
+    "visit": "Visit"
   },
-  "description": "An Interior design project of “The Barbershop”, A chain of barbershops based in Egypt. The project was designed and implemented in 2020. Soliman and co-designer Aaacer noshokaty provided full design and execution drawings as freelancer architects. The shop is currently open and working in Cairo.",
+  "description": "An interior design project for “The Barbershop,” a growing chain of barbershops based in Egypt. Designed and implemented in 2020, the project was developed by Soliman in collaboration with co-designer Aaacer El Noshokaty, working as freelance architects.\n\nThe project encompassed the full interior design process, from concept development to detailed execution drawings, with a focus on creating a distinctive and contemporary spatial identity. The design aimed to reinterpret the traditional barbershop experience through a modern lens, balancing functionality, comfort, and a strong visual character.\n\nIn parallel, the scope included the development of a complete brand identity, covering logo design, visual language, and overall branding strategy to ensure coherence between the physical space and the brand’s image.\n\nThe shop is currently operational in Cairo.",
   "date": "2019-2020 & 2024-2025",
   "role": "Interior design, rendering, modeling, lighting, logo design, identity design, supervision of implementation.",
   "client": "Ahmed Soliman, Aacer Noshokaty.",
-  "visit": "",
-  "linktext": "",
+  "visit": "https://thebarber-eg.com/mens-haircut-gallery-cairo/",
+  "linktext": "Visit project",
   "subtitle": "",
   "text_2": ""
 }
