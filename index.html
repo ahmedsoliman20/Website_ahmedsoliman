@@ -736,7 +736,9 @@
         return [];
       }
 
-      const data = await response.json();
+      const rawData = await response.json();
+      const orderMap = (rawData && !Array.isArray(rawData) && rawData.galleryOrder && typeof rawData.galleryOrder === 'object') ? rawData.galleryOrder : {};
+      const data = Array.isArray(rawData) ? rawData : (rawData && Array.isArray(rawData.projects) ? rawData.projects : null);
       if (!Array.isArray(data)) {
         return [];
       }
@@ -754,7 +756,9 @@
           const projectNumber = idMatch ? idMatch[1] : '';
           const folderPath = `../projects/${projectId}`;
           const showInGallery = project.showInGallery !== false;
-          const galleryOrder = parseGalleryOrder(project.galleryOrder);
+          const galleryOrder = Object.prototype.hasOwnProperty.call(orderMap, projectId)
+            ? parseGalleryOrder(orderMap[projectId])
+            : parseGalleryOrder(project.galleryOrder);
           const filterTags = Array.isArray(project.filters)
             ? project.filters.map((filterValue) => canonicalizeFilterKey(filterValue)).filter((filterValue) => !!filterValue)
             : [];

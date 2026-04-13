@@ -1,8 +1,11 @@
 ﻿{
-    "gallery":  [
-
-                ],
-    "slideshow":  [
-
-                  ]
+  "gallery": [
+    "002.webp",
+    "003.webp",
+    "0034.webp",
+    "005.webp",
+    "006.webp",
+    "cover.webp"
+  ],
+  "slideshow": []
 }

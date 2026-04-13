@@ -58,7 +58,19 @@
           });
         })
         .then(function(data) {
-          return Array.isArray(data) ? data : [];
+          if (Array.isArray(data)) {
+            return data;
+          }
+          if (data && Array.isArray(data.projects)) {
+            var orderMap = (data.galleryOrder && typeof data.galleryOrder === 'object') ? data.galleryOrder : {};
+            return data.projects.map(function(project) {
+              if (project && typeof project.id === 'string' && Object.prototype.hasOwnProperty.call(orderMap, project.id)) {
+                return Object.assign({}, project, { galleryOrder: orderMap[project.id] });
+              }
+              return project;
+            });
+          }
+          return [];
         })
         .catch(function() {
           return [];
