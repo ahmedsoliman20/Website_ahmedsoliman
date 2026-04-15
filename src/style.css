@@ -847,6 +847,14 @@ main.py-4 {
   padding-bottom: 2rem;
 }
 
+@media (max-width: 768px) {
+  .teaching-hero-sticky {
+    position: relative;
+    top: auto;
+    padding-top: 0;
+  }
+}
+
 #teaching-logo-filters {
   padding: 0.35rem 0;
 }

@@ -52,7 +52,8 @@
         "filters":  [
                         "design",
                         "research",
-                        "computational"
+                        "computational",
+                        "render"
                     ],
         "labels":  {
                        "desc":  "Project Description",
@@ -74,8 +75,8 @@
         "id":  "project_4",
         "title":  "The Chavilion: Scissor chair-pavilion",
         "filters":  [
-                        "design",
                         "research",
+                        "design",
                         "computational"
                     ],
         "labels":  {
@@ -99,7 +100,8 @@
         "title":  "ULB timber tower: timber is the new concrete ",
         "filters":  [
                         "design",
-                        "computational"
+                        "computational",
+                        "render"
                     ],
         "labels":  {
                        "desc":  "Project Description",
@@ -122,8 +124,7 @@
         "title":  "Konligo: Internship - Research and development ",
         "filters":  [
                         "professional",
-                        "research",
-                        "grahpic"
+                        "research"
                     ],
         "labels":  {
                        "desc":  "Project Description",
@@ -146,7 +147,6 @@
         "title":  "Prison de Saint-Gilles: 2030",
         "filters":  [
                         "design",
-                        "research",
                         "competition"
                     ],
         "labels":  {
@@ -217,7 +217,7 @@
         "filters":  [
                         "professional",
                         "design",
-                        "graphic"
+                        "render"
                     ],
         "labels":  {
                        "desc":  "Project Description",
@@ -263,7 +263,10 @@
     {
         "id": "project_12",
         "title": "Integration of rigid plates in deployable scissor structures",
-        "filters": [],
+        "filters": [
+            "research",
+            "computational"
+        ],
         "labels": {
             "desc": "Project Description",
             "date": "Project Date",
@@ -279,6 +282,77 @@
         "linktext": "",
         "subtitle": "geometrical modelling and design by prototyping",
         "text_2": ""
+    },
+    {
+        "id": "project_13",
+        "title": "Freelance Projects (2013–2019)",
+        "filters": [
+            "professional",
+            "render"
+        ],
+        "labels": {
+            "desc": "Project Description",
+            "date": "Project Date",
+            "role": "",
+            "client": "",
+            "visit": ""
+        },
+        "description": "This page presents a curated selection of freelance work developed between 2013 and 2019, spanning a wide range of design services across architecture and visualization.\n\nDuring this period, I worked independently on diverse projects that included architectural design, 3D rendering, and the development of execution drawings, as well as oversight of renovation works. The scope of work also extended to façade and elevation design, alongside various design outputs and technical consultations tailored to client needs.\n\nThese projects combine conceptual thinking with precise technical development. Visualizations were primarily produced using 3ds Max and V-Ray, enabling detailed and realistic representations that supported both the design process and effective client communication.",
+        "date": "2013–2019",
+        "role": "",
+        "client": "",
+        "publication": "",
+        "visit": "",
+        "linktext": "",
+        "subtitle": "Location: Egypt",
+        "text_2": ""
+    },
+    {
+        "id": "project_14",
+        "title": "3D Car Modeling from Scratch",
+        "filters": [
+            "design"
+        ],
+        "labels": {
+            "desc": "Project Description",
+            "date": "Project Date",
+            "role": "",
+            "client": "",
+            "visit": ""
+        },
+        "description": "This project explores the complete process of building a 3D car model from the ground up using 3ds Max, without relying on any imported geometry. The model was developed through a polygonal modeling workflow, starting from simple primitives and progressively refined to achieve accurate proportions. The final model was then prepared and optimized for rendering using the Mental Ray engine. In addition, AI-based rendering tools (Nano Banana 2) were used to further refine and validate the visual concept, supporting a more realistic proof of concept and enhancing the overall presentation quality.",
+        "date": "2018",
+        "role": "", 
+        "client": "",
+        "publication": "",
+        "visit": "",
+        "linktext": "",
+        "subtitle": "",
+        "text_2": ""
+    },
+    {
+        "id": "project_15",
+        "title": "Origami villa",
+        "filters": [
+            "design",
+            "render"
+        ],
+        "labels": {
+            "desc": "Project Description",
+            "date": "Project Date",
+            "role": "",
+            "client": "",
+            "visit": ""
+        },
+        "description": "This project presents a conceptual villa design that explores architectural form through the lens of origami-inspired folding. The design focuses on translating folded geometries into spatial compositions, where surfaces and volumes emerge from continuous, dynamic transformations.",
+        "date": "2019",
+        "role": "",
+        "client": "",
+        "publication": "",
+        "visit": "",
+        "linktext": "",
+        "subtitle": "",
+        "text_2": ""
     }
 ],
   "galleryOrder": {
@@ -290,9 +364,12 @@
     "project_6":  4,
     "project_7":  7,
     "project_8":  8,
-    "project_9":  12,
+    "project_9":  15,
     "project_10": 10,
     "project_11":  2,
-    "project_12":  6
+    "project_12":  6,
+    "project_13": 13,
+    "project_14": 14,
+    "project_15": 12
 }
 }

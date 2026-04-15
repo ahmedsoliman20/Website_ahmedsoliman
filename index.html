@@ -441,9 +441,45 @@
       }
     }
 
+    @media (max-width: 768px) {
+      .gallery-section-wrap {
+        flex-direction: column;
+      }
+
+      #gallery-filters {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        order: -1;
+        width: 100vw;
+        align-self: stretch;
+        margin: 0 calc(50% - 50vw);
+        padding: 10px 24px 12px;
+        box-sizing: border-box;
+        background: #252525;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px 16px;
+        z-index: 20;
+      }
+
+      .gallery-filter-key {
+        text-align: left;
+      }
+
+      .gallery-section-wrap #gallery-grid {
+        width: 100%;
+        padding-top: 0;
+      }
+    }
+
     @media (max-width: 576px) {
       #gallery-grid {
         column-count: 1;
+        padding-top: 0;
       }
     }
 
