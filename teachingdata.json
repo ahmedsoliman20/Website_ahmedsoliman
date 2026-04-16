@@ -1,34 +1,34 @@
 ﻿[
     {
-        "category": "Spatial structures & Computational Design",
+        "category": "Spatial Structures & Computational Design",
         "items": [
             {
                 "title": "Parametric Design of Transformable Structures",
                 "years": "2022/23, 2023/24, 2024/25, 2025/26",
-                "description": "Prof. dr. ir. arch. Niels De Temmerman, MSc. of architectural engineering, Bruface (Vrije Universiteit Brussel & universite libre de bruxelles)",
+                "description": "Prof. dr. ir. arch. Niels De Temmerman, MSc in Architectural Engineering, Bruface (Vrije Universiteit Brussel & Université libre de Bruxelles).",
                 "role": "Teaching Assistant"
             },
             {
                 "title": "Spatial Structures: Design and Analysis",
                 "years": "2022/23, 2023/24, 2024/25",
-                "description": "Prof. dr. ir. arch Lars De Laet, MSc. of architectural engineering, Bruface (Vrije Universiteit Brussel & universite libre de bruxelles).",
+                "description": "Prof. dr. ir. arch. Lars De Laet, MSc in Architectural Engineering, Bruface (Vrije Universiteit Brussel & Université libre de Bruxelles).",
                 "role": "Teaching Assistant"
             },
             {
-                "title": "Elective 2\\Computer Applications for Architects 2-ARC E02",
+                "title": "Elective 2: Computer Applications for Architects 2 – ARC E02",
                 "years": "2019/20",
-                "description": "BSc. of Architectural Engineering, Third year, Future University in Egypt.",
+                "description": "BSc in Architectural Engineering, third year, Future University in Egypt.",
                 "role": "Teaching Assistant"
             }
         ]
     },
     {
-        "category": "Research methods",
+        "category": "Research Methods",
         "items": [
             {
-                "title": "Research methods in architectural engineering",
+                "title": "Research Methods in Architectural Engineering",
                 "years": "2022/23",
-                "description": "Prof. dr. ir. arch. Ine Wouters & Prof. dr. ir. arch. Ahmed Z. Khan, MSc. of architectural engineering, Bruface (Vrije Universiteit Brussel & universite libre de bruxelles).",
+                "description": "Prof. dr. ir. arch. Ine Wouters & Prof. dr. ir. arch. Ahmed Z. Khan, MSc in Architectural Engineering, Bruface (Vrije Universiteit Brussel & Université libre de Bruxelles).",
                 "role": "Teaching Assistant"
             }
         ]
@@ -37,15 +37,15 @@
         "category": "Modeling & Rendering",
         "items": [
             {
-                "title": "Autodesk 3ds Max: modeling & rendering for architecture",
+                "title": "Autodesk 3ds Max: Modeling & Rendering for Architecture",
                 "years": "2015/2016",
-                "description": "Two weeks workshop, Future University in Egypt.",
+                "description": "Two-week workshop, Future University in Egypt.",
                 "role": "Workshop Instructor"
             }
         ]
     },
     {
-        "category": "Design studios",
+        "category": "Design Studios",
         "items": [
             {
                 "title": "Design Studio 6",
@@ -54,39 +54,39 @@
                 "role": "Teaching Assistant"
             },
             {
-                "title": "Architectural Design Studio 1&2-ARC 211 & ARC 212",
+                "title": "Architectural Design Studio 1 & 2 – ARC 211 & ARC 212",
                 "years": "2014/15, 2015/16, 2016/17, 2017/18",
-                "description": "BSc. of Architectural Engineering, Second year, Future University in Egypt.",
+                "description": "BSc in Architectural Engineering, second year, Future University in Egypt.",
                 "role": "Teaching Assistant"
             },
             {
-                "title": "Architectural Design Studio 3&4-ARC 311 & ARC 312",
+                "title": "Architectural Design Studio 3 & 4 – ARC 311 & ARC 312",
                 "years": "2014/15, 2018/19",
-                "description": "BSc. of Architectural Engineering, Third year, Future University in Egypt.",
+                "description": "BSc in Architectural Engineering, third year, Future University in Egypt.",
                 "role": "Teaching Assistant"
             },
             {
-                "title": "Architectural Design Studio 5&6-ARC 411 & ARC 412",
+                "title": "Architectural Design Studio 5 & 6 – ARC 411 & ARC 412",
                 "years": "2014/15, 2016/17, 2019/20",
-                "description": "BSc. of Architectural Engineering, Fourth year, Future University in Egypt.",
+                "description": "BSc in Architectural Engineering, fourth year, Future University in Egypt.",
                 "role": "Teaching Assistant"
             },
             {
-                "title": "Architectural Design Studio 7-ARC 511",
+                "title": "Architectural Design Studio 7 – ARC 511",
                 "years": "2015/16, 2016/17",
-                "description": "BSc. of Architectural Engineering, Fifth year, Future University in Egypt.",
+                "description": "BSc in Architectural Engineering, fifth year, Future University in Egypt.",
                 "role": "Teaching Assistant"
             },
             {
-                "title": "Graduation Project-ARC 502",
+                "title": "Graduation Project – ARC 502",
                 "years": "2014/15, 2016/17",
-                "description": "BSc. of Architectural Engineering, Fifth year, Future University in Egypt.",
+                "description": "BSc in Architectural Engineering, fifth year, Future University in Egypt.",
                 "role": "Teaching Assistant"
             }
         ]
     },
     {
-        "category": "Building technology",
+        "category": "Building Technology",
         "items": [
             {
                 "title": "Building Construction 1",
@@ -95,27 +95,27 @@
                 "role": "Teaching Assistant"
             },
             {
-                "title": "Building Construction & Materials 1&2-ARC241 & ARC242",
+                "title": "Building Construction & Materials 1 & 2 – ARC 241 & ARC 242",
                 "years": "2014/15, 2015/16, 2016/17, 2017/18, 2018/19",
-                "description": "BSc. of Architectural Engineering, Second year, Future University in Egypt.",
+                "description": "BSc in Architectural Engineering, second year, Future University in Egypt.",
                 "role": "Teaching Assistant"
             },
             {
-                "title": "Building Construction & Materials 3&4-ARC341 & ARC342",
+                "title": "Building Construction & Materials 3 & 4 – ARC 341 & ARC 342",
                 "years": "2014/15, 2019/20",
-                "description": "BSc. of Architectural Engineering, Third year, Future University in Egypt.",
+                "description": "BSc in Architectural Engineering, third year, Future University in Egypt.",
                 "role": "Teaching Assistant"
             },
             {
-                "title": "Execution Designs 1 & 2 -ARC 471 & ARC 472",
+                "title": "Execution Designs 1 & 2 – ARC 471 & ARC 472",
                 "years": "2016/17, 2017/18, 2018/19, 2019/20",
-                "description": "BSc. of Architectural Engineering, Forth year, Future University in Egypt.",
+                "description": "BSc in Architectural Engineering, fourth year, Future University in Egypt.",
                 "role": "Teaching Assistant"
             }
         ]
     },
     {
-        "category": "Visual drawings",
+        "category": "Visual Drawings",
         "items": [
             {
                 "title": "Free-hand Representation for Architects (ARCH 221/1511)",
@@ -124,33 +124,33 @@
                 "role": "Teaching Assistant"
             },
             {
-                "title": "Foundations of 3-dimensional (ARCH 250/2512)",
+                "title": "Foundations of 3-Dimensional Design (ARCH 250/2512)",
                 "years": "2019/20",
                 "description": "Prof. Hoda Shaheen, American University in Cairo.",
                 "role": "Teaching Assistant"
             },
             {
-                "title": "Graphic & Visual Skills 1 & 2 - ARC 231 & ARC 232",
+                "title": "Graphic & Visual Skills 1 & 2 – ARC 231 & ARC 232",
                 "years": "2015/16, 2017/18, 2018/19, 2019/20",
-                "description": "BSc. of Architectural Engineering, Second year, Future University in Egypt.",
+                "description": "BSc in Architectural Engineering, second year, Future University in Egypt.",
                 "role": "Teaching Assistant"
             },
             {
-                "title": "History & Theories of Architecture 1 &2 -ARC221 & ARC222",
+                "title": "History & Theories of Architecture 1 & 2 – ARC 221 & ARC 222",
                 "years": "2014/15, 2015/16",
-                "description": "BSc. of Architectural Engineering, Second year, Future University in Egypt.",
+                "description": "BSc in Architectural Engineering, second year, Future University in Egypt.",
                 "role": "Teaching Assistant"
             },
             {
-                "title": "History & Theories of Architecture 4 - &ARC322",
+                "title": "History & Theories of Architecture 4 – ARC 322",
                 "years": "2016/17, 2017/18",
-                "description": "BSc. of Architectural Engineering, Third year, Future University in Egypt.",
+                "description": "BSc in Architectural Engineering, third year, Future University in Egypt.",
                 "role": "Teaching Assistant"
             },
             {
-                "title": "History & Theories of Architecture 6-ARC422",
+                "title": "History & Theories of Architecture 6 – ARC 422",
                 "years": "2017/18",
-                "description": "BSc. of Architectural Engineering, Forth year, Future University in Egypt.",
+                "description": "BSc in Architectural Engineering, fourth year, Future University in Egypt.",
                 "role": "Teaching Assistant"
             }
         ]

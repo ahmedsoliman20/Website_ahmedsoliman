@@ -94,6 +94,35 @@
     return (path || '').replace(/\/$/, '').toLowerCase();
   }
 
+  function getCurrentSiteLanguage() {
+    try {
+      const storedLanguage = (localStorage.getItem('ahmedsoliman.site-language') || '').toLowerCase();
+      if (storedLanguage === 'nl') {
+        return 'nl';
+      }
+    } catch (error) {
+      // Ignore localStorage issues.
+    }
+
+    return (document.documentElement.lang || 'en').toLowerCase() === 'nl' ? 'nl' : 'en';
+  }
+
+  function getPagerText() {
+    return getCurrentSiteLanguage() === 'nl'
+      ? {
+          previousLabel: 'Vorig project',
+          nextLabel: 'Volgend project',
+          previousAria: 'Vorig project: ',
+          nextAria: 'Volgend project: '
+        }
+      : {
+          previousLabel: 'Previous Project',
+          nextLabel: 'Next Project',
+          previousAria: 'Previous project: ',
+          nextAria: 'Next project: '
+        };
+  }
+
   function createProjectHref(projectId) {
     const projectNumber = getProjectNumber(projectId);
     if (!projectNumber) {
@@ -158,10 +187,11 @@
   }
 
   function createPreviousLink(project) {
+    const pagerText = getPagerText();
     const anchor = document.createElement('a');
     anchor.href = project.href;
     anchor.className = 'project-pager-link project-pager-link-prev text-decoration-none d-inline-flex align-items-center gap-2';
-    anchor.setAttribute('aria-label', 'Previous project: ' + project.title);
+    anchor.setAttribute('aria-label', pagerText.previousAria + project.title);
 
     const arrow = document.createElement('span');
     arrow.className = 'project-pager-arrow';
@@ -169,7 +199,7 @@
 
     const label = document.createElement('span');
     label.className = 'project-pager-label';
-    label.textContent = 'Previous Project';
+    label.textContent = pagerText.previousLabel;
 
     anchor.appendChild(arrow);
     anchor.appendChild(label);
@@ -178,14 +208,15 @@
   }
 
   function createNextLink(project) {
+    const pagerText = getPagerText();
     const anchor = document.createElement('a');
     anchor.href = project.href;
     anchor.className = 'project-pager-link project-pager-link-next text-decoration-none d-inline-flex align-items-center gap-2';
-    anchor.setAttribute('aria-label', 'Next project: ' + project.title);
+    anchor.setAttribute('aria-label', pagerText.nextAria + project.title);
 
     const label = document.createElement('span');
     label.className = 'project-pager-label';
-    label.textContent = 'Next Project';
+    label.textContent = pagerText.nextLabel;
 
     const arrow = document.createElement('span');
     arrow.className = 'project-pager-arrow';

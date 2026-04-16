@@ -1,0 +1,81 @@
+{
+  "sectionTitles": {
+    "publications": "Publicaties",
+    "supervised": "Begeleide werken",
+    "outreach": "Publieke activiteiten"
+  },
+  "publications": [
+    {
+      "text": "Designing from Waste: Computational Reuse of Formwork Wood in Lightweight Structures. \n Nicolas, Gabrielle; Soliman, Ahmed; De Laet, Lars; Snoeck, Didier. \n Proceedings of the IASS Annual Symposium 2025: The living past as a source of innovation. 2025. p. 1-11.",
+      "link": "https://researchportal.vub.be/en/publications/designing-from-waste-computational-reuse-of-formwork-wood-in-ligh/"
+    },
+    {
+      "text": "Exploring the use of planar scissor structures as actuation falsework systems for segmented singly curved shells. \n Soliman, Ahmed; Recker, Laura ; De Laet, Lars ; De Temmerman, Niels. \n Proceedings of IASS Annual Symposia, IASS 2025 . Mexico City : International Association for Shell and Spatial Structures (IASS), 2025. p. 1-12.",
+      "link": "https://researchportal.vub.be/en/publications/exploring-the-use-of-planar-scissor-structures-as-actuation-false/"
+    },
+    {
+      "text": "Exploring Rigid Plates Integration in Barrel Vault Deployable Scissor Systems. \n Soliman, Ahmed; Tysmans, Tine; De Laet, Lars ; De Temmerman, Niels. \n Proceedings of IASS Annual Symposia: IASS 2024 Zurich Symposium: Structural Morphology. Vol. 2024 Zurich, Switzerland : International Association for Shell and Spatial Structures (IASS), 2024. p. 1-6.",
+      "link": "https://researchportal.vub.be/en/publications/exploring-rigid-plates-integration-in-barrel-vault-deployable-sci/"
+    },
+    {
+      "text": "Design and construction of the ReciPlyDome, a lightweight modular reciprocal dome. \n Leemans, Ellen; Soliman, Ahmed; Brancart, Stijn ; De Temmerman, Niels ; De Laet, Lars. \n Integration of Design and Fabrication: Proceedings of the International Association for Shell and Spatial Structures Annual Sumposium 2023. ed. / Yi Min Xie; Jane Burry; Ting-Uei Lee; Jiaming Ma. IASS, 2023. p. 1024-1034.",
+      "link": "https://researchportal.vub.be/en/publications/design-and-construction-of-the-reciplydome-a-lightweight-modular-/"
+    },
+    {
+      "text": "Double-curved plate components in configurable systems. \n Soliman, Ahmed; Leemans, Ellen; De Laet, Lars ; De Temmerman, Niels. \n Integration of Design and Fabrication: Proceedings of the International Association for Shell and Spatial Structures Annual Symposium 2023. ed. / Yi Min Xie; Jane Burry; Ting-Uei Lee; Jiaming Ma. IASS, 2023. p. 983-994.",
+      "link": "https://researchportal.vub.be/en/publications/double-curved-plate-components-in-configurable-systems/"
+    },
+    {
+      "text": "Bending-active plate components in configurable kit-of-parts systems\nSoliman, A. (Masterproef). Sept 2022",
+      "link": "https://researchportal.vub.be/en/studentTheses/bending-active-plate-components-in-configurable-kit-of-parts-syst/"
+    }
+  ],
+  "supervised": [
+    {
+      "text": "A Deployable Scissor-Rail Falsework System for the On-Site Construction of Segmented Singly Curved Shells\nRecker, L. Promotor: De Temmerman, N. Adviseur: Soliman, A. Jury: Van de Voorde, S.; Devos, R.; Bouillard, P.; Koumar, A. , 2 Sept 2025",
+      "link": ""
+    },
+    {
+      "text": "A reconfigurable kit-of-parts for temporary structures using lightweight polygonal plate elements\nvan Daalen, R. A. Promotor: De Laet, L. Co-promotor: De Temmerman, N. Adviseurs: Leemans, E.; Soliman, A. Jury: Van de Voorde, S.; Devos, R.; Bouillard, P.; Van Sande, H. , 21 Jun 2024",
+      "link": ""
+    },
+    {
+      "text": "Controlled Buckling Actuation of Kirigami Modules: A Design-Driven Experimental Exploration\nGiraud, M.-L. Promotor: De Temmerman, N. Adviseur: Soliman, A. Jury: Van de Voorde, S.; Devos, R.; Brancart, S.; De Laet, L. , 26 Jun 2023",
+      "link": ""
+    },
+    {
+      "text": "Deployable bending-active grid as support for temporary shell structures\nDiliën, F. Promotor: De Laet, L. Adviseur: Soliman, A. Jury: Van de Voorde, S.; Devos, R.; Bouillard, P.; De Temmerman, N. , 4 Sept 2023",
+      "link": ""
+    },
+    {
+      "text": "Deployable scissor grid structures: development and computation of the hexagonal dome \nMevis, W. L. P. Promotor: De Temmerman, N. Adviseurs: Leemans, E.; Soliman, A. Jury: Van de Voorde, S.; Devos, R.; Snoeck, D.; De Laet, L. , Jan 2024",
+      "link": ""
+    },
+    {
+      "text": "Designing and prototyping modular structures using thin wooden plates through active bending \nMens, N. Promotor: De Laet, L. Adviseur: Soliman, A. Jury: Van de Voorde, S.; Devos, R.; Snoeck, D.; De Temmerman, N. , 26 Jun 2023",
+      "link": ""
+    },
+    {
+      "text": "Elastic Geodesic Gridshells based on Reciprocal Frames\nMaes, F. Promotor: De Temmerman, N. Co-promotor: De Laet, L. Adviseurs: Leemans, E.; Soliman, A. Jury: Van de Voorde, S.; Devos, R.; Belmans, B. , 20 Jun 2024",
+      "link": ""
+    }
+  ],
+  "outreach": [
+    {
+      "text": "Gastlezing: Architecture Beyond Limits: Structural Innovation in Extreme Environments, mrt 2026, Cairo\nGehost door Dr. arch. Mohamed Mahmoud, academiejaar 2025/2026",
+      "link": ""
+    },
+    {
+      "text": "Gastlezing: Innovative structural techniques: A dialog between geometry and function, mrt 2024, Cairo\nGehost door Dr. arch. Mohamed Mahmoud, academiejaar 2023/2024",
+      "link": ""
+    },
+    {
+      "text": "Gastlezing: Foundations of Form: Exploring the Structural Core of Architecture, apr 2024, Cairo\nGehost door Dr. arch. Randa Medhat, academiejaar 2023/2024",
+      "link": ""
+    },
+    {
+      "text": "Gastlezing: Temporary Is the New Permanent: A look into lightweight temporary structures, mei 2023, Cairo\nGehost door de afdeling architectuur aan Future University in Cairo, academiejaar 2022/2023",
+      "link": ""
+    }
+  ]
+}

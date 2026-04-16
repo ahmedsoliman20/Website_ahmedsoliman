@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="../../src/style.css">
+  <script defer src="../../src/i18n.js"></script>
 <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DCJVGXKXL5"></script>
   <script>
@@ -22,7 +23,7 @@
 
 <body class="project-page">
 
-<header class="pt-5 pb-0">
+<header class="site-header pt-5 pb-4">
   <nav class="navbar navbar-expand-xl">
     <div class="container px-4 d-flex align-items-center position-relative">
       <div class="d-flex justify-content-start flex-grow-1">
@@ -32,7 +33,7 @@
       <div class="d-flex align-items-center header-right-section">
         <div class="collapse navbar-collapse custom-dropdown" id="mainNav"> 
           <ul class="navbar-nav gap-lg-4 text-uppercase">
-            <li class="nav-item"><a class="nav-link active p-0" href="/">Work</a></li>
+            <li class="nav-item"><a class="nav-link active p-0" href="../../index.html">Work</a></li>
             <li class="nav-item"><a class="nav-link p-0" href="../../research.html">Research</a></li>
             <li class="nav-item"><a class="nav-link p-0" href="../../news.html">News</a></li>
             <li class="nav-item"><a class="nav-link p-0" href="../../teaching.html">Teaching</a></li>
@@ -40,21 +41,7 @@
           </ul>
         </div>
 
-        <div class="d-flex align-items-center gap-3 ms-xl-5"> 
-          <div class="d-flex gap-3 align-items-center">
-            <a href="https://www.researchgate.net/profile/Ahmed_Soliman141/research" class="text-reset opacity-75 d-flex align-items-center"> 
-              <img src="../../icons_header/RNG.png" alt="R" style="width: 18px; height: 18px; filter: invert(1);">
-            </a>
-            <a href="https://www.linkedin.com/in/ahmedsoliman7/" class="text-reset opacity-75 d-flex align-items-center">
-              <img src="../../icons_header/linkedin2.png" alt="L" style="width: 18px; height: 18px; filter: invert(1);">
-            </a>
-            <a href="https://www.instagram.com/ahsolimann/" class="text-reset opacity-75 d-flex align-items-center">
-              <img src="../../icons_header/instagram-53.png" alt="I" style="width: 18px; height: 18px; filter: invert(1);">
-            </a>
-            <a href="https://www.vub.be/arch/people/ahmed-soliman" class="text-reset opacity-75 d-flex align-items-center">
-              <img src="../../icons_header/arch.png" alt="P" style="width: 18px; height: 18px; filter: invert(1);">
-            </a>
-          </div>
+        <div class="d-flex align-items-center gap-3 ms-xl-5">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -133,8 +120,19 @@
   const fileName = window.location.pathname.split('/').pop();
   const projectId = fileName.replace('.html', '');
 
+  function getProjectDataPath() {
+    try {
+      const savedLanguage = (localStorage.getItem('ahmedsoliman.site-language') || document.documentElement.lang || 'en').toLowerCase();
+      return savedLanguage === 'nl'
+        ? '../../projects/projects_data_nl.json'
+        : '../../projects/projects_data.json';
+    } catch (error) {
+      return '../../projects/projects_data.json';
+    }
+  }
+
   // 2. Fetch the JSON file
-  fetch('../../projects/projects_data.json')
+  fetch(getProjectDataPath(), { cache: 'no-cache' })
     .then(response => {
       if (!response.ok) throw new Error("Network response was not ok");
       return response.json();

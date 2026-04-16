@@ -16,26 +16,74 @@ body {
   margin: 0;
 }
 
+html[data-i18n-ready="false"] .site-header {
+  visibility: hidden;
+}
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.38rem 0.55rem;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.lang-btn:hover {
+  color: #fff;
+  opacity: 1;
+}
+
+.lang-btn.is-active {
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+}
+
+@media (max-width: 576px) {
+  .language-switcher {
+    margin-right: 0.25rem;
+  }
+
+  .lang-btn {
+    font-size: 0.68rem;
+    padding: 0.35rem 0.5rem;
+  }
+}
+
 /* ==========================================================================
    2. REVEAL ANIMATIONS
    The "Swipe In" effect used when pages or items first load.
    ========================================================================== */
-@keyframes swipeIn {
+@keyframes softFadeRise {
   0% {
     opacity: 0;
-    transform: translateX(-30px);
-    clip-path: inset(0 100% 0 0);
+    transform: translate3d(0, 16px, 0) scale(0.985);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
-    clip-path: inset(0 0 0 0);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
 .reveal-item {
   opacity: 0;
-  animation: swipeIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  will-change: transform, opacity;
+  animation: softFadeRise 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
   break-inside: avoid; /* Prevents items from breaking across columns in masonry */
 }
 
@@ -108,6 +156,19 @@ body {
   color: var(--accent) !important; 
 }
 
+.header-right-section {
+  flex-shrink: 0;
+}
+
+.header-right-section > .d-flex.align-items-center.gap-3.ms-xl-5 {
+  min-width: 140px;
+  justify-content: flex-end;
+}
+
+header .navbar h1 {
+  flex-shrink: 0;
+}
+
 /* Category Filter Buttons  in the news page*/
 .btn-filter {
   border: 1px solid rgba(134, 134, 134, 0.2);
@@ -141,7 +202,28 @@ body {
 
 .project-page .sticky-top { padding-top: 20px; }
 .project-page .text-muted { color: #666 !important; letter-spacing: 0.1em; }
-.project-page .container { max-width: 1200px; }
+
+@media (min-width: 992px) {
+  .project-page main.container > .row:first-of-type > .col-lg-8,
+  .project-page.project-page-roomy .project-layout-media {
+    flex: 0 0 61%;
+    width: 61%;
+  }
+
+  .project-page main.container > .row:first-of-type > .col-lg-4,
+  .project-page.project-page-roomy .project-layout-text {
+    flex: 0 0 39%;
+    width: 39%;
+  }
+
+  .project-page main.container > section > .row.justify-content-center.text-center.mb-5 > .col-lg-8,
+  .project-page main.container > section > .row.justify-content-center.text-center.mb-5 > .col-lg-9,
+  .project-page.project-page-roomy .project-layout-copy {
+    flex: 0 0 72%;
+    width: 72%;
+  }
+}
+
 .project-page #fetch-title {
   font-size: clamp(1.45rem, 2.9vw, 2rem);
   line-height: 1.1;
@@ -222,6 +304,7 @@ body {
   .header-right-section {
     width: 100%;
     margin-left: 0;
+    flex-shrink: 1;
   }
 
   .header-right-section > .d-flex.align-items-center.gap-3.ms-xl-5 {
@@ -758,55 +841,63 @@ main.py-4 {
 /* Container for each course row */
 .section-container {
   margin-bottom: 1.1rem; /* Space between different courses */
+  align-items: flex-start;
 }
 
 /* Left side: Role text */
 .role-text {
-    font-family: 'Helvetica', Arial, sans-serif;
-    font-style: italic;
-    font-weight: 700;
-    font-size: 1rem;
-    color: #ffffff; /* Adjust based on your background */
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    color: rgba(170, 170, 170, 0.88);
+    margin-top: 0.1rem;
 }
 
 /* Right side: The main course title */
 .entry-title {
-    font-family: 'Helvetica', Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 700;
-    font-size: 1.1rem;
-  margin-bottom: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.55;
+    letter-spacing: 0;
+    margin-bottom: 0.15rem;
     color: #ffffff;
-    border: none; /* Ensures no default h2 borders interfere */
+    border: none;
 }
 
 .entry-meta-badges {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 0.24rem;
+  margin-bottom: 0.35rem;
 }
 
 .teaching-badge {
   display: inline-flex;
   align-items: center;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  font-family: "Inter", sans-serif;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.64rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-transform: none;
 }
 
 .role-badge {
-  background: rgba(255, 255, 255, 0.14);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(235, 235, 235, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .years-badge {
-  background: rgba(205, 210, 217, 0.1);
-  color: #d5d9df;
-  border: 1px solid rgba(205, 210, 217, 0.28);
+  background: rgba(205, 210, 217, 0.04);
+  color: rgba(213, 217, 223, 0.88);
+  border: 1px solid rgba(205, 210, 217, 0.12);
 }
 
 /* The Years/Dates */
@@ -819,16 +910,18 @@ main.py-4 {
 
 /* The Professor/University details */
 .entry-description {
-    font-size: 0.95rem;
-    line-height: 1.45;
-    color: #a0a0a0; /* Muted gray for a professional look */
-    max-width: 600px;
-  margin-bottom: 0.1rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: rgba(230, 230, 230, 0.82);
+    max-width: 720px;
+    margin-bottom: 0;
 }
 
 .teaching-filter-wrapper {
   top: 8px;
   z-index: 1001;
+  margin-bottom: -0.35rem;
 }
 
 /* Sticky hero carousel */
@@ -836,7 +929,7 @@ main.py-4 {
   position: sticky;
   top: 0;
   z-index: 0;
-  padding-top: 12px;
+  padding-top: 2px;
 }
 
 /* Content layer slides over the sticky carousel */
@@ -844,8 +937,10 @@ main.py-4 {
   position: relative;
   z-index: 1;
   background: var(--bg-dark);
+  padding-top: 0.75rem;
   padding-bottom: 2rem;
 }
+
 
 @media (max-width: 768px) {
   .teaching-hero-sticky {
@@ -855,30 +950,40 @@ main.py-4 {
   }
 }
 
+.teaching-filter-label {
+  margin: 0 0 0.16rem;
+  font-size: 0.62rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+}
+
 #teaching-logo-filters {
-  padding: 0.35rem 0;
+  padding: 0.08rem 0 0;
 }
 
 .teaching-logo-filter {
-  width: 74px;
-  height: 74px;
+  width: 52px;
+  height: 52px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 9px;
   background: rgba(255, 255, 255, 0.04);
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 10px;
-  gap: 10px;
+  padding: 7px;
+  gap: 8px;
   overflow: hidden;
   transition: width 0.28s ease, transform 0.22s ease, border-color 0.22s ease, background 0.22s ease, opacity 0.22s ease;
   opacity: 0.72;
 }
 
 .teaching-logo-filter img {
-  width: 52px;
-  height: 52px;
-  flex: 0 0 52px;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
   object-fit: contain;
 }
 
@@ -894,16 +999,21 @@ main.py-4 {
   transition: max-width 0.28s ease, opacity 0.22s ease;
 }
 
+.teaching-logo-filter .institution-meta.always-visible {
+  max-width: 120px;
+  opacity: 1;
+}
+
 .teaching-logo-filter .institution-name {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   text-align: left;
 }
 
 .teaching-logo-filter .institution-location {
-  margin-top: 2px;
-  font-size: 0.68rem;
+  margin-top: 1px;
+  font-size: 0.62rem;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -914,7 +1024,7 @@ main.py-4 {
 }
 
 .teaching-logo-filter.active {
-  width: 290px;
+  width: fit-content;
   border-color: #ffffff;
   background: rgba(255, 255, 255, 0.12);
   opacity: 1;
@@ -922,8 +1032,12 @@ main.py-4 {
 }
 
 .teaching-logo-filter.active .institution-meta {
-  max-width: 210px;
+  max-width: 260px;
   opacity: 1;
+}
+
+.teaching-logo-filter-all {
+  width: fit-content;
 }
 
 .teaching-logo-filter:focus-visible {
@@ -932,17 +1046,17 @@ main.py-4 {
 }
 
 .teaching-action-link {
-  min-height: 74px;
-  min-width: 260px;
+  min-height: 52px;
+  min-width: 182px;
   margin-left: auto;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 9px;
   background: rgba(255, 255, 255, 0.04);
   color: #f2f2f2;
-  display: inline-flex;
+  display: none;
   align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
+  gap: 10px;
+  padding: 7px 10px;
   text-decoration: none;
   transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
 }
@@ -976,38 +1090,43 @@ main.py-4 {
   }
 
   .teaching-logo-filter {
-    width: 62px;
-    height: 62px;
+    width: 50px;
+    height: 50px;
     border-radius: 8px;
-    padding: 8px;
+    padding: 7px;
   }
 
   .teaching-logo-filter img {
-    width: 44px;
-    height: 44px;
-    flex-basis: 44px;
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
   }
 
   .teaching-logo-filter.active {
-    width: 240px;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .teaching-logo-filter-all {
+    width: fit-content;
   }
 
   .teaching-logo-filter .institution-name {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
   }
 
   .teaching-logo-filter .institution-location {
-    font-size: 0.64rem;
+    font-size: 0.58rem;
   }
 
   .teaching-logo-filter.active .institution-meta {
-    max-width: 165px;
+    max-width: 120px;
   }
 
   .teaching-action-link {
-    min-height: 62px;
-    min-width: 210px;
-    padding: 8px 12px;
+    min-height: 50px;
+    min-width: 170px;
+    padding: 7px 10px;
     margin-left: auto;
     margin-right: auto;
     flex-basis: 100%;
@@ -1099,4 +1218,116 @@ main.py-4 {
 
 .research-page .site-footer {
   margin-top: 48px;
+}
+
+/* ==========================================================================
+   12. ELEGANT PAGE APPEAR TRANSITION (all inner pages, excluding home)
+   ========================================================================== */
+@view-transition {
+  navigation: auto;
+}
+
+body.teaching-page .teaching-hero-sticky,
+body.teaching-page .teaching-content-layer,
+body.teaching-page .teaching-logo-filter,
+body.teaching-page .teaching-logo-filter .institution-meta,
+body.teaching-page .teaching-action-link,
+body.teaching-page .site-footer .footer-links a,
+body.teaching-page .site-footer .social-links a,
+body.teaching-page .site-footer .back-to-top {
+  animation: none !important;
+  transition: none !important;
+}
+
+body.teaching-page .teaching-hero-sticky,
+body.teaching-page .teaching-content-layer {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  will-change: auto;
+  view-transition-name: none;
+}
+
+body.teaching-page .teaching-logo-filter:hover,
+body.teaching-page .teaching-action-link:hover,
+body.teaching-page .site-footer .social-links a:hover {
+  transform: none !important;
+}
+
+body:not(.home-page):not(.teaching-page) main,
+body:not(.home-page):not(.teaching-page) .teaching-hero-sticky,
+body:not(.home-page):not(.teaching-page) .teaching-content-layer {
+  opacity: 0;
+  transform: translateY(18px) scale(0.997);
+  filter: blur(4px);
+  animation: elegantPageAppear 0.62s cubic-bezier(0.22, 1, 0.36, 1) 0.03s forwards;
+  will-change: opacity, transform, filter;
+}
+
+.site-header,
+.site-footer,
+footer {
+  view-transition-name: none;
+}
+
+body:not(.home-page):not(.teaching-page) main {
+  view-transition-name: page-content;
+}
+
+body:not(.home-page):not(.teaching-page) .teaching-hero-sticky {
+  view-transition-name: teaching-hero;
+}
+
+body:not(.home-page):not(.teaching-page) .teaching-content-layer {
+  view-transition-name: teaching-content;
+}
+
+@keyframes elegantPageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.997);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes elegantPageExit {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(8px) scale(0.999);
+    filter: blur(2px);
+  }
+}
+
+::view-transition-old(page-content),
+::view-transition-old(teaching-hero),
+::view-transition-old(teaching-content) {
+  animation: elegantPageExit 0.18s ease both;
+}
+
+::view-transition-new(page-content),
+::view-transition-new(teaching-hero),
+::view-transition-new(teaching-content) {
+  animation: elegantPageAppear 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:not(.home-page) main,
+  body:not(.home-page) .teaching-hero-sticky,
+  body:not(.home-page) .teaching-content-layer {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    animation: none;
+    will-change: auto;
+  }
 }

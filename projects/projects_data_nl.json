@@ -1,0 +1,325 @@
+{
+  "projects": [
+    {
+      "id": "project_1",
+      "title": "The Univer-City",
+      "filters": ["design", "research"],
+      "labels": {
+        "desc": "Projectbeschrijving",
+        "date": "Projectdatum",
+        "role": "Rol",
+        "client": "Team",
+        "visit": "  "
+      },
+      "description": "De universiteit is een smeltkroes van verschillende wetenschappen en verschillende vormen van kennis. Het is een alternatieve discipline die onze samenleving indirect ondersteunt. Het idee van universe-city wil de denkbeeldige grens tussen deze twee entiteiten doorbreken en van de universiteit een open ruimte maken, met diverse invalshoeken. In onze visie op het territorium is het logisch om Brussel te zien als een complex web, waarin de universe-cities een belangrijke rol spelen. De Solbosch-campus speelt daarin een belangrijke rol. We brachten 5 hoofdthema's van de Solbosch-campus en haar omgeving in kaart op de schaal van het Brussels University District. De verbinding van de campus met de stad, mobiliteitssystemen, landschapsontwerp, milieuontwikkelingen (waaronder waterbeheer en energie) en het idee van harmonie in brede zin zijn de voornaamste aandachtspunten. Deze strategieën helpen ons om duurzaamheid verder te bespreken dan alleen milieukwesties; ook sociale en economische niveaus worden meegenomen. Door de universiteit te verbinden met de stad Brussel wordt de campus omgevormd tot een open ruimte voor de buurt. Onze eerste ambitie is om de campus open te stellen voor de stad. Daarom voorzien we verschillende gemeenschappelijke zones zoals een zwembad, sportvelden, stadslandbouw, een speeltuin op het dak, open bibliotheken, een café en eetvoorzieningen, een ressourcerie, auditoria en multifunctionele ruimtes voor publieke evenementen, conferenties enzovoort. Het nieuwe entreegebouw wordt zo gevuld met gemeenschapsvoorzieningen als schakel met de stad. Vervolgens richten we ons op mobiliteit op de schaal van de campus en de BUD.",
+      "date": "2021-2022",
+      "role": "Ontwerp, onderzoek, maquettebouw, rendering",
+      "client": "Yasmin Allaouzi, Niloofar Amini, Paulien Beeckman, Pauline Harou, Ahmed Soliman en Alexandre Rovere",
+      "visit": " ",
+      "linktext": " ",
+      "subtitle": " ",
+      "text_2": " "
+    },
+    {
+      "id": "project_2",
+      "title": "Leap of Faith Bridge",
+      "filters": ["Design", "competition"],
+      "labels": {
+        "desc": "Projectbeschrijving",
+        "date": "Projectdatum",
+        "role": "Rol",
+        "client": "Team",
+        "visit": "Bezoek"
+      },
+      "description": "We behaalden de tweede plaats in de nationale studentenwedstrijd FEDA Week 2012/13 rond het thema Bridge of the Future, in competitie met meer dan 60 andere universiteiten. Ons project werd ontworpen om aanpasbare bewegingen mogelijk te maken die variëren volgens verschillende omstandigheden. De brug verbeeldt de sprong in het diepe die mensen moeten nemen om van hun verleden naar de toekomst over te gaan. Met een glazen middendeel als obstakel dat mensen in hun leven tegenkomen, moeten gebruikers kiezen om vooruit te stappen en de sprong naar de toekomst te wagen.",
+      "date": "2013-2014",
+      "role": "Ontwerp, onderzoek, maquettebouw",
+      "client": "Mohamed Mahmoud, Mazen Nabil, Fatma Abd Elrahman, Abdullah Gabr, Ayman Shawki, Mostfafa Elsayed, Haytham Kamal, Ahmed Soliman.",
+      "visit": "https://youtu.be/Ay3a4hwkNZg",
+      "linktext": "Volledige projectvideo",
+      "subtitle": " ",
+      "text_2": ""
+    },
+    {
+      "id": "project_3",
+      "title": "Bending-active responsive grid shell",
+      "filters": ["design", "research", "computational", "render"],
+      "labels": {
+        "desc": "Projectbeschrijving",
+        "date": "Projectdatum",
+        "role": "Rol",
+        "client": "",
+        "visit": ""
+      },
+      "description": "Dit project is een poging om buigactieve structurele elementen te combineren in een responsief systeem. Het paviljoen bestaat uit een gridshell die met een set kabels kan worden aangestuurd. De kabels kunnen door gebruikers afzonderlijk op spanning worden gebracht volgens verschillende noden en weersomstandigheden. Het doel van het project is om de relatie tussen Brusselse bewoners en de buitenruimte te verrijken en gebruikers de kans te geven het paviljoen zelf te veranderen en vorm te geven. De zeven gespannen kabels van het paviljoen maken tientallen alternatieve configuraties mogelijk.\n\nTijdelijke structuren zijn overal aanwezig. Ze definiëren de buitenruimte en vullen de leegte tussen permanente constructies. Ze volgen de organische evolutie van de behoeften en dagelijkse functies van steden. Zo'n organische ontwikkeling moet ondersteund worden door transformeerbare systemen die flexibiliteit bieden. Transformeerbare structuursystemen veranderen van de ene toestand naar de andere. Ze kunnen snel worden opgebouwd en afgebroken, daarna verplaatst worden naar een andere plek om dezelfde materialen opnieuw te gebruiken en de hoeveelheid afval te verminderen.",
+      "date": "2021-2022",
+      "role": "Ontwerp, onderzoek, structurele analyse, parametrische modellering",
+      "client": " ",
+      "visit": " ",
+      "linktext": " ",
+      "subtitle": "",
+      "text_2": " "
+    },
+    {
+      "id": "project_4",
+      "title": "The Chavilion: Scissor chair-pavilion",
+      "filters": ["research", "design", "computational"],
+      "labels": {
+        "desc": "Projectbeschrijving",
+        "date": "Projectdatum",
+        "role": "Rol",
+        "client": "Team",
+        "visit": ""
+      },
+      "description": "The Chavilion is een ontwerpproject voor een binnenpaviljoen voor het architectuuratelier aan de VUB. Het paviljoen is opgevat als een kit-of-parts-systeem dat bestaat uit één repetitieve hoofdeenheid. Het systeem is bedoeld om te functioneren als Lego en zo transformeerbaarheid te garanderen. Het basiselement in het systeem is een vrijstaande functionele stoel met schaarmechanisme. Door 6 tot 8 stoelen samen te voegen ontstaat de boog van het paviljoen, die nog steeds uitvouwbaar blijft.\n\nHet project omvatte een structurele analyse met de plugin Karamba3D in Grasshopper, en ook de bouw van een schaalmodel op 1/5 om de functionaliteit van het volledige project te testen. De stoel gebruikt het schaarmechanisme om 5 verschillende gebruiksvormen mogelijk te maken.",
+      "date": "2021-2022",
+      "role": "Conceptualisering, ontwerp, onderzoek, structurele analyse, parametrische modellering",
+      "client": "Ahmed Soliman, Hana Taherazar, Pauline Harou, Razan Atwi.",
+      "visit": " ",
+      "linktext": " ",
+      "subtitle": "",
+      "text_2": " "
+    },
+    {
+      "id": "project_5",
+      "title": "ULB timber tower: timber is the new concrete ",
+      "filters": ["design", "computational", "render"],
+      "labels": {
+        "desc": "Projectbeschrijving",
+        "date": "Projectdatum",
+        "role": "Rol",
+        "client": "",
+        "visit": ""
+      },
+      "description": "De ULB Timber Tower maakt deel uit van een masterplan voor de ontwikkeling van de ULB-campus in Brussel, België. Het project stelt een inkomgebouw voor dat bezoekers en studenten rechtstreeks verwelkomt langs de hoofd-as van de campus. De doelstellingen van de ULB Timber Tower weerspiegelen de visie van het masterplan en volgen vier belangrijke ambities: 1) duurzaamheid bevorderen en de gemeenschap het goede voorbeeld geven; 2) een symbolische identiteit voor de universiteit creëren; 3) de band tussen stad en universiteit versterken; en 4) de functionele ruimtes voorzien die nodig zijn om de voortdurende groei van het aantal studenten op te vangen en de capaciteit van de universiteit uit te breiden.",
+      "date": "2021-2022",
+      "role": "Conceptualisering, ontwerp, onderzoek, structurele analyse, milieuanalyse, parametrische modellering, nachtbeelden nabewerkt door Mohamed Mahmoud",
+      "client": "",
+      "visit": " ",
+      "linktext": " ",
+      "subtitle": "",
+      "text_2": " "
+    },
+    {
+      "id": "project_6",
+      "title": "Konligo: Internship - Research and development ",
+      "filters": ["professional", "research"],
+      "labels": {
+        "desc": "Projectbeschrijving",
+        "date": "Projectdatum",
+        "role": "Rol",
+        "client": " ",
+        "visit": "Bezoek"
+      },
+      "description": "Konligo is een Belgische start-up gespecialiseerd in lichte en transformeerbare structuren. De belangrijkste missie is om tijdelijke structuren naar een hoger niveau te tillen en tegelijk de eventsector naar een duurzamere toekomst te sturen. Ik sloot me aan bij het R&D-team en werkte mee aan de ontwikkeling van deployable scissor structures. Tijdens mijn stage bij Konligo kreeg ik de kans om in verschillende afdelingen mee te werken. Een van de voordelen van werken in relatief kleine teams is dat je betrokken raakt bij veel verschillende domeinen en zo een breder inzicht krijgt in hoe alles werkt. Ik ben opgeleid als ingenieur, maar leerde er ook veel ondernemerschapsvaardigheden bij.",
+      "date": "2021-2022",
+      "role": "R&D, onderzoek, parametrische modellering, computationele productie, grafisch ontwerp, videobewerking. De structuur werd oorspronkelijk ontworpen door het Konligo-team.",
+      "client": " ",
+      "visit": "https://www.konligo.com/nl/",
+      "linktext": "Konligo",
+      "subtitle": " ",
+      "text_2": " "
+    },
+    {
+      "id": "project_7",
+      "title": "Prison de Saint-Gilles: 2030",
+      "filters": ["design", "competition"],
+      "labels": {
+        "desc": "Projectbeschrijving",
+        "date": "Projectdatum",
+        "role": "Rol",
+        "client": "",
+        "visit": ""
+      },
+      "description": "De gevangenissen van Saint-Gilles zijn ontruimd, waardoor een uitzonderlijk terrein van meer dan 10 hectare vrijkwam om te herontwikkelen dicht bij het centrum van Brussel. We ontwikkelden een volledig plan om het gevangenisgebouw om te vormen tot een multifunctioneel project dat het terrein bevrijdt en het perceel teruggeeft aan de stad. Het project won de eerste prijs in het vak Design project competition, gegeven door Vincent Gérin en beoordeeld door juryleden Luc Deleuze, Laurent Vrijdaghs, Vincent Wathelet, John Pitseys en Françoise Sacchi.\n\nIk kreeg ook de kans om samen met Benoit Moritz, Laurent Vrijdaghs en Vincent Gérin op het podium van de Realty Belgium Real Estate Summit te staan, in het kader van een bespreking van casestudy's rond de herbestemming van de gevangenis van Saint-Gilles in september 2022.",
+      "date": "2021-2022",
+      "role": "Ontwerp, onderzoek, financiële plannen, conceptualisering, computationele productie, rendering.",
+      "client": "",
+      "visit": "",
+      "linktext": " ",
+      "subtitle": "",
+      "text_2": ""
+    },
+    {
+      "id": "project_8",
+      "title": "Bending-active plate components in configurable kit-of-parts systems",
+      "filters": ["research", "computational", "design"],
+      "labels": {
+        "desc": "Projectbeschrijving",
+        "date": "Projectdatum",
+        "role": "Projecttype",
+        "client": "Publicatie",
+        "visit": "Bezoek"
+      },
+      "description": "Dit onderzoek verkent transformeerbare houten kit-of-parts-systemen via digitale en fysieke modellering. De structuur wordt geconceptualiseerd als een assemblage van modulaire componenten die ter plaatse worden opgebouwd, en het project stelt een herconfigureerbaar tijdelijk systeem voor dat zich met een consistente set elementen kan aanpassen aan verschillende vormen en afmetingen. Een systematische methode voor het verbinden van componenten wordt geïntroduceerd op basis van verbindingen die geordend zijn binnen symmetrische rasters en volumes. Elk vlak wordt vervangen door een modulair element, waarbij telkens twee elementen met één verbinding aan elkaar worden gekoppeld. De resulterende structurele configuraties worden afgeleid uit zorgvuldig bestudeerde polyhedrale geometrieën of tessellaties. De regelmaat van deze systemen is essentieel voor hun herconfigureerbaarheid.",
+      "date": "2022-2023",
+      "role": "Masterproefproject",
+      "client": "<ul><li><strong>Double-curved plate components in configurable systems.</strong><br>Soliman, Ahmed; Leemans, Ellen; De Laet, Lars; De Temmerman, Niels.<br>Integration of Design and Fabrication: Proceedings of the International Association for Shell and Spatial Structures Annual Symposium 2023. Ed. Yi Min Xie; Jane Burry; Ting-Uei Lee; Jiaming Ma. IASS, 2023. p. 983-994. <a href=\"https://researchportal.vub.be/en/publications/double-curved-plate-components-in-configurable-systems/\" target=\"_blank\" rel=\"noopener noreferrer\">Meer info</a></li><li><strong>Bending-active plate components in configurable kit-of-parts systems</strong><br>Soliman, A. (Master thesis). Sept 2022 <a href=\"https://researchportal.vub.be/en/studentTheses/bending-active-plate-components-in-configurable-kit-of-parts-syst/\" target=\"_blank\" rel=\"noopener noreferrer\">Meer info</a></li></ul>",
+      "visit": "https://youtu.be/w2GxYpVNqng",
+      "linktext": "Volledige projectvideo",
+      "subtitle": "",
+      "text_2": ""
+    },
+    {
+      "id": "project_9",
+      "title": "First permanent moon base",
+      "filters": ["design"],
+      "labels": {
+        "desc": "Projectbeschrijving",
+        "date": "Projectdatum",
+        "role": "Rol",
+        "client": "",
+        "visit": " "
+      },
+      "description": "Het ruimtevaarttijdperk belooft een enorm potentieel, doordat het de mensheid toegang geeft tot grote hoeveelheden grondstoffen, materialen en energie buiten de aarde. In 2004 stelde George W. Bush een visie voor hernieuwde maanverkenning voor via een reeks robotmissies om gegevens over maanbronnen te verzamelen en geschikte bouwplaatsen voor toekomstige bewoning te identificeren.\n\nDit project presenteert een visie, ontwikkeld in 2014, op een vroege stap richting de kolonisatie van de maan. Het onderzoekt de ontwikkeling van een eerste onbemande maanbasis als fundament voor een permanente menselijke aanwezigheid.\n\nDe eerste permanente maanbasis vormt een cruciale mijlpaal in de overgang naar een nieuw tijdperk van verkenning. Ze zal diepere toegang tot het zonnestelsel mogelijk maken, de vestiging van buitenaardse nederzettingen ondersteunen en het perspectief van de mensheid verschuiven van een gesloten aardvisie naar een bredere, open blik op vooruitgang en ontdekking.",
+      "date": "2014-2015",
+      "role": "Bachelor, afstudeerproject, 2014",
+      "client": "",
+      "visit": "",
+      "linktext": "",
+      "subtitle": "",
+      "text_2": ""
+    },
+    {
+      "id": "project_10",
+      "title": "The Barber",
+      "filters": ["professional", "design", "render"],
+      "labels": {
+        "desc": "Projectbeschrijving",
+        "date": "Projectdatum",
+        "role": "Rol",
+        "client": "Team",
+        "visit": "Bezoek"
+      },
+      "description": "Een interieurontwerpproject voor The Barbershop, een groeiende keten van barbershops in Egypte. Het project werd ontworpen en uitgevoerd in 2020 en ontwikkeld door Soliman in samenwerking met co-designer Aacer El Noshokaty, werkzaam als freelance architecten.\n\nHet project omvatte het volledige interieurontwerpproces, van conceptontwikkeling tot gedetailleerde uitvoeringsplannen, met focus op het creëren van een onderscheidende en eigentijdse ruimtelijke identiteit. Het ontwerp wilde de traditionele barbershopervaring herinterpreteren door een moderne lens, met een evenwicht tussen functionaliteit, comfort en een sterke visuele uitstraling.\n\nParallel omvatte de opdracht ook de ontwikkeling van een volledige merkidentiteit, met logo-ontwerp, visuele taal en een algemene brandingstrategie om coherentie te creëren tussen de fysieke ruimte en het merkimago.\n\nDe zaak is momenteel operationeel in Caïro.",
+      "date": "2019-2020 & 2024-2025",
+      "role": "Interieurontwerp, rendering, modellering, verlichting, logo-ontwerp, identiteitsontwerp, opvolging van de uitvoering.",
+      "client": "Ahmed Soliman, Aacer Noshokaty.",
+      "visit": "https://thebarber-eg.com/mens-haircut-gallery-cairo/",
+      "linktext": "Bezoek project",
+      "subtitle": "",
+      "text_2": ""
+    },
+    {
+      "id": "project_11",
+      "title": "ReciPlyDome",
+      "filters": ["research", "design", "computational"],
+      "labels": {
+        "desc": "Projectbeschrijving",
+        "date": "Projectdatum",
+        "role": "Rol",
+        "client": "Team",
+        "visit": "Publicatie"
+      },
+      "description": "In de evenementensector, waar gezocht wordt naar architecturale constructies met een innovatieve morfologie, is hergebruik essentieel om duurzamere evenementen mogelijk te maken. Modulaire structuren ontwerpen en zo detailleren dat ze eenvoudig kunnen worden gedemonteerd en opnieuw opgebouwd, is een ideale manier om hergebruik aan te moedigen en te vergemakkelijken. Zo wordt een langere levensduur gegarandeerd voor de gebruikte componenten. Tijdelijke evenementstructuren zijn echter vaak moeilijk op te bouwen, wat hun herbruikbaarheid kan bemoeilijken. De moeilijkheden tijdens de montage worden meestal veroorzaakt door de morfologie van de modules of door bepaalde types verbindingen. Daarom moeten deze structuren geoptimaliseerd worden op het vlak van montage, terwijl ze tegelijk grondstoffenefficiënt blijven.\n\nHet hoofddoel van dit onderzoek is om een reeds ontwikkelde structuur, de ReciPlyDome, te herdenken en te optimaliseren met het oog op montage. De ReciPlyDome is een reciproque koepelstructuur gebaseerd op een rhombic triacontahedron, waarbij alle elementen identiek zijn, behalve de vijf elementen die de grond raken. Tijdens de opbouw van de eerste versie bleek torsie in de componenten een efficiënte constructie te hinderen. Om dit op te lossen werd de koepel herzien, wat leidde tot een nieuw verbindingssysteem en een verbeterde vorm van de balken. Er werd een nieuwe versie op ware schaal gebouwd, die het positieve effect toont van het verbeterde connectorsysteem en de geoptimaliseerde positie van de balken. Na de opbouw werden in-situ metingen uitgevoerd, die een goede overeenkomst tussen het digitale en het gebouwde model aantoonden. Verder onderzoek zal zich richten op de bekleding van deze modulaire reciproque koepel voor buitengebruik.",
+      "date": "2023",
+      "role": "Technische optimalisatie, modellering, bekledingsontwerp, onderzoek, constructie.",
+      "client": "Ellen Leemans, Ahmed Soliman, Niels De Temmerman, Lars De Laet",
+      "publication": "Design and construction of the ReciPlyDome, a lightweight modular reciprocal dome. Leemans, Ellen; Soliman, Ahmed; Brancart, Stijn; De Temmerman, Niels; De Laet, Lars. Integration of Design and Fabrication: Proceedings of the International Association for Shell and Spatial Structures Annual Symposium 2023. ed. / Yi Min Xie; Jane Burry; Ting-Uei Lee; Jiaming Ma. IASS, 2023. p. 1024-1034. <a href=\"https://researchportal.vub.be/en/publications/design-and-construction-of-the-reciplydome-a-lightweight-modular-/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-white text-decoration-none border-bottom\">Meer info</a>",
+      "visit": "",
+      "linktext": "",
+      "subtitle": "een lichte modulaire reciproque koepel",
+      "text_2": ""
+    },
+    {
+      "id": "project_12",
+      "title": "Integration of rigid plates in deployable scissor structures",
+      "filters": ["research", "computational"],
+      "labels": {
+        "desc": "Projectbeschrijving",
+        "date": "Projectdatum",
+        "role": "",
+        "client": "",
+        "visit": ""
+      },
+      "description": "Dit onderzoek verkent twee geometrische benaderingen voor de integratie van starre platen in deployable scissor structures, met als doel de beperkingen van flexibele membraanbekledingen in tijdelijke architecturale toepassingen te overwinnen. Schaarroosters staan bekend om hun snelle uitvouwbaarheid en compacte opslag, maar hun bredere toepassing wordt vaak beperkt door bekledingen die weinig structurele capaciteit toevoegen en vaak weinig duurzaam zijn. Om dit te verhelpen worden in dit onderzoek twee nieuwe strategieën voorgesteld: (i) geëxtrudeerde platen geïntegreerd in uniaxiaal transformerende vlakke schaarstructuren, en (ii) hyperbolische ruled surface-platen opgenomen in driedimensionale schaarmodules. De studie combineert automatisering van geometrische modellering, analyse van uitvouwbeperkingen en optimalisatie van verbindingen om de haalbaarheid en implicaties van deze hybride systemen te onderzoeken. De resultaten tonen aan dat de integratie van starre platen het bereik van ruimtelijke configuraties binnen schaarroosters vergroot en hun functioneel potentieel verbetert. Door ontwerpmethodologieën voor hybride deployable systems verder te ontwikkelen, draagt dit werk bij aan robuustere, herconfigureerbare en efficiëntere oplossingen voor tijdelijke ruimtelijke toepassingen.",
+      "date": "2025",
+      "role": "",
+      "client": "",
+      "visit": "",
+      "linktext": "",
+      "subtitle": "geometrische modellering en ontwerp via prototyping",
+      "text_2": ""
+    },
+    {
+      "id": "project_13",
+      "title": "Freelance Projects (2013–2019)",
+      "filters": ["professional", "render"],
+      "labels": {
+        "desc": "Projectbeschrijving",
+        "date": "Projectdatum",
+        "role": "",
+        "client": "",
+        "visit": ""
+      },
+      "description": "Deze pagina toont een zorgvuldig samengestelde selectie freelance werk ontwikkeld tussen 2013 en 2019, verspreid over een brede waaier aan ontwerpdiensten binnen architectuur en visualisatie.\n\nIn deze periode werkte ik zelfstandig aan uiteenlopende projecten, waaronder architecturaal ontwerp, 3D-rendering en het uitwerken van uitvoeringsplannen, evenals de opvolging van renovatiewerken. De opdrachten omvatten ook gevel- en elevatieontwerp, naast diverse ontwerpoutputs en technische consultaties op maat van de klant.\n\nDeze projecten combineren conceptueel denken met nauwkeurige technische uitwerking. De visualisaties werden hoofdzakelijk gemaakt met 3ds Max en V-Ray, wat gedetailleerde en realistische voorstellingen mogelijk maakte die zowel het ontwerpproces als de communicatie met de klant ondersteunden.",
+      "date": "2013–2019",
+      "role": "",
+      "client": "",
+      "publication": "",
+      "visit": "",
+      "linktext": "",
+      "subtitle": "Locatie: Egypte",
+      "text_2": ""
+    },
+    {
+      "id": "project_14",
+      "title": "3D Car Modeling from Scratch",
+      "filters": ["design"],
+      "labels": {
+        "desc": "Projectbeschrijving",
+        "date": "Projectdatum",
+        "role": "",
+        "client": "",
+        "visit": ""
+      },
+      "description": "Dit project verkent het volledige proces van het opbouwen van een 3D-automodel van nul af aan met 3ds Max, zonder gebruik te maken van geïmporteerde geometrie. Het model werd ontwikkeld via een polygonale modelleringworkflow, vertrekkend van eenvoudige primitieve vormen die geleidelijk werden verfijnd om nauwkeurige proporties te bereiken. Het eindmodel werd vervolgens voorbereid en geoptimaliseerd voor rendering met de Mental Ray-engine. Daarnaast werden AI-gebaseerde renderingtools (Nano Banana 2) gebruikt om het visuele concept verder te verfijnen en te valideren, wat een realistischer proof of concept mogelijk maakte en de algemene presentatiekwaliteit versterkte.",
+      "date": "2018",
+      "role": "",
+      "client": "",
+      "publication": "",
+      "visit": "",
+      "linktext": "",
+      "subtitle": "",
+      "text_2": ""
+    },
+    {
+      "id": "project_15",
+      "title": "Origami villa",
+      "filters": ["design", "render"],
+      "labels": {
+        "desc": "Projectbeschrijving",
+        "date": "Projectdatum",
+        "role": "",
+        "client": "",
+        "visit": ""
+      },
+      "description": "Dit project presenteert een conceptueel villadesign dat architecturale vorm verkent door de lens van op origami geïnspireerd vouwen. Het ontwerp richt zich op het vertalen van gevouwen geometrieën naar ruimtelijke composities, waarbij oppervlakken en volumes voortkomen uit continue en dynamische transformaties.",
+      "date": "2019",
+      "role": "",
+      "client": "",
+      "publication": "",
+      "visit": "",
+      "linktext": "",
+      "subtitle": "",
+      "text_2": ""
+    }
+  ],
+  "galleryOrder": {
+    "project_1": 5,
+    "project_2": 3,
+    "project_3": 9,
+    "project_4": 11,
+    "project_5": 1,
+    "project_6": 4,
+    "project_7": 7,
+    "project_8": 8,
+    "project_9": 15,
+    "project_10": 10,
+    "project_11": 2,
+    "project_12": 6,
+    "project_13": 13,
+    "project_14": 14,
+    "project_15": 12
+  }
+}

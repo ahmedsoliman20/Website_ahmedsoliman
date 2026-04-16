@@ -34,6 +34,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="../src/style.css">
+  <script defer src="src/i18n.js"></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DCJVGXKXL5"></script>
   <script>
@@ -59,7 +60,7 @@
         
         <div class="collapse navbar-collapse custom-dropdown" id="mainNav"> 
           <ul class="navbar-nav gap-lg-4 text-uppercase">
-            <li class="nav-item"><a class="nav-link p-0" href="/">Work</a></li>
+            <li class="nav-item"><a class="nav-link p-0" href="index.html">Work</a></li>
             <li class="nav-item"><a class="nav-link active p-0"  href="research.html">Research</a></li>
             <li class="nav-item"><a class="nav-link p-0"  href="news.html">News</a></li>
             <li class="nav-item"><a class="nav-link p-0"  href="teaching.html">Teaching</a></li>
@@ -67,22 +68,7 @@
           </ul>
         </div>
 
-        <div class="d-flex align-items-center gap-3 ms-xl-5"> 
-          <div class="d-flex gap-3 align-items-center">
-            <a href="https://www.researchgate.net/profile/Ahmed_Soliman141/research" class="text-reset opacity-75 d-flex align-items-center"> 
-              <img src="../icons_header/RNG.png" alt="R" style="width: 18px; height: 18px; filter: invert(1);">
-            </a>
-            <a href="https://www.linkedin.com/in/ahmedsoliman7/" class="text-reset opacity-75 d-flex align-items-center">
-              <img src="../icons_header/linkedin2.png" alt="L" style="width: 18px; height: 18px; filter: invert(1);">
-            </a>
-            <a href="https://www.instagram.com/ahsolimann/" class="text-reset opacity-75 d-flex align-items-center">
-              <img src="../icons_header/instagram-53.png" alt="I" style="width: 18px; height: 18px; filter: invert(1);">
-            </a>
-            <a href="https://www.vub.be/arch/people/ahmed-soliman" class="text-reset opacity-75 d-flex align-items-center">
-              <img src="../icons_header/arch.png" alt="P" style="width: 18px; height: 18px; filter: invert(1);">
-            </a>
-          </div>
-          
+        <div class="d-flex align-items-center gap-3 ms-xl-5">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -94,7 +80,7 @@
 </header>
 
 
-  <main class="py-4">
+  <main class="pt-5 pb-4">
     <div class="container px-4">
       <h2 class="mb-4" id="publications-title">Publications</h2>
       <div id="publications-content"></div>
@@ -112,9 +98,71 @@
   </main>
 
   <script>
-    fetch('research_data.json')
-      .then(response => response.json())
-      .then(data => {
+    function getResearchLanguage() {
+      try {
+        const savedLanguage = (localStorage.getItem('ahmedsoliman.site-language') || '').toLowerCase();
+        if (savedLanguage === 'nl' || savedLanguage === 'en') {
+          return savedLanguage;
+        }
+      } catch (error) {
+        // Ignore localStorage issues.
+      }
+
+      const pageLanguage = (document.documentElement.lang || 'en').toLowerCase();
+      return pageLanguage === 'nl' ? 'nl' : 'en';
+    }
+
+    function getResearchDataPath(language) {
+      return language === 'nl' ? 'research_data_nl.json' : 'research_data.json';
+    }
+
+    function getResearchLinkLabel(language) {
+      return language === 'nl' ? 'Meer info' : 'Learn more';
+    }
+
+    function getResearchFallbackText(language) {
+      if (language === 'nl') {
+        return {
+          publications: 'Publicaties konden niet worden geladen. Probeer later opnieuw.',
+          supervised: 'Begeleide werken konden niet worden geladen. Probeer later opnieuw.',
+          outreach: 'Publieke activiteiten konden niet worden geladen. Probeer later opnieuw.',
+          emptyOutreach: 'Publieke activiteiten worden hier later toegevoegd.'
+        };
+      }
+
+      return {
+        publications: 'Unable to load publications content. Please try again later.',
+        supervised: 'Unable to load supervised work content. Please try again later.',
+        outreach: 'Unable to load outreach content. Please try again later.',
+        emptyOutreach: 'Outreach details will be added here.'
+      };
+    }
+
+    async function loadResearchData(language) {
+      const currentLanguage = language || getResearchLanguage();
+      const fallbackText = getResearchFallbackText(currentLanguage);
+      const dataPath = getResearchDataPath(currentLanguage);
+
+      const pubContainer = document.getElementById('publications-content');
+      const supContainer = document.getElementById('supervised-content');
+      const outreachContainer = document.getElementById('outreach-content');
+
+      pubContainer.innerHTML = '';
+      supContainer.innerHTML = '';
+      outreachContainer.innerHTML = '';
+
+      try {
+        let response = await fetch(dataPath, { cache: 'no-cache' });
+
+        if (!response.ok && currentLanguage === 'nl') {
+          response = await fetch('research_data.json', { cache: 'no-cache' });
+        }
+
+        if (!response.ok) {
+          throw new Error('Failed to load research data');
+        }
+
+        const data = await response.json();
         const sectionTitles = data.sectionTitles || {};
 
         const publicationsTitle = document.getElementById('publications-title');
@@ -122,51 +170,42 @@
         const outreachTitle = document.getElementById('outreach-title');
 
         if (publicationsTitle) {
-          publicationsTitle.textContent = sectionTitles.publications || 'Publications';
+          publicationsTitle.textContent = sectionTitles.publications || (currentLanguage === 'nl' ? 'Publicaties' : 'Publications');
         }
         if (supervisedTitle) {
-          supervisedTitle.textContent = sectionTitles.supervised || 'Supervised Work';
+          supervisedTitle.textContent = sectionTitles.supervised || (currentLanguage === 'nl' ? 'Begeleide werken' : 'Supervised Work');
         }
         if (outreachTitle) {
-          outreachTitle.textContent = sectionTitles.outreach || 'Outreach';
+          outreachTitle.textContent = sectionTitles.outreach || (currentLanguage === 'nl' ? 'Publieke activiteiten' : 'Outreach');
         }
 
         function generateHTML(item) {
-          // Support both actual newline and literal '\n' in JSON content.
-          const normalizedText = item.text
+          const normalizedText = String(item.text || '')
             .replace(/\r\n/g, '\n')
             .replace(/\\n/g, '\n');
           const lines = normalizedText.split('\n').map(line => line.trim()).filter(Boolean);
           const title = lines.shift() || '';
           const body = lines.join('<br>');
-          const linkHTML = item.link ? ' <a href="' + item.link + '" target="_blank" class="text-white">Learn more</a>' : '';
+          const linkHTML = item.link ? ' <a href="' + item.link + '" target="_blank" class="text-white">' + getResearchLinkLabel(currentLanguage) + '</a>' : '';
           return '<strong>' + title + '</strong>' + (body ? '<br>' + body : '') + linkHTML;
         }
 
-        // Populate publications
-        const pubContainer = document.getElementById('publications-content');
-        data.publications.forEach(item => {
+        (Array.isArray(data.publications) ? data.publications : []).forEach(item => {
           const p = document.createElement('p');
           p.innerHTML = generateHTML(item);
           pubContainer.appendChild(p);
         });
 
-        // Populate supervised work
-        const supContainer = document.getElementById('supervised-content');
-        supContainer.innerHTML = ''; // Clear placeholder
-        data.supervised.forEach(item => {
+        (Array.isArray(data.supervised) ? data.supervised : []).forEach(item => {
           const p = document.createElement('p');
           p.innerHTML = generateHTML(item);
           supContainer.appendChild(p);
         });
 
-        // Populate outreach
-        const outreachContainer = document.getElementById('outreach-content');
-        outreachContainer.innerHTML = '';
         const outreachItems = Array.isArray(data.outreach) ? data.outreach : [];
 
         if (outreachItems.length === 0) {
-          outreachContainer.innerHTML = '<p class="text-muted">Outreach details will be added here.</p>';
+          outreachContainer.innerHTML = '<p class="text-muted">' + fallbackText.emptyOutreach + '</p>';
         } else {
           outreachItems.forEach(item => {
             const p = document.createElement('p');
@@ -174,16 +213,20 @@
             outreachContainer.appendChild(p);
           });
         }
-      })
-      .catch(error => {
+      } catch (error) {
         console.error('Error loading research data:', error);
-        const pubContainer = document.getElementById('publications-content');
-        pubContainer.innerHTML = '<p class="text-muted">Unable to load publications content. Please try again later.</p>';
-        const supContainer = document.getElementById('supervised-content');
-        supContainer.innerHTML = '<p class="text-muted">Unable to load supervised work content. Please try again later.</p>';
-        const outreachContainer = document.getElementById('outreach-content');
-        outreachContainer.innerHTML = '<p class="text-muted">Unable to load outreach content. Please try again later.</p>';
-      });
+        pubContainer.innerHTML = '<p class="text-muted">' + fallbackText.publications + '</p>';
+        supContainer.innerHTML = '<p class="text-muted">' + fallbackText.supervised + '</p>';
+        outreachContainer.innerHTML = '<p class="text-muted">' + fallbackText.outreach + '</p>';
+      }
+    }
+
+    loadResearchData();
+
+    document.addEventListener('site-language-changed', function(event) {
+      const language = event && event.detail ? event.detail.language : getResearchLanguage();
+      loadResearchData(language);
+    });
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -35,6 +35,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   
   <link rel="stylesheet" href="../src/style.css">
+  <script defer src="src/i18n.js"></script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DCJVGXKXL5"></script>
@@ -61,7 +62,7 @@
         
         <div class="collapse navbar-collapse custom-dropdown" id="mainNav"> 
           <ul class="navbar-nav gap-lg-4 text-uppercase">
-            <li class="nav-item"><a class="nav-link p-0" href="/">Work</a></li>
+            <li class="nav-item"><a class="nav-link p-0" href="index.html">Work</a></li>
             <li class="nav-item"><a class="nav-link p-0"  href="research.html">Research</a></li>
             <li class="nav-item"><a class="nav-link active p-0"  href="news.html">News</a></li>
             <li class="nav-item"><a class="nav-link p-0"  href="teaching.html">Teaching</a></li>
@@ -69,22 +70,7 @@
           </ul>
         </div>
 
-        <div class="d-flex align-items-center gap-3 ms-xl-5"> 
-          <div class="d-flex gap-3 align-items-center">
-            <a href="https://www.researchgate.net/profile/Ahmed_Soliman141/research" class="text-reset opacity-75 d-flex align-items-center"> 
-              <img src="../icons_header/RNG.png" alt="R" style="width: 18px; height: 18px; filter: invert(1);">
-            </a>
-            <a href="https://www.linkedin.com/in/ahmedsoliman7/" class="text-reset opacity-75 d-flex align-items-center">
-              <img src="../icons_header/linkedin2.png" alt="L" style="width: 18px; height: 18px; filter: invert(1);">
-            </a>
-            <a href="https://www.instagram.com/ahsolimann/" class="text-reset opacity-75 d-flex align-items-center">
-              <img src="../icons_header/instagram-53.png" alt="I" style="width: 18px; height: 18px; filter: invert(1);">
-            </a>
-            <a href="https://www.vub.be/arch/people/ahmed-soliman" class="text-reset opacity-75 d-flex align-items-center">
-              <img src="../icons_header/arch.png" alt="P" style="width: 18px; height: 18px; filter: invert(1);">
-            </a>
-          </div>
-          
+        <div class="d-flex align-items-center gap-3 ms-xl-5">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -201,7 +187,36 @@
     return fallbackPath;
   }
 
-  async function loadGallery() {
+  function getNewsLanguage() {
+    try {
+      const savedLanguage = (localStorage.getItem('ahmedsoliman.site-language') || '').toLowerCase();
+      if (savedLanguage === 'nl' || savedLanguage === 'en') {
+        return savedLanguage;
+      }
+    } catch (error) {
+      // Ignore localStorage issues.
+    }
+
+    const pageLanguage = (document.documentElement.lang || 'en').toLowerCase();
+    return pageLanguage === 'nl' ? 'nl' : 'en';
+  }
+
+  function getNewsDataPath(language) {
+    return language === 'nl' ? 'new_nl.json' : 'new.json';
+  }
+
+  function getNewsFallbackLabel(language) {
+    return language === 'nl' ? 'Nieuwsitem' : 'News Item';
+  }
+
+  function getEmptyNewsMessage(language) {
+    return language === 'nl'
+      ? 'Geen items gevonden in deze categorie.'
+      : 'No items found in this category.';
+  }
+
+  async function loadGallery(language) {
+    const currentLanguage = language || getNewsLanguage();
     let jsonData = {
       descriptions: {},
       newstitles: {},
@@ -211,12 +226,15 @@
     };
 
     try {
-      const jsonRes = await fetch('new.json');
+      let jsonRes = await fetch(getNewsDataPath(currentLanguage), { cache: 'no-cache' });
+      if (!jsonRes.ok && currentLanguage === 'nl') {
+        jsonRes = await fetch('new.json', { cache: 'no-cache' });
+      }
       if (jsonRes.ok) {
         jsonData = await jsonRes.json();
       }
     } catch (err) {
-      console.error("Could not load new.json", err);
+      console.error('Could not load news data', err);
     }
 
     // Preferred format: an explicit array lets you add/reorder items without renaming files.
@@ -226,11 +244,11 @@
         const imagePath = await resolveNewsImagePath(item.image, `n${fallbackId}`);
 
         return {
-          title: item.title || `News Item ${fallbackId}`,
+          title: item.title || `${getNewsFallbackLabel(currentLanguage)} ${fallbackId}`,
           img: imagePath,
-          link: item.link || "#",
-          description: item.description || "",
-          category: item.category || "other"
+          link: item.link || '#',
+          description: item.description || '',
+          category: item.category || 'other'
         };
       }));
     } else {
@@ -247,11 +265,11 @@
         );
 
         return {
-          title: jsonData.newstitles[key] || `News Item ${id}`,
+          title: jsonData.newstitles[key] || `${getNewsFallbackLabel(currentLanguage)} ${id}`,
           img: imagePath,
           link: `../Projects/Project_${id}/index.html`,
-          description: jsonData.descriptions[key] || "",
-          category: (jsonData.categories && jsonData.categories[key]) ? jsonData.categories[key] : "other"
+          description: jsonData.descriptions[key] || '',
+          category: (jsonData.categories && jsonData.categories[key]) ? jsonData.categories[key] : 'other'
         };
       }));
     }
@@ -263,7 +281,7 @@
   function renderGallery(items) {
     currentGalleryItems = items;
     if (items.length === 0) {
-      grid.innerHTML = `<div class="col-12 text-center opacity-50 my-5"><p>No items found in this category.</p></div>`;
+      grid.innerHTML = `<div class="col-12 text-center opacity-50 my-5"><p>${getEmptyNewsMessage(getNewsLanguage())}</p></div>`;
       return;
     }
 
@@ -296,12 +314,10 @@
     }
     
     buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // UI Update: Toggle Active Class
+      btn.onclick = () => {
         buttons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
-        // Logic: Filter Items
         const filterValue = normalizeCategory(btn.getAttribute('data-filter'));
         
         if (filterValue === 'all') {
@@ -312,7 +328,7 @@
           );
           renderGallery(filtered);
         }
-      });
+      };
     });
   }
 
@@ -374,6 +390,11 @@
   // Initialize
   loadGallery();
   setupImagePopup();
+
+  document.addEventListener('site-language-changed', function(event) {
+    const language = event && event.detail ? event.detail.language : getNewsLanguage();
+    loadGallery(language);
+  });
 </script>
 
 

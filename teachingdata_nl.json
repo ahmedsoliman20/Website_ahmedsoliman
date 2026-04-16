@@ -1,0 +1,158 @@
+[
+  {
+    "category": "Ruimtelijke structuren & computationeel ontwerp",
+    "items": [
+      {
+        "title": "Parametrisch ontwerp van transformeerbare structuren (gegeven in het Engels)",
+        "years": "2022/23, 2023/24, 2024/25, 2025/26",
+        "description": "Prof. dr. ir. arch. Niels De Temmerman, MSc in Architectural Engineering, Bruface (Vrije Universiteit Brussel & Université libre de Bruxelles).",
+        "role": "Onderwijsassistent"
+      },
+      {
+        "title": "Ruimtelijke structuren: ontwerp en analyse (gegeven in het Engels)",
+        "years": "2022/23, 2023/24, 2024/25",
+        "description": "Prof. dr. ir. arch. Lars De Laet, MSc in Architectural Engineering, Bruface (Vrije Universiteit Brussel & Université libre de Bruxelles).",
+        "role": "Onderwijsassistent"
+      },
+      {
+        "title": "Keuzevak 2: computertoepassingen voor architecten 2 – ARC E02 (gegeven in het Arabisch)",
+        "years": "2019/20",
+        "description": "BSc in Architectural Engineering, derde jaar, Future University in Egypt.",
+        "role": "Onderwijsassistent"
+      }
+    ]
+  },
+  {
+    "category": "Onderzoeksmethoden",
+    "items": [
+      {
+        "title": "Onderzoeksmethoden in Architectural Engineering (gegeven in het Engels)",
+        "years": "2022/23",
+        "description": "Prof. dr. ir. arch. Ine Wouters & Prof. dr. ir. arch. Ahmed Z. Khan, MSc in Architectural Engineering, Bruface (Vrije Universiteit Brussel & Université libre de Bruxelles).",
+        "role": "Onderwijsassistent"
+      }
+    ]
+  },
+  {
+    "category": "Modelleren & rendering",
+    "items": [
+      {
+        "title": "Autodesk 3ds Max: modelleren & renderen voor architectuur (gegeven in het Arabisch)",
+        "years": "2015/2016",
+        "description": "Tweedaagse workshop, Future University in Egypt.",
+        "role": "Workshopbegeleider"
+      }
+    ]
+  },
+  {
+    "category": "Ontwerpstudio's",
+    "items": [
+      {
+        "title": "Design Studio 6",
+        "years": "2016/17",
+        "description": "Prof. Dr. Shafak El Wakil and Assoc. Prof. Ayman Fareed, Credit Hours Engineering Programs - Landscape Architecture, Ain Shams University, Cairo.",
+        "role": "Onderwijsassistent"
+      },
+      {
+        "title": "Architectural Design Studio 1 & 2 – ARC 211 & ARC 212 (gegeven in het Arabisch)",
+        "years": "2014/15, 2015/16, 2016/17, 2017/18",
+        "description": "BSc in Architectural Engineering, tweede jaar, Future University in Egypt.",
+        "role": "Onderwijsassistent"
+      },
+      {
+        "title": "Architectural Design Studio 3 & 4 – ARC 311 & ARC 312 (gegeven in het Arabisch)",
+        "years": "2014/15, 2018/19",
+        "description": "BSc in Architectural Engineering, derde jaar, Future University in Egypt.",
+        "role": "Onderwijsassistent"
+      },
+      {
+        "title": "Architectural Design Studio 5 & 6 – ARC 411 & ARC 412 (gegeven in het Arabisch)",
+        "years": "2014/15, 2016/17, 2019/20",
+        "description": "BSc in Architectural Engineering, vierde jaar, Future University in Egypt.",
+        "role": "Onderwijsassistent"
+      },
+      {
+        "title": "Architectural Design Studio 7 – ARC 511 (gegeven in het Arabisch)",
+        "years": "2015/16, 2016/17",
+        "description": "BSc in Architectural Engineering, vijfde jaar, Future University in Egypt.",
+        "role": "Onderwijsassistent"
+      },
+      {
+        "title": "Afstudeerproject – ARC 502 (gegeven in het Arabisch)",
+        "years": "2014/15, 2016/17",
+        "description": "BSc in Architectural Engineering, vijfde jaar, Future University in Egypt.",
+        "role": "Onderwijsassistent"
+      }
+    ]
+  },
+  {
+    "category": "Bouwtechnologie",
+    "items": [
+      {
+        "title": "Bouwconstructie 1",
+        "years": "2016/17, 2017/18, 2019/20",
+        "description": "Assoc. Prof. Tamer Samir & Assoc. Prof. Mohamed El Fayoumi (2016/17), Credit Hours Engineering Programs - Environmental Architecture and Urbanism, Ain Shams University, Cairo.",
+        "role": "Onderwijsassistent"
+      },
+      {
+        "title": "Building Construction & Materials 1 & 2 – ARC 241 & ARC 242 (gegeven in het Arabisch)",
+        "years": "2014/15, 2015/16, 2016/17, 2017/18, 2018/19",
+        "description": "BSc in Architectural Engineering, tweede jaar, Future University in Egypt.",
+        "role": "Onderwijsassistent"
+      },
+      {
+        "title": "Building Construction & Materials 3 & 4 – ARC 341 & ARC 342 (gegeven in het Arabisch)",
+        "years": "2014/15, 2019/20",
+        "description": "BSc in Architectural Engineering, derde jaar, Future University in Egypt.",
+        "role": "Onderwijsassistent"
+      },
+      {
+        "title": "Execution Designs 1 & 2 – ARC 471 & ARC 472 (gegeven in het Arabisch)",
+        "years": "2016/17, 2017/18, 2018/19, 2019/20",
+        "description": "BSc in Architectural Engineering, vierde jaar, Future University in Egypt.",
+        "role": "Onderwijsassistent"
+      }
+    ]
+  },
+  {
+    "category": "Visuele tekenvaardigheden",
+    "items": [
+      {
+        "title": "Free-hand Representation for Architects (ARCH 221/1511)",
+        "years": "2019/20, 2020/21",
+        "description": "Prof. Hoda Shaheen, American University in Cairo.",
+        "role": "Onderwijsassistent"
+      },
+      {
+        "title": "Foundations of 3-Dimensional Design (ARCH 250/2512)",
+        "years": "2019/20",
+        "description": "Prof. Hoda Shaheen, American University in Cairo.",
+        "role": "Onderwijsassistent"
+      },
+      {
+        "title": "Graphic & Visual Skills 1 & 2 – ARC 231 & ARC 232 (gegeven in het Arabisch)",
+        "years": "2015/16, 2017/18, 2018/19, 2019/20",
+        "description": "BSc in Architectural Engineering, tweede jaar, Future University in Egypt.",
+        "role": "Onderwijsassistent"
+      },
+      {
+        "title": "History & Theories of Architecture 1 & 2 – ARC 221 & ARC 222 (gegeven in het Arabisch)",
+        "years": "2014/15, 2015/16",
+        "description": "BSc in Architectural Engineering, tweede jaar, Future University in Egypt.",
+        "role": "Onderwijsassistent"
+      },
+      {
+        "title": "History & Theories of Architecture 4 – ARC 322 (gegeven in het Arabisch)",
+        "years": "2016/17, 2017/18",
+        "description": "BSc in Architectural Engineering, derde jaar, Future University in Egypt.",
+        "role": "Onderwijsassistent"
+      },
+      {
+        "title": "History & Theories of Architecture 6 – ARC 422 (gegeven in het Arabisch)",
+        "years": "2017/18",
+        "description": "BSc in Architectural Engineering, vierde jaar, Future University in Egypt.",
+        "role": "Onderwijsassistent"
+      }
+    ]
+  }
+]

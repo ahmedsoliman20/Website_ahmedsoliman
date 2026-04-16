@@ -2,7 +2,7 @@
   "sectionTitles": {
     "publications": "Publications",
     "supervised": "Supervised Work",
-    "outreach": "Other"
+    "outreach": "Outreach"
   },
   "publications": [
     {
@@ -10,19 +10,19 @@
       "link": "https://researchportal.vub.be/en/publications/designing-from-waste-computational-reuse-of-formwork-wood-in-ligh/"
     },
     {
-      "text": "Exploring the use of planar scissor structures as actuation falsework systems for segmented singly curved shells. \n Soliman, Ahmed; Recker, Laura ; De Laet, Lars ; De Temmerman, Niels. \n Proceedings of IASS Annual Symposia, IASS 2025 . Mexico City : International Association for Shell and Spatial Structures (IASS), 2025. p. 1-12. ",
+      "text": "Exploring the use of planar scissor structures as actuation falsework systems for segmented singly curved shells. \n Soliman, Ahmed; Recker, Laura; De Laet, Lars; De Temmerman, Niels. \n Proceedings of IASS Annual Symposia, IASS 2025. Mexico City: International Association for Shell and Spatial Structures (IASS), 2025. p. 1-12.",
       "link": "https://researchportal.vub.be/en/publications/exploring-the-use-of-planar-scissor-structures-as-actuation-false/"
     },
     {
-      "text": "Exploring Rigid Plates Integration in Barrel Vault Deployable Scissor Systems. \n Soliman, Ahmed; Tysmans, Tine; De Laet, Lars ; De Temmerman, Niels. \n Proceedings of IASS Annual Symposia: IASS 2024 Zurich Symposium: Structural Morphology. Vol. 2024 Zurich, Switzerland : International Association for Shell and Spatial Structures (IASS), 2024. p. 1-6. ",
+      "text": "Exploring Rigid Plates Integration in Barrel Vault Deployable Scissor Systems. \n Soliman, Ahmed; Tysmans, Tine; De Laet, Lars; De Temmerman, Niels. \n Proceedings of IASS Annual Symposia: IASS 2024 Zurich Symposium: Structural Morphology. Vol. 2024 Zurich, Switzerland: International Association for Shell and Spatial Structures (IASS), 2024. p. 1-6.",
       "link": "https://researchportal.vub.be/en/publications/exploring-rigid-plates-integration-in-barrel-vault-deployable-sci/"
     },
     {
-      "text": "Design and construction of the ReciPlyDome, a lightweight modular reciprocal dome. \n Leemans, Ellen; Soliman, Ahmed; Brancart, Stijn ; De Temmerman, Niels ; De Laet, Lars. \n Integration of Design and Fabrication: Proceedings of the International Association for Shell and Spatial Structures Annual Sumposium 2023. ed. / Yi Min Xie; Jane Burry; Ting-Uei Lee; Jiaming Ma. IASS, 2023. p. 1024-1034.",
+      "text": "Design and construction of the ReciPlyDome, a lightweight modular reciprocal dome. \n Leemans, Ellen; Soliman, Ahmed; Brancart, Stijn; De Temmerman, Niels; De Laet, Lars. \n Integration of Design and Fabrication: Proceedings of the International Association for Shell and Spatial Structures Annual Symposium 2023. ed. / Yi Min Xie; Jane Burry; Ting-Uei Lee; Jiaming Ma. IASS, 2023. p. 1024-1034.",
       "link": "https://researchportal.vub.be/en/publications/design-and-construction-of-the-reciplydome-a-lightweight-modular-/"
     },
     {
-      "text": "Double-curved plate components in configurable systems. \n Soliman, Ahmed; Leemans, Ellen; De Laet, Lars ; De Temmerman, Niels. \n Integration of Design and Fabrication: Proceedings of the International Association for Shell and Spatial Structures Annual Symposium 2023. ed. / Yi Min Xie; Jane Burry; Ting-Uei Lee; Jiaming Ma. IASS, 2023. p. 983-994.",
+      "text": "Double-curved plate components in configurable systems. \n Soliman, Ahmed; Leemans, Ellen; De Laet, Lars; De Temmerman, Niels. \n Integration of Design and Fabrication: Proceedings of the International Association for Shell and Spatial Structures Annual Symposium 2023. ed. / Yi Min Xie; Jane Burry; Ting-Uei Lee; Jiaming Ma. IASS, 2023. p. 983-994.",
       "link": "https://researchportal.vub.be/en/publications/double-curved-plate-components-in-configurable-systems/"
     },
     {
@@ -36,11 +36,11 @@
       "link": ""
     },
     {
-      "text": "A reconfigurable kit-of-parts for temporary structures using lightweight polygonal plate elements\nvan Daalen, R. A. Promotor: De Laet, L.Co-promotor: De Temmerman, N.Advisors: Leemans, E.; Soliman, A. Jury: Van de Voorde, S.; Devos, R.; Bouillard, P.; Van Sande, H. , 21 Jun 2024",
+      "text": "A reconfigurable kit-of-parts for temporary structures using lightweight polygonal plate elements\nvan Daalen, R. A. Promotor: De Laet, L. Co-promotor: De Temmerman, N. Advisors: Leemans, E.; Soliman, A. Jury: Van de Voorde, S.; Devos, R.; Bouillard, P.; Van Sande, H., 21 Jun 2024",
       "link": ""
     },
     {
-      "text": "Controlled Buckling Actuation of Kirigami Modules: A Design-Driven Experimental Exploration\nGiraud, M.-L.Promotor: De Temmerman, N.Advisor: Soliman, A.Jury: Van de Voorde, S.; Devos, R.; Brancart, S.; De Laet, L. , 26 Jun 2023",
+      "text": "Controlled Buckling Actuation of Kirigami Modules: A Design-Driven Experimental Exploration\nGiraud, M.-L. Promotor: De Temmerman, N. Advisor: Soliman, A. Jury: Van de Voorde, S.; Devos, R.; Brancart, S.; De Laet, L., 26 Jun 2023",
       "link": ""
     },
     {
@@ -74,7 +74,7 @@
       "link": ""
     },
     {
-      "text": "Guest lecture: Temporary Is the New Permanent: A look into lightweight temporary structures, May 2023, Cairo\nHosted by the department of architectural engineering at future university in cairo, Year 2022/2023",
+      "text": "Guest lecture: Temporary Is the New Permanent: A Look into Lightweight Temporary Structures, May 2023, Cairo\nHosted by the Department of Architectural Engineering at Future University in Cairo, Year 2022/2023",
       "link": ""
     }
   ]
