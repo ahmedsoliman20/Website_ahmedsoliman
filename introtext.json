@@ -1,19 +1,32 @@
 {
-  "intro": [
-    "Stairs are a representation of life, at least of my life. They speak of growth, of development, and most importantly, of resilience. Every step is a decision, each landing a quiet pause, a moment suspended between where you have been and where you are going.",
+  "en": [
+    "Stairs are a representation of life, at least of mine. They speak of growth, of development, and above all, of resilience. Every step is a decision; every landing, a quiet pause suspended between where you have been and where you are going.",
     "",
-    "Stairs are both challenge and beauty. They reveal the poetry of structures, where forces are resolved and engineering becomes something almost lyrical. They are one of the few elements in architecture that demand both precision and emotion, where calculation meets intuition.",
+    "In architecture, stairs are both challenge and beauty. They reveal the poetry of structure, where forces resolve and engineering becomes something almost lyrical. They are among the few elements that demand precision and emotion in equal measure.",
     "",
-    "<b>This portfolio follows the same logic.</b>",
+    "<span style=\"display:block; font-weight:700; color:#d94a38;\">This portfolio follows the same logic.</span>",
     "It is not a collection of finished work,",
-    "but a sequence of steps, projects, explorations, and iterations that build upon one another.",
-    "Each one reflects a moment of learning.",
+    "but a sequence of steps: projects, explorations, and iterations that build upon one another.",
+    "Each one marks a moment of learning.",
     "",
     "Like a staircase, my work moves between precision and intuition,",
     "between constraint and expression.",
     "",
-    "<b>What you see here is not only what I design,</b>",
-    "<b>but how I think, how I test, and how I move forward.</b>" 
-    
+    "<span style=\"font-weight:700; color:#d94a38;\">What you find here is not only what I design,<br>but how I think, how I question, and how I grow.</span>"
+  ],
+  "nl": [
+    "Trappen zijn een verbeelding van het leven, althans van het mijne. Ze spreken over groei, ontwikkeling en vooral veerkracht. Elke trede is een beslissing; elke overloop een stille pauze, tussen waar je bent geweest en waar je naartoe gaat.",
+    "",
+    "In de architectuur zijn trappen zowel een uitdaging als een vorm van schoonheid. Ze onthullen de poëzie van de structuur, waar krachten samenkomen en techniek bijna iets lyrisch wordt. Het zijn een van de weinige elementen die in gelijke mate precisie en emotie vereisen.",
+    "",
+    "<span style=\"display:block; font-weight:700; color:#d94a38;\">Deze portfolio volgt dezelfde logica.</span>",
+    "Het is geen verzameling afgeronde werken,",
+    "maar een opeenvolging van stappen: projecten, verkenningen en iteraties die op elkaar voortbouwen.",
+    "Elk daarvan markeert een moment van leren.",
+    "",
+    "Zoals een trap beweegt mijn werk tussen precisie en intuïtie,",
+    "tussen beperking en expressie.",
+    "",
+    "<span style=\"font-weight:700; color:#d94a38;\">Wat je hier vindt, is niet alleen wat ik ontwerp,<br>maar ook hoe ik denk, hoe ik vragen stel en hoe ik groei.</span>"
   ]
 }

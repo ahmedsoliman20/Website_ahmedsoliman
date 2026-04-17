@@ -204,22 +204,22 @@
   function inferPageKey() {
     const path = (window.location.pathname || '').toLowerCase();
 
-    if (!path || path === '/' || path.endsWith('/index.html')) {
+    if (!path || path === '/' || path.endsWith('/index.html') || path.endsWith('/index')) {
       return 'home';
     }
-    if (path.endsWith('/about.html')) {
+    if (path.endsWith('/about.html') || path.endsWith('/about')) {
       return 'about';
     }
-    if (path.endsWith('/research.html')) {
+    if (path.endsWith('/research.html') || path.endsWith('/research')) {
       return 'research';
     }
-    if (path.endsWith('/teaching.html')) {
+    if (path.endsWith('/teaching.html') || path.endsWith('/teaching')) {
       return 'teaching';
     }
-    if (path.endsWith('/news.html')) {
+    if (path.endsWith('/news.html') || path.endsWith('/news')) {
       return 'news';
     }
-    if (path.endsWith('/st_samples.html')) {
+    if (path.endsWith('/st_samples.html') || path.endsWith('/st_samples')) {
       return 'samples';
     }
 
@@ -236,10 +236,13 @@
 
     document.title = content.title;
 
+    const currentUrl = `${window.location.origin}${window.location.pathname}${window.location.search}${window.location.hash}`;
+
     const metaUpdates = [
       ['meta[name="description"]', 'content', content.description],
       ['meta[property="og:title"]', 'content', content.title],
       ['meta[property="og:description"]', 'content', content.description],
+      ['meta[property="og:url"]', 'content', currentUrl],
       ['meta[name="twitter:title"]', 'content', content.title],
       ['meta[name="twitter:description"]', 'content', content.description]
     ];
@@ -258,19 +261,19 @@
     if (!normalizedHref || normalizedHref === '#') {
       return '';
     }
-    if (normalizedHref === '/' || normalizedHref.includes('index.html')) {
+    if (normalizedHref === '/' || normalizedHref.includes('index.html') || /(^|\/)index(?:[?#]|$)/.test(normalizedHref)) {
       return 'work';
     }
-    if (normalizedHref.includes('research.html')) {
+    if (normalizedHref.includes('research.html') || /(^|\/)research(?:[?#]|$)/.test(normalizedHref)) {
       return 'research';
     }
-    if (normalizedHref.includes('news.html')) {
+    if (normalizedHref.includes('news.html') || /(^|\/)news(?:[?#]|$)/.test(normalizedHref)) {
       return 'news';
     }
-    if (normalizedHref.includes('teaching.html')) {
+    if (normalizedHref.includes('teaching.html') || /(^|\/)teaching(?:[?#]|$)/.test(normalizedHref)) {
       return 'teaching';
     }
-    if (normalizedHref.includes('about.html')) {
+    if (normalizedHref.includes('about.html') || /(^|\/)about(?:[?#]|$)/.test(normalizedHref)) {
       return 'about';
     }
 
@@ -532,7 +535,33 @@
     });
   }
 
+  function normalizeDisplayedUrl() {
+    if (!window.history || typeof window.history.replaceState !== 'function') {
+      return;
+    }
+
+    const path = String(window.location.pathname || '');
+
+    if (!/\.html$/i.test(path)) {
+      return;
+    }
+
+    let cleanPath = path.replace(/\.html$/i, '');
+
+    cleanPath = cleanPath.replace(/\/projects\/([^/]+)\/\1$/i, '/projects/$1');
+
+    const cleanUrl = `${cleanPath}${window.location.search}${window.location.hash}`;
+
+    window.history.replaceState(window.history.state, '', cleanUrl);
+
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (canonicalLink) {
+      canonicalLink.setAttribute('href', `${window.location.origin}${cleanPath}`);
+    }
+  }
+
   function initialize() {
+    normalizeDisplayedUrl();
     applyLanguage(currentLanguage, false, { notify: false });
     observeDynamicChanges();
 

@@ -994,6 +994,16 @@
   <div class="intro-content" id="introText"></div>
 </div>
 
+<div class="mobile-desktop-notice" id="mobileDesktopNotice" aria-hidden="true">
+  <div class="mobile-desktop-notice-card" role="dialog" aria-modal="true" aria-labelledby="mobileDesktopNoticeTitle">
+    <h3 id="mobileDesktopNoticeTitle">Better on desktop</h3>
+    <p id="mobileDesktopNoticeText">For the best experience, please visit this website on a desktop device.</p>
+    <div class="mobile-desktop-notice-actions">
+      <button type="button" class="mobile-desktop-notice-close" id="mobileDesktopNoticeClose">Continue</button>
+    </div>
+  </div>
+</div>
+
 <script>
   // Scroll arrow
   document.getElementById('scrollArrow').addEventListener('click', () => {
@@ -1005,16 +1015,92 @@
   const introText = document.getElementById('introText');
   const introClose = document.getElementById('introClose');
   const learnMoreBtn = document.querySelector('.learn-more-btn');
+  const mobileDesktopNotice = document.getElementById('mobileDesktopNotice');
+  const mobileDesktopNoticeTitle = document.getElementById('mobileDesktopNoticeTitle');
+  const mobileDesktopNoticeText = document.getElementById('mobileDesktopNoticeText');
+  const mobileDesktopNoticeClose = document.getElementById('mobileDesktopNoticeClose');
+  let loadedIntroLanguage = '';
+
+  function updateMobileNoticeLanguage() {
+    const language = getCurrentIntroLanguage();
+
+    if (!mobileDesktopNoticeTitle || !mobileDesktopNoticeText || !mobileDesktopNoticeClose) {
+      return;
+    }
+
+    if (language === 'nl') {
+      mobileDesktopNoticeTitle.textContent = 'Beter op desktop';
+      mobileDesktopNoticeText.textContent = 'Voor de beste ervaring bezoekt u deze website best op een desktopapparaat.';
+      mobileDesktopNoticeClose.textContent = 'Doorgaan';
+    } else {
+      mobileDesktopNoticeTitle.textContent = 'Better on desktop';
+      mobileDesktopNoticeText.textContent = 'For the best experience, please visit this website on a desktop device.';
+      mobileDesktopNoticeClose.textContent = 'Continue';
+    }
+  }
+
+  function setupMobileDesktopNotice() {
+    if (!mobileDesktopNotice || !mobileDesktopNoticeClose) {
+      return;
+    }
+
+    updateMobileNoticeLanguage();
+
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      mobileDesktopNotice.classList.add('is-visible');
+      mobileDesktopNotice.setAttribute('aria-hidden', 'false');
+    }
+
+    mobileDesktopNoticeClose.addEventListener('click', () => {
+      mobileDesktopNotice.classList.remove('is-visible');
+      mobileDesktopNotice.setAttribute('aria-hidden', 'true');
+    });
+
+    mobileDesktopNotice.addEventListener('click', (event) => {
+      if (event.target === mobileDesktopNotice) {
+        mobileDesktopNotice.classList.remove('is-visible');
+        mobileDesktopNotice.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }
+
+  function getCurrentIntroLanguage() {
+    return (window.siteLanguage && typeof window.siteLanguage.getCurrentLanguage === 'function'
+      ? window.siteLanguage.getCurrentLanguage()
+      : document.documentElement.getAttribute('data-site-language') || document.documentElement.lang || 'en').toLowerCase();
+  }
+
+  async function loadIntroContent(forceReload = false) {
+    const language = getCurrentIntroLanguage();
+
+    if (!forceReload && loadedIntroLanguage === language && introText.innerHTML.trim()) {
+      return;
+    }
+
+    const res = await fetch('introtext.json', { cache: 'no-cache' });
+    const data = await res.json();
+    const selectedIntro = data[language] || data.en || data.intro || [];
+    const raw = Array.isArray(selectedIntro) ? selectedIntro.join('\n') : selectedIntro;
+
+    introText.innerHTML = raw.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+    loadedIntroLanguage = language;
+  }
 
   learnMoreBtn.addEventListener('click', async () => {
-    if (!introText.textContent) {
-      const res = await fetch('introtext.json');
-      const data = await res.json();
-      const raw = Array.isArray(data.intro) ? data.intro.join('\n') : data.intro;
-      introText.innerHTML = raw.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
-    }
+    await loadIntroContent();
     overlay.classList.add('active');
   });
+
+  document.addEventListener('site-language-changed', async () => {
+    loadedIntroLanguage = '';
+    updateMobileNoticeLanguage();
+
+    if (overlay.classList.contains('active')) {
+      await loadIntroContent(true);
+    }
+  });
+
+  setupMobileDesktopNotice();
 
   introClose.addEventListener('click', () => {
     overlay.classList.remove('active');

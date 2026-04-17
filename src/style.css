@@ -853,6 +853,7 @@ main.py-4 {
     line-height: 1.35;
     letter-spacing: 0.01em;
     text-transform: none;
+    text-align: right;
     color: rgba(170, 170, 170, 0.88);
     margin-top: 0.1rem;
 }
@@ -939,14 +940,19 @@ main.py-4 {
   background: var(--bg-dark);
   padding-top: 0.75rem;
   padding-bottom: 2rem;
+  min-height: calc(100vh - 220px);
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-height: 760px) {
   .teaching-hero-sticky {
     position: relative;
     top: auto;
     padding-top: 0;
+  }
+
+  .teaching-content-layer {
+    min-height: 0;
   }
 }
 
@@ -1086,7 +1092,8 @@ main.py-4 {
 
 @media (max-width: 575.98px) {
   #teaching-logo-filters {
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .teaching-logo-filter {
@@ -1127,10 +1134,10 @@ main.py-4 {
     min-height: 50px;
     min-width: 170px;
     padding: 7px 10px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
     flex-basis: 100%;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .teaching-action-text {
@@ -1141,15 +1148,30 @@ main.py-4 {
     text-align: left !important;
   }
 
+  .entry-meta-badges {
+    justify-content: flex-start;
+  }
+
+  .section-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .section-container .col-md-3,
+  .section-container .col-md-9 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .section-container .col-md-3 {
-    text-align: center;
+    text-align: left;
     margin-bottom: 0.6rem;
   }
 
   .role-text {
-    display: inline-block;
-    text-align: center !important;
-    margin: 0 auto 0.45rem;
+    display: block;
+    text-align: left !important;
+    margin: 0 0 0.45rem;
     padding-bottom: 0.35rem;
     position: relative;
   }
@@ -1157,9 +1179,9 @@ main.py-4 {
   .role-text::after {
     content: "";
     position: absolute;
-    left: 50%;
+    left: 0;
     bottom: 0;
-    transform: translateX(-50%);
+    transform: none;
     width: 42px;
     height: 1px;
     background: rgba(255, 255, 255, 0.35);
@@ -1329,5 +1351,69 @@ body:not(.home-page):not(.teaching-page) .teaching-content-layer {
     filter: none;
     animation: none;
     will-change: auto;
+  }
+}
+
+/* Mobile desktop recommendation popup */
+.mobile-desktop-notice {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.58);
+}
+
+.mobile-desktop-notice.is-visible {
+  display: flex;
+}
+
+.mobile-desktop-notice-card {
+  width: min(100%, 360px);
+  background: #2a2a2a;
+  color: #f3f3f3;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.35);
+  padding: 1rem 1rem 0.9rem;
+}
+
+.mobile-desktop-notice-card h3 {
+  margin: 0 0 0.45rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.mobile-desktop-notice-card p {
+  margin: 0 0 0.9rem;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.mobile-desktop-notice-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mobile-desktop-notice-close {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.42rem 0.8rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.mobile-desktop-notice-close:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+@media (min-width: 769px) {
+  .mobile-desktop-notice {
+    display: none !important;
   }
 }
