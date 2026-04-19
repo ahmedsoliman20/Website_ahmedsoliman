@@ -48,7 +48,7 @@
   </script>
 </head>
 
-<body>
+<body class="news-page">
 
 <header class="site-header pt-5 pb-4">
   <nav class="navbar navbar-expand-xl">
@@ -83,8 +83,11 @@
 
 <main class="py-4">
   <div class="container px-4">
-    
-    <div class="sticky-filter-wrapper">
+    <section class="news-hero-section">
+      <p class="news-page-intro mb-0">A selection of lectures, conferences, workshops, awards, and academic moments shaping the ongoing journey.</p>
+    </section>
+
+    <div class="sticky-filter-wrapper news-filter-bar">
       <div class="d-flex flex-wrap justify-content-start gap-2" id="filter-buttons">
         <button class="btn btn-filter active" data-filter="all">All</button>
         <button class="btn btn-filter" data-filter="Lectures">Lectures</button>
@@ -96,8 +99,7 @@
       </div>
     </div>
 
-    <div id="gallery-grid" class="row gx-4 gy-2 mt-1">
-      </div>
+    <div id="gallery-grid" class="row gx-4 gy-4 mt-0"></div>
 
   </div>
 </main>
@@ -113,6 +115,7 @@
           <img id="imageModalImg" src="" alt="" class="img-fluid rounded news-modal-image" />
         </div>
         <div class="p-3 text-white news-modal-caption">
+          <div class="news-modal-meta" id="imageModalMeta"></div>
           <h5 class="mb-2" id="imageModalTitle"></h5>
           <p class="mb-0" id="imageModalDescription"></p>
         </div>
@@ -278,6 +281,30 @@
     setupFilters();
   }
 
+  function formatCategoryLabel(value) {
+    const normalized = String(value || 'Other').trim();
+    if (!normalized) return 'Other';
+    return normalized.charAt(0).toUpperCase() + normalized.slice(1).toLowerCase();
+  }
+
+  function inferCountryInfo(item) {
+    const haystack = `${item.title || ''} ${item.description || ''}`.toLowerCase();
+
+    const countryMatchers = [
+      { keywords: ['athens', 'athene', 'greece', 'ntua'], flag: '🇬🇷', name: 'Greece' },
+      { keywords: ['cairo', 'caïro', 'egypt', 'sharm el-sheikh', 'al ahly'], flag: '🇪🇬', name: 'Egypt' },
+      { keywords: ['melbourne', 'australia'], flag: '🇦🇺', name: 'Australia' },
+      { keywords: ['singapore'], flag: '🇸🇬', name: 'Singapore' },
+      { keywords: ['zurich', 'zürich', 'switzerland'], flag: '🇨🇭', name: 'Switzerland' },
+      { keywords: ['mexico city', 'mexico-stad', 'mexico'], flag: '🇲🇽', name: 'Mexico' },
+      { keywords: ['torino', 'turijn', 'italy', 'italia'], flag: '🇮🇹', name: 'Italy' },
+      { keywords: ['delft', 'netherlands'], flag: '🇳🇱', name: 'Netherlands' },
+      { keywords: ['brussels', 'brussel', 'belgium', 'vub', 'ulb', 'asiat park', 'tour & taxis'], flag: '🇧🇪', name: 'Belgium' }
+    ];
+
+    return countryMatchers.find((country) => country.keywords.some((keyword) => haystack.includes(keyword))) || null;
+  }
+
   function renderGallery(items) {
     currentGalleryItems = items;
     if (items.length === 0) {
@@ -285,20 +312,27 @@
       return;
     }
 
-    grid.innerHTML = items.map((item, index) => `
-      <div class="col-md-6 col-lg-4 gallery-item">
-        <div class="reveal-item" style="animation-delay: ${index * 0.05}s;">
-          <div class="tile">
+    grid.innerHTML = items.map((item, index) => {
+      const countryInfo = inferCountryInfo(item);
+      return `
+      <div class="col-md-6 col-xl-4 gallery-item">
+        <article class="reveal-item news-card" style="animation-delay: ${index * 0.05}s;">
+          <span class="news-card-badge">${formatCategoryLabel(item.category)}</span>
+          ${countryInfo ? `<span class="news-card-flag" title="${countryInfo.name}" aria-label="${countryInfo.name}">${countryInfo.flag}</span>` : ''}
+          <div class="tile news-card-media">
             <div class="img-link" role="button" aria-label="Open ${item.title} in popup">
-              <img src="${item.img}" class="gallery-img img-fluid" alt="${item.title}" data-title="${item.title}" data-description="${item.description}" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" style="cursor: zoom-in;">
+              <img src="${item.img}" class="gallery-img img-fluid" alt="${item.title}" data-title="${item.title}" data-description="${item.description}" data-category="${formatCategoryLabel(item.category)}" data-country="${countryInfo ? `${countryInfo.flag} ${countryInfo.name}` : ''}" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" style="cursor: zoom-in;">
               <div class="tile-overlay"></div>
-              <figcaption class="caption font-bebas">${item.title}</figcaption>
             </div>
           </div>
-          <p class="project-description">${item.description}</p>
-        </div>
+          <div class="news-card-body">
+            <h3 class="news-card-title">${item.title}</h3>
+            <p class="news-card-description">${item.description}</p>
+          </div>
+        </article>
       </div>
-    `).join('');
+    `;
+    }).join('');
   }
 
   function setupFilters() {
@@ -339,6 +373,7 @@
     if (!modalEl || !modalImg || !modalTitle) return;
 
     const modal = new bootstrap.Modal(modalEl, { keyboard: true, backdrop: 'static' });
+    const modalMeta = document.getElementById('imageModalMeta');
 
     document.body.addEventListener('click', event => {
       const card = event.target.closest('.img-link');
@@ -350,6 +385,8 @@
       const src = img.getAttribute('src');
       const title = img.getAttribute('data-title') || img.getAttribute('alt') || '';
       const description = img.getAttribute('data-description') || '';
+      const category = img.getAttribute('data-category') || '';
+      const country = img.getAttribute('data-country') || '';
 
       currentGalleryIndex = currentGalleryItems.findIndex(item => item.img === src);
       if (currentGalleryIndex === -1) currentGalleryIndex = 0;
@@ -357,6 +394,7 @@
       modalImg.setAttribute('src', src);
       modalImg.setAttribute('alt', title);
       modalTitle.textContent = title;
+      if (modalMeta) modalMeta.textContent = country ? `${category} · ${country}` : category;
       document.getElementById('imageModalDescription').textContent = description;
       modal.show();
     });
@@ -368,9 +406,14 @@
       if (!currentGalleryItems.length) return;
       const item = currentGalleryItems[currentGalleryIndex];
       if (!item) return;
+      const countryInfo = inferCountryInfo(item);
       modalImg.setAttribute('src', item.img);
       modalImg.setAttribute('alt', item.title);
       modalTitle.textContent = item.title;
+      if (modalMeta) {
+        const categoryLabel = formatCategoryLabel(item.category);
+        modalMeta.textContent = countryInfo ? `${categoryLabel} · ${countryInfo.flag} ${countryInfo.name}` : categoryLabel;
+      }
       document.getElementById('imageModalDescription').textContent = item.description || '';
     }
 

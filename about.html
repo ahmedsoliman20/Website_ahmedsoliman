@@ -123,7 +123,7 @@
         </div>
 
         <div class="about-quick-links" aria-label="Profile and social links">
-          <button class="about-contact-link" id="contactBtn">CONTACT</button>
+          <button class="about-contact-link" id="contactBtn" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">CONTACT</button>
           <a href="https://researchportal.vub.be/en/persons/ahmed-soliman/" target="_blank" title="Pure Profile" class="about-quick-link about-quick-link-pure">PURE</a>
           <a href="https://innovativestructureslab.com/" target="_blank" title="Innovative Structures Lab" class="about-quick-link about-quick-link-pure">LAB</a>
           <a href="https://www.instagram.com/ahsolimann/" target="_blank" title="Instagram" class="about-quick-link">
@@ -552,17 +552,17 @@
 
     // Render Contact Modal
     const contactModalBody = document.getElementById('contactModalBody');
-    const contactBtn = document.getElementById('contactBtn');
-    if (contacts && contacts.length > 0) {
-      contactModalBody.innerHTML = contacts.map(contact => `
-        <div class="mb-2">
-          <strong>${contact.label}:</strong> 
-          <a href="${contact.url}" class="text-reset">${contact.value}</a>
-        </div>
-      `).join('');
-      contactBtn.addEventListener('click', () => {
-        new bootstrap.Modal(document.getElementById('contactModal')).show();
-      });
+    if (contactModalBody) {
+      if (contacts && contacts.length > 0) {
+        contactModalBody.innerHTML = contacts.map(contact => `
+          <div class="mb-2">
+            <strong>${contact.label}:</strong> 
+            <a href="${contact.url}" class="text-reset">${contact.value}</a>
+          </div>
+        `).join('');
+      } else {
+        contactModalBody.innerHTML = '<div class="text-muted">Contact details are currently unavailable.</div>';
+      }
     }
 
     // Render Experience Timeline
@@ -577,8 +577,11 @@
       </div>
     `).join('');
 
-    // Set CV Download Link
-    document.getElementById('cvDownloadLink').href = cvDownloadUrl;
+    // Set CV Download Link if the element exists
+    const cvDownloadLink = document.getElementById('cvDownloadLink');
+    if (cvDownloadLink && cvDownloadUrl) {
+      cvDownloadLink.href = cvDownloadUrl;
+    }
 
     const requestBtn = document.getElementById('requestPhysicalCopyBtn');
     const requestForm = document.getElementById('portfolioRequestForm');
@@ -616,6 +619,14 @@
       requestForm.reset();
     });
   }
+
+  // Move Bootstrap modals to the body to avoid stacking-context issues
+  ['contactModal', 'physicalCopyModal'].forEach((modalId) => {
+    const modalEl = document.getElementById(modalId);
+    if (modalEl && modalEl.parentElement !== document.body) {
+      document.body.appendChild(modalEl);
+    }
+  });
 
   // Initialize
   loadCVData();

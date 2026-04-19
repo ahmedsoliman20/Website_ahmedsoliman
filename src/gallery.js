@@ -110,14 +110,10 @@
   function getPagerText() {
     return getCurrentSiteLanguage() === 'nl'
       ? {
-          previousLabel: 'Vorig project',
-          nextLabel: 'Volgend project',
           previousAria: 'Vorig project: ',
           nextAria: 'Volgend project: '
         }
       : {
-          previousLabel: 'Previous Project',
-          nextLabel: 'Next Project',
           previousAria: 'Previous project: ',
           nextAria: 'Next project: '
         };
@@ -186,53 +182,71 @@
       });
   }
 
-  function createPreviousLink(project) {
+  function createSideNavLink(project, direction) {
     const pagerText = getPagerText();
+    const isPrevious = direction === 'prev';
     const anchor = document.createElement('a');
     anchor.href = project.href;
-    anchor.className = 'project-pager-link project-pager-link-prev text-decoration-none d-inline-flex align-items-center gap-2';
-    anchor.setAttribute('aria-label', pagerText.previousAria + project.title);
+    anchor.className = 'project-side-nav-button project-side-nav-' + (isPrevious ? 'prev' : 'next');
+    anchor.setAttribute('aria-label', (isPrevious ? pagerText.previousAria : pagerText.nextAria) + project.title);
+    anchor.setAttribute('title', project.title);
 
     const arrow = document.createElement('span');
-    arrow.className = 'project-pager-arrow';
-    arrow.textContent = '\u2039';
-
-    const label = document.createElement('span');
-    label.className = 'project-pager-label';
-    label.textContent = pagerText.previousLabel;
+    arrow.className = 'project-side-nav-icon';
+    arrow.textContent = isPrevious ? '\u2039' : '\u203A';
 
     anchor.appendChild(arrow);
-    anchor.appendChild(label);
-
     return anchor;
   }
 
-  function createNextLink(project) {
-    const pagerText = getPagerText();
-    const anchor = document.createElement('a');
-    anchor.href = project.href;
-    anchor.className = 'project-pager-link project-pager-link-next text-decoration-none d-inline-flex align-items-center gap-2';
-    anchor.setAttribute('aria-label', pagerText.nextAria + project.title);
+  function injectProjectSideArrows(previousProject, nextProject) {
+    if (document.getElementById('project-side-arrows') || (!previousProject && !nextProject)) {
+      return;
+    }
 
-    const label = document.createElement('span');
-    label.className = 'project-pager-label';
-    label.textContent = pagerText.nextLabel;
+    const wrapper = document.createElement('div');
+    wrapper.id = 'project-side-arrows';
+    wrapper.className = 'project-side-arrows';
 
-    const arrow = document.createElement('span');
-    arrow.className = 'project-pager-arrow';
-    arrow.textContent = '\u203A';
+    if (previousProject) {
+      wrapper.appendChild(createSideNavLink(previousProject, 'prev'));
+    }
 
-    anchor.appendChild(label);
-    anchor.appendChild(arrow);
-    return anchor;
+    if (nextProject) {
+      wrapper.appendChild(createSideNavLink(nextProject, 'next'));
+    }
+
+    document.body.appendChild(wrapper);
+  }
+
+  function bindProjectArrowKeyNavigation(previousProject, nextProject) {
+    if (!document.body || document.body.dataset.projectArrowNavigationBound === 'true') {
+      return;
+    }
+
+    document.body.dataset.projectArrowNavigationBound = 'true';
+
+    document.addEventListener('keydown', function(event) {
+      const activeElement = document.activeElement;
+      const tagName = activeElement && activeElement.tagName ? activeElement.tagName.toLowerCase() : '';
+      const isTypingField = activeElement && (activeElement.isContentEditable || tagName === 'input' || tagName === 'textarea' || tagName === 'select');
+
+      if (isTypingField || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) {
+        return;
+      }
+
+      if (event.key === 'ArrowLeft' && previousProject) {
+        window.location.href = previousProject.href;
+      }
+
+      if (event.key === 'ArrowRight' && nextProject) {
+        window.location.href = nextProject.href;
+      }
+    });
   }
 
   async function injectProjectPager() {
     if (!document.body || !document.body.classList.contains('project-page')) {
-      return;
-    }
-
-    if (document.getElementById('project-pager-nav')) {
       return;
     }
 
@@ -265,29 +279,8 @@
       return;
     }
 
-    const section = document.createElement('section');
-    section.id = 'project-pager-nav';
-    section.className = 'pt-0 pb-0 mt-0';
-
-    const row = document.createElement('div');
-    row.className = 'd-flex flex-column flex-md-row justify-content-between gap-3 pt-0';
-
-    const previousSlot = document.createElement('div');
-    previousSlot.className = 'text-start';
-    if (previousProject) {
-      previousSlot.appendChild(createPreviousLink(previousProject));
-    }
-
-    const nextSlot = document.createElement('div');
-    nextSlot.className = 'text-start text-md-end';
-    if (nextProject) {
-      nextSlot.appendChild(createNextLink(nextProject));
-    }
-
-    row.appendChild(previousSlot);
-    row.appendChild(nextSlot);
-    section.appendChild(row);
-    main.appendChild(section);
+    injectProjectSideArrows(previousProject, nextProject);
+    bindProjectArrowKeyNavigation(previousProject, nextProject);
   }
 
   async function discoverGalleryMedia(options) {

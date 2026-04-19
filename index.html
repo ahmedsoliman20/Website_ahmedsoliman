@@ -236,10 +236,18 @@
       margin-right: calc((100vw - min(100vw - 48px, 1320px)) / 2);
       margin-bottom: 0;
       background: transparent;
+      border: 0;
+      outline: none;
       --poster-color: transparent;
+      --progress-bar-color: transparent;
       opacity: 0;
       visibility: hidden;
       overflow: visible;
+    }
+
+    #hero-section model-viewer::part(default-progress-bar),
+    #hero-section model-viewer::part(default-progress-mask) {
+      display: none;
     }
 
     @media (max-width: 768px) {
