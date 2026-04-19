@@ -3,13 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    if (window.location.protocol.indexOf('http') === 0 && window.location.pathname.toLowerCase() === '/news.html') {
+      window.location.replace('/news/');
+    }
+  </script>
   <title>News | Ahmed Soliman</title>
   <meta name="description" content="Follow Ahmed Soliman's latest news, lectures, conferences, workshops, and academic activities in architecture and research." />
-  <link rel="canonical" href="https://ahmedsoliman.be/news.html" />
+  <link rel="canonical" href="https://ahmedsoliman.be/news/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="News | Ahmed Soliman" />
   <meta property="og:description" content="Follow Ahmed Soliman's latest news, lectures, conferences, workshops, and academic activities in architecture and research." />
-  <meta property="og:url" content="https://ahmedsoliman.be/news.html" />
+  <meta property="og:url" content="https://ahmedsoliman.be/news/" />
   <meta property="og:image" content="https://ahmedsoliman.be/assets/thumb.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="News | Ahmed Soliman" />
@@ -20,7 +25,7 @@
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "News | Ahmed Soliman",
-      "url": "https://ahmedsoliman.be/news.html",
+      "url": "https://ahmedsoliman.be/news/",
       "description": "Follow Ahmed Soliman's latest news, lectures, conferences, workshops, and academic activities in architecture and research.",
       "image": "https://ahmedsoliman.be/assets/thumb.webp",
       "about": {
@@ -62,11 +67,11 @@
         
         <div class="collapse navbar-collapse custom-dropdown" id="mainNav"> 
           <ul class="navbar-nav gap-lg-4 text-uppercase">
-            <li class="nav-item"><a class="nav-link p-0" href="index.html">Work</a></li>
-            <li class="nav-item"><a class="nav-link p-0"  href="research.html">Research</a></li>
-            <li class="nav-item"><a class="nav-link active p-0"  href="news.html">News</a></li>
-            <li class="nav-item"><a class="nav-link p-0"  href="teaching.html">Teaching</a></li>
-            <li class="nav-item"><a class="nav-link p-0"  href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link p-0" href="/">Work</a></li>
+            <li class="nav-item"><a class="nav-link p-0"  href="/research/">Research</a></li>
+            <li class="nav-item"><a class="nav-link active p-0"  href="/news/">News</a></li>
+            <li class="nav-item"><a class="nav-link p-0"  href="/teaching/">Teaching</a></li>
+            <li class="nav-item"><a class="nav-link p-0"  href="/about/">About</a></li>
           </ul>
         </div>
 
@@ -452,10 +457,10 @@
 
       <div class="footer-links footer-nav">
         <a href="/">Work</a>
-        <a href="research.html">Research</a>
-        <a href="news.html">News</a>
-        <a href="teaching.html">Teaching</a>
-        <a href="about.html">About</a>
+        <a href="/research/">Research</a>
+        <a href="/news/">News</a>
+        <a href="/teaching/">Teaching</a>
+        <a href="/about/">About</a>
       </div>
 
       <div class="footer-connect">
@@ -497,6 +502,7 @@
 </script>
 </body>
 </html>
+
 
 
 

@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ahmedsoliman.be/</loc>
   </url>
   <url>
-    <loc>https://ahmedsoliman.be/about.html</loc>
+    <loc>https://ahmedsoliman.be/about/</loc>
   </url>
   <url>
-    <loc>https://ahmedsoliman.be/research.html</loc>
+    <loc>https://ahmedsoliman.be/research/</loc>
   </url>
   <url>
-    <loc>https://ahmedsoliman.be/teaching.html</loc>
+    <loc>https://ahmedsoliman.be/teaching/</loc>
   </url>
   <url>
-    <loc>https://ahmedsoliman.be/news.html</loc>
+    <loc>https://ahmedsoliman.be/news/</loc>
   </url>
   <url>
-    <loc>https://ahmedsoliman.be/st_samples.html</loc>
+    <loc>https://ahmedsoliman.be/st_samples/</loc>
   </url>
   <url>
     <loc>https://ahmedsoliman.be/projects/project_1/project_1.html</loc>

@@ -1,0 +1,504 @@
+﻿<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <base href="/" />
+  <title>News | Ahmed Soliman</title>
+  <meta name="description" content="Follow Ahmed Soliman's latest news, lectures, conferences, workshops, and academic activities in architecture and research." />
+  <link rel="canonical" href="https://ahmedsoliman.be/news/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="News | Ahmed Soliman" />
+  <meta property="og:description" content="Follow Ahmed Soliman's latest news, lectures, conferences, workshops, and academic activities in architecture and research." />
+  <meta property="og:url" content="https://ahmedsoliman.be/news/" />
+  <meta property="og:image" content="https://ahmedsoliman.be/assets/thumb.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="News | Ahmed Soliman" />
+  <meta name="twitter:description" content="Follow Ahmed Soliman's latest news, lectures, conferences, workshops, and academic activities in architecture and research." />
+  <meta name="twitter:image" content="https://ahmedsoliman.be/assets/thumb.webp" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "News | Ahmed Soliman",
+      "url": "https://ahmedsoliman.be/news/",
+      "description": "Follow Ahmed Soliman's latest news, lectures, conferences, workshops, and academic activities in architecture and research.",
+      "image": "https://ahmedsoliman.be/assets/thumb.webp",
+      "about": {
+        "@type": "Person",
+        "name": "Ahmed Soliman"
+      }
+    }
+  </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../src/style.css">
+  <script defer src="src/i18n.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DCJVGXKXL5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DCJVGXKXL5');
+  </script>
+</head>
+
+<body class="news-page">
+
+<header class="site-header pt-5 pb-4">
+  <nav class="navbar navbar-expand-xl">
+    <div class="container px-4 d-flex align-items-center position-relative">
+
+      <div class="d-flex justify-content-start flex-grow-1">
+        <h1 class="h4 h3-lg fw-semibold mb-0 text-nowrap">Ahmed Soliman</h1>
+      </div>
+
+      <div class="d-flex align-items-center header-right-section">
+        
+        <div class="collapse navbar-collapse custom-dropdown" id="mainNav"> 
+          <ul class="navbar-nav gap-lg-4 text-uppercase">
+            <li class="nav-item"><a class="nav-link p-0" href="/">Work</a></li>
+            <li class="nav-item"><a class="nav-link p-0"  href="/research/">Research</a></li>
+            <li class="nav-item"><a class="nav-link active p-0"  href="/news/">News</a></li>
+            <li class="nav-item"><a class="nav-link p-0"  href="/teaching/">Teaching</a></li>
+            <li class="nav-item"><a class="nav-link p-0"  href="/about/">About</a></li>
+          </ul>
+        </div>
+
+        <div class="d-flex align-items-center gap-3 ms-xl-5">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+      </div> 
+    </div>
+  </nav>
+</header>
+
+<main class="py-4">
+  <div class="container px-4">
+    <section class="news-hero-section">
+      <p class="news-page-intro mb-0">A selection of lectures, conferences, workshops, awards, and academic moments shaping the ongoing journey.</p>
+    </section>
+
+    <div class="sticky-filter-wrapper news-filter-bar">
+      <div class="d-flex flex-wrap justify-content-start gap-2" id="filter-buttons">
+        <button class="btn btn-filter active" data-filter="all">All</button>
+        <button class="btn btn-filter" data-filter="Lectures">Lectures</button>
+        <button class="btn btn-filter" data-filter="conferences">Conferences</button>
+        <button class="btn btn-filter" data-filter="degrees">Degrees</button>
+        <button class="btn btn-filter" data-filter="awards">Awards</button>
+        <button class="btn btn-filter" data-filter="workshops">Workshops</button>
+        <button class="btn btn-filter" data-filter="other">Other</button>
+      </div>
+    </div>
+
+    <div id="gallery-grid" class="row gx-4 gy-4 mt-0"></div>
+
+  </div>
+</main>
+
+<!-- Image popup modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content news-modal-content border-0">
+      <div class="modal-body p-0 news-modal-body">
+        <button id="prevImageBtn" type="button" class="btn news-modal-arrow" aria-label="Previous image">&#10094;</button>
+        <button id="nextImageBtn" type="button" class="btn news-modal-arrow" aria-label="Next image">&#10095;</button>
+        <div class="d-flex justify-content-center align-items-center p-3 news-modal-image-wrap">
+          <img id="imageModalImg" src="" alt="" class="img-fluid rounded news-modal-image" />
+        </div>
+        <div class="p-3 text-white news-modal-caption">
+          <div class="news-modal-meta" id="imageModalMeta"></div>
+          <h5 class="mb-2" id="imageModalTitle"></h5>
+          <p class="mb-0" id="imageModalDescription"></p>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-center news-modal-footer">
+        <button type="button" class="btn btn-outline-light btn-sm news-modal-close" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const grid = document.getElementById('gallery-grid');
+  let allItems = []; 
+  let currentGalleryItems = [];
+  let currentGalleryIndex = 0;
+  const SUPPORTED_IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp'];
+  const imagePathCache = new Map();
+
+  function isExternalOrAbsolutePath(path) {
+    return /^(https?:\/\/|\.\.\/|\/)/.test(path);
+  }
+
+  function hasSupportedExtension(fileName) {
+    return /\.(jpg|jpeg|png|webp)$/i.test(fileName);
+  }
+
+  function testImagePath(path) {
+    return new Promise(resolve => {
+      const img = new Image();
+      img.onload = () => resolve(true);
+      img.onerror = () => resolve(false);
+      img.src = path;
+    });
+  }
+
+  async function resolveNewsImagePath(imageName, fallbackBaseName) {
+    const rawName = (imageName || fallbackBaseName || '').trim();
+    if (!rawName) {
+      return 'https://placehold.co/600x400?text=Image+Not+Found';
+    }
+
+    if (isExternalOrAbsolutePath(rawName)) {
+      return rawName;
+    }
+
+    const cacheKey = `news:${rawName}`;
+    if (imagePathCache.has(cacheKey)) {
+      return imagePathCache.get(cacheKey);
+    }
+
+    if (hasSupportedExtension(rawName)) {
+      const directPath = `../news/${rawName}`;
+      imagePathCache.set(cacheKey, directPath);
+      return directPath;
+    }
+
+    const candidates = SUPPORTED_IMAGE_EXTENSIONS.map(ext => `../news/${rawName}.${ext}`);
+    for (const candidate of candidates) {
+      const exists = await testImagePath(candidate);
+      if (exists) {
+        imagePathCache.set(cacheKey, candidate);
+        return candidate;
+      }
+    }
+
+    // Keep a deterministic fallback so rendering never breaks.
+    const fallbackPath = candidates[0];
+    imagePathCache.set(cacheKey, fallbackPath);
+    return fallbackPath;
+  }
+
+  function getNewsLanguage() {
+    try {
+      const savedLanguage = (localStorage.getItem('ahmedsoliman.site-language') || '').toLowerCase();
+      if (savedLanguage === 'nl' || savedLanguage === 'en') {
+        return savedLanguage;
+      }
+    } catch (error) {
+      // Ignore localStorage issues.
+    }
+
+    const pageLanguage = (document.documentElement.lang || 'en').toLowerCase();
+    return pageLanguage === 'nl' ? 'nl' : 'en';
+  }
+
+  function getNewsDataPath(language) {
+    return language === 'nl' ? 'new_nl.json' : 'new.json';
+  }
+
+  function getNewsFallbackLabel(language) {
+    return language === 'nl' ? 'Nieuwsitem' : 'News Item';
+  }
+
+  function getEmptyNewsMessage(language) {
+    return language === 'nl'
+      ? 'Geen items gevonden in deze categorie.'
+      : 'No items found in this category.';
+  }
+
+  async function loadGallery(language) {
+    const currentLanguage = language || getNewsLanguage();
+    let jsonData = {
+      descriptions: {},
+      newstitles: {},
+      categories: {},
+      images: {},
+      order: []
+    };
+
+    try {
+      let jsonRes = await fetch(getNewsDataPath(currentLanguage), { cache: 'no-cache' });
+      if (!jsonRes.ok && currentLanguage === 'nl') {
+        jsonRes = await fetch('new.json', { cache: 'no-cache' });
+      }
+      if (jsonRes.ok) {
+        jsonData = await jsonRes.json();
+      }
+    } catch (err) {
+      console.error('Could not load news data', err);
+    }
+
+    // Preferred format: an explicit array lets you add/reorder items without renaming files.
+    if (Array.isArray(jsonData.items) && jsonData.items.length > 0) {
+      allItems = await Promise.all(jsonData.items.map(async (item, index) => {
+        const fallbackId = index + 1;
+        const imagePath = await resolveNewsImagePath(item.image, `n${fallbackId}`);
+
+        return {
+          title: item.title || `${getNewsFallbackLabel(currentLanguage)} ${fallbackId}`,
+          img: imagePath,
+          link: item.link || '#',
+          description: item.description || '',
+          category: item.category || 'other'
+        };
+      }));
+    } else {
+      const fallbackKeys = Object.keys(jsonData.newstitles).reverse();
+      const newsKeys = Array.isArray(jsonData.order) && jsonData.order.length > 0
+        ? jsonData.order.filter(key => key in (jsonData.newstitles || {}))
+        : fallbackKeys;
+
+      allItems = await Promise.all(newsKeys.map(async key => {
+        const id = key.split('_')[1];
+        const imagePath = await resolveNewsImagePath(
+          (jsonData.images && jsonData.images[key]) ? jsonData.images[key] : '',
+          `n${id}`
+        );
+
+        return {
+          title: jsonData.newstitles[key] || `${getNewsFallbackLabel(currentLanguage)} ${id}`,
+          img: imagePath,
+          link: `../Projects/Project_${id}/index.html`,
+          description: jsonData.descriptions[key] || '',
+          category: (jsonData.categories && jsonData.categories[key]) ? jsonData.categories[key] : 'other'
+        };
+      }));
+    }
+
+    renderGallery(allItems);
+    setupFilters();
+  }
+
+  function formatCategoryLabel(value) {
+    const normalized = String(value || 'Other').trim();
+    if (!normalized) return 'Other';
+    return normalized.charAt(0).toUpperCase() + normalized.slice(1).toLowerCase();
+  }
+
+  function inferCountryInfo(item) {
+    const haystack = `${item.title || ''} ${item.description || ''}`.toLowerCase();
+
+    const countryMatchers = [
+      { keywords: ['athens', 'athene', 'greece', 'ntua'], flag: '🇬🇷', name: 'Greece' },
+      { keywords: ['cairo', 'caïro', 'egypt', 'sharm el-sheikh', 'al ahly'], flag: '🇪🇬', name: 'Egypt' },
+      { keywords: ['melbourne', 'australia'], flag: '🇦🇺', name: 'Australia' },
+      { keywords: ['singapore'], flag: '🇸🇬', name: 'Singapore' },
+      { keywords: ['zurich', 'zürich', 'switzerland'], flag: '🇨🇭', name: 'Switzerland' },
+      { keywords: ['mexico city', 'mexico-stad', 'mexico'], flag: '🇲🇽', name: 'Mexico' },
+      { keywords: ['torino', 'turijn', 'italy', 'italia'], flag: '🇮🇹', name: 'Italy' },
+      { keywords: ['delft', 'netherlands'], flag: '🇳🇱', name: 'Netherlands' },
+      { keywords: ['brussels', 'brussel', 'belgium', 'vub', 'ulb', 'asiat park', 'tour & taxis'], flag: '🇧🇪', name: 'Belgium' }
+    ];
+
+    return countryMatchers.find((country) => country.keywords.some((keyword) => haystack.includes(keyword))) || null;
+  }
+
+  function renderGallery(items) {
+    currentGalleryItems = items;
+    if (items.length === 0) {
+      grid.innerHTML = `<div class="col-12 text-center opacity-50 my-5"><p>${getEmptyNewsMessage(getNewsLanguage())}</p></div>`;
+      return;
+    }
+
+    grid.innerHTML = items.map((item, index) => {
+      const countryInfo = inferCountryInfo(item);
+      return `
+      <div class="col-md-6 col-xl-4 gallery-item">
+        <article class="reveal-item news-card" style="animation-delay: ${index * 0.05}s;">
+          <span class="news-card-badge">${formatCategoryLabel(item.category)}</span>
+          ${countryInfo ? `<span class="news-card-flag" title="${countryInfo.name}" aria-label="${countryInfo.name}">${countryInfo.flag}</span>` : ''}
+          <div class="tile news-card-media">
+            <div class="img-link" role="button" aria-label="Open ${item.title} in popup">
+              <img src="${item.img}" class="gallery-img img-fluid" alt="${item.title}" data-title="${item.title}" data-description="${item.description}" data-category="${formatCategoryLabel(item.category)}" data-country="${countryInfo ? `${countryInfo.flag} ${countryInfo.name}` : ''}" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" style="cursor: zoom-in;">
+              <div class="tile-overlay"></div>
+            </div>
+          </div>
+          <div class="news-card-body">
+            <h3 class="news-card-title">${item.title}</h3>
+            <p class="news-card-description">${item.description}</p>
+          </div>
+        </article>
+      </div>
+    `;
+    }).join('');
+  }
+
+  function setupFilters() {
+    const buttons = document.querySelectorAll('.btn-filter');
+
+    function normalizeCategory(value) {
+      return String(value || '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9\s]/g, '')
+        .replace(/\s+/g, ' ')
+        .replace(/s$/, '');
+    }
+    
+    buttons.forEach(btn => {
+      btn.onclick = () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = normalizeCategory(btn.getAttribute('data-filter'));
+        
+        if (filterValue === 'all') {
+          renderGallery(allItems);
+        } else {
+          const filtered = allItems.filter(item => 
+            normalizeCategory(item.category) === filterValue
+          );
+          renderGallery(filtered);
+        }
+      };
+    });
+  }
+
+  function setupImagePopup() {
+    const modalEl = document.getElementById('imageModal');
+    const modalImg = document.getElementById('imageModalImg');
+    const modalTitle = document.getElementById('imageModalTitle');
+    if (!modalEl || !modalImg || !modalTitle) return;
+
+    const modal = new bootstrap.Modal(modalEl, { keyboard: true, backdrop: 'static' });
+    const modalMeta = document.getElementById('imageModalMeta');
+
+    document.body.addEventListener('click', event => {
+      const card = event.target.closest('.img-link');
+      if (!card) return;
+
+      const img = card.querySelector('.gallery-img');
+      if (!img) return;
+
+      const src = img.getAttribute('src');
+      const title = img.getAttribute('data-title') || img.getAttribute('alt') || '';
+      const description = img.getAttribute('data-description') || '';
+      const category = img.getAttribute('data-category') || '';
+      const country = img.getAttribute('data-country') || '';
+
+      currentGalleryIndex = currentGalleryItems.findIndex(item => item.img === src);
+      if (currentGalleryIndex === -1) currentGalleryIndex = 0;
+
+      modalImg.setAttribute('src', src);
+      modalImg.setAttribute('alt', title);
+      modalTitle.textContent = title;
+      if (modalMeta) modalMeta.textContent = country ? `${category} · ${country}` : category;
+      document.getElementById('imageModalDescription').textContent = description;
+      modal.show();
+    });
+
+    const prevButton = document.getElementById('prevImageBtn');
+    const nextButton = document.getElementById('nextImageBtn');
+
+    function showCurrentItem() {
+      if (!currentGalleryItems.length) return;
+      const item = currentGalleryItems[currentGalleryIndex];
+      if (!item) return;
+      const countryInfo = inferCountryInfo(item);
+      modalImg.setAttribute('src', item.img);
+      modalImg.setAttribute('alt', item.title);
+      modalTitle.textContent = item.title;
+      if (modalMeta) {
+        const categoryLabel = formatCategoryLabel(item.category);
+        modalMeta.textContent = countryInfo ? `${categoryLabel} · ${countryInfo.flag} ${countryInfo.name}` : categoryLabel;
+      }
+      document.getElementById('imageModalDescription').textContent = item.description || '';
+    }
+
+    prevButton?.addEventListener('click', () => {
+      if (currentGalleryItems.length === 0) return;
+      currentGalleryIndex = Math.max(0, currentGalleryIndex - 1);
+      showCurrentItem();
+    });
+
+    nextButton?.addEventListener('click', () => {
+      if (currentGalleryItems.length === 0) return;
+      currentGalleryIndex = Math.min(currentGalleryItems.length - 1, currentGalleryIndex + 1);
+      showCurrentItem();
+    });
+  }
+
+  // Initialize
+  loadGallery();
+  setupImagePopup();
+
+  document.addEventListener('site-language-changed', function(event) {
+    const language = event && event.detail ? event.detail.language : getNewsLanguage();
+    loadGallery(language);
+  });
+</script>
+
+
+<footer class="site-footer">
+  <div class="container px-4">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Ahmed Soliman</h3>
+        <p>Architectural Engineer & Researcher</p>
+        <p style="font-size: 0.85rem; margin-top: 12px;">Exploring the intersection of architecture, computation, and structural design.</p>
+      </div>
+
+      <div class="footer-links footer-nav">
+        <a href="/">Work</a>
+        <a href="/research/">Research</a>
+        <a href="/news/">News</a>
+        <a href="/teaching/">Teaching</a>
+        <a href="/about/">About</a>
+      </div>
+
+      <div class="footer-connect">
+        <h4 style="font-size: 1rem; font-weight: 600; margin: 0 0 16px 0; opacity: 1;">Connect</h4>
+        <div class="social-links">
+          <a href="https://www.researchgate.net/profile/Ahmed_Soliman141/research" target="_blank" title="ResearchGate">
+            <img src="icons_header/RNG.png" alt="ResearchGate">
+          </a>
+          <a href="https://www.linkedin.com/in/ahmedsoliman7/" target="_blank" title="LinkedIn">
+            <img src="icons_header/linkedin2.png" alt="LinkedIn">
+          </a>
+          <a href="https://www.instagram.com/ahsolimann/" target="_blank" title="Instagram">
+            <img src="icons_header/instagram-53.png" alt="Instagram">
+          </a>
+          <a href="https://www.vub.be/arch/people/ahmed-soliman" target="_blank" title="VUB">
+            <img src="icons_header/arch.png" alt="VUB Architecture">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Ahmed Soliman. All rights reserved.</div>
+      <a href="#" class="back-to-top" id="backToTop">
+        <span>Back to Top</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="2,10 8,3 14,10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('backToTop').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>
+
+
+
+

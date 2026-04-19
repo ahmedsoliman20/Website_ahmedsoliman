@@ -202,24 +202,25 @@
   }
 
   function inferPageKey() {
-    const path = (window.location.pathname || '').toLowerCase();
+    const rawPath = (window.location.pathname || '').toLowerCase();
+    const path = rawPath.replace(/\/index\.html$/, '/').replace(/\/+$/, '') || '/';
 
-    if (!path || path === '/' || path.endsWith('/index.html')) {
+    if (path === '/') {
       return 'home';
     }
-    if (path.endsWith('/about.html')) {
+    if (path === '/about' || rawPath.endsWith('/about.html')) {
       return 'about';
     }
-    if (path.endsWith('/research.html')) {
+    if (path === '/research' || rawPath.endsWith('/research.html')) {
       return 'research';
     }
-    if (path.endsWith('/teaching.html')) {
+    if (path === '/teaching' || rawPath.endsWith('/teaching.html')) {
       return 'teaching';
     }
-    if (path.endsWith('/news.html')) {
+    if (path === '/news' || rawPath.endsWith('/news.html')) {
       return 'news';
     }
-    if (path.endsWith('/st_samples.html')) {
+    if (path === '/st_samples' || rawPath.endsWith('/st_samples.html')) {
       return 'samples';
     }
 
@@ -253,24 +254,34 @@
   }
 
   function resolveNavKey(href) {
-    const normalizedHref = String(href || '').toLowerCase().trim();
+    const rawHref = String(href || '').trim();
 
-    if (!normalizedHref || normalizedHref === '#') {
+    if (!rawHref || rawHref === '#') {
       return '';
     }
-    if (normalizedHref === '/' || normalizedHref.includes('index.html')) {
+
+    let pathname = rawHref.toLowerCase();
+    try {
+      pathname = new URL(rawHref, window.location.origin).pathname.toLowerCase();
+    } catch (error) {
+      pathname = rawHref.toLowerCase();
+    }
+
+    const normalizedPath = pathname.replace(/\/index\.html$/, '/').replace(/\/+$/, '') || '/';
+
+    if (normalizedPath === '/') {
       return 'work';
     }
-    if (normalizedHref.includes('research.html')) {
+    if (normalizedPath === '/research' || pathname.includes('research.html')) {
       return 'research';
     }
-    if (normalizedHref.includes('news.html')) {
+    if (normalizedPath === '/news' || pathname.includes('news.html')) {
       return 'news';
     }
-    if (normalizedHref.includes('teaching.html')) {
+    if (normalizedPath === '/teaching' || pathname.includes('teaching.html')) {
       return 'teaching';
     }
-    if (normalizedHref.includes('about.html')) {
+    if (normalizedPath === '/about' || pathname.includes('about.html')) {
       return 'about';
     }
 
