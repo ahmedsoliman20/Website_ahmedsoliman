@@ -58,7 +58,8 @@
       degrees: 'Degrees',
       awards: 'Awards',
       workshops: 'Workshops',
-      other: 'Other'
+      other: 'Other',
+      newsIntro: 'A selection of lectures, conferences, workshops, awards, and academic moments shaping the ongoing journey.'
     },
     nl: {
       work: 'Werk',
@@ -112,7 +113,8 @@
       degrees: 'Diploma\'s',
       awards: 'Prijzen',
       workshops: 'Workshops',
-      other: 'Overig'
+      other: 'Overig',
+      newsIntro: 'Een selectie van lezingen, conferenties, workshops, prijzen en academische momenten die de voortdurende reis vormgeven.'
     }
   };
 
@@ -364,6 +366,7 @@
     setText('.teaching-logo-filter[data-university="ain"] .institution-location', t('cairoEgypt'));
     setText('.teaching-logo-filter[data-university="auc"] .institution-location', t('cairoEgypt'));
     setText('.teaching-action-text', t('studentWorkSamples'));
+    setText('.news-page-intro', t('newsIntro'));
 
     document.querySelectorAll('#filter-buttons [data-filter]').forEach(function(button) {
       const filterKey = String(button.getAttribute('data-filter') || '').toLowerCase();
