@@ -6,6 +6,18 @@
   },
   "publications": [
     {
+      "text": "A Multi-Agent Framework for deterministic, LLM-Informed Early-Stage Truss Steel Design. \n Di Noi, Savino; Soliman, Ahmed; De Laet, Lars. \n In review.",
+      "link": ""
+    },
+    {
+      "text": "Early-Stage Cost Estimation of Bridge Structures Using Large Language Models and Synthetic Data. \n Coninx, Thibault; Soliman, Ahmed; De Laet, Lars; Sepulchre, Léopold. \n In review.",
+      "link": ""
+    },
+    {
+      "text": "Design of a reciprocal structure constructed from construction wood waste: a design from a limited stock approach. \n Nicolas, Gabrielle; Soliman, Ahmed; Snoeck, Didier; De Laet, Lars. \n In review.",
+      "link": ""
+    },
+    {
       "text": "Designing from Waste: Computational Reuse of Formwork Wood in Lightweight Structures. \n Nicolas, Gabrielle; Soliman, Ahmed; De Laet, Lars; Snoeck, Didier. \n Proceedings of the IASS Annual Symposium 2025: The living past as a source of innovation. 2025. p. 1-11.",
       "link": "https://researchportal.vub.be/en/publications/designing-from-waste-computational-reuse-of-formwork-wood-in-ligh/"
     },
@@ -31,6 +43,14 @@
     }
   ],
   "supervised": [
+    {
+      "text": "Early-Stage Cost Estimation of Pedestrian Bridge Structures Using a RAG Pipeline, Large Language Models, and Synthetic Data\nConinx, T. Promotor: De Laet, L. Adviseurs: Soliman, A.; Sepulchre, L. Jury: Bouillard, P.; Munteanu, A. , jun 2026",
+      "link": ""
+    },
+    {
+      "text": "Agentic AI for Early-Stage Structural Design: A Multi-Agent Framework for Eurocode 3 Compliant Steel Trusses\nDi Noi, S. Promotor: De Laet, L. Adviseur: Soliman, A. Jury: Berke, P.; Munteanu, A. , 22 jun 2026",
+      "link": ""
+    },
     {
       "text": "A Deployable Scissor-Rail Falsework System for the On-Site Construction of Segmented Singly Curved Shells\nRecker, L. Promotor: De Temmerman, N. Adviseur: Soliman, A. Jury: Van de Voorde, S.; Devos, R.; Bouillard, P.; Koumar, A. , 2 Sept 2025",
       "link": ""
